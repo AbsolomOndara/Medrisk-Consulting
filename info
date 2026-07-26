@@ -1,0 +1,205 @@
+I. Overall Design & Development Strategy
+Color Palette: This must be strictly maintained from the screenshots. The primary brand colors appear to be:
+
+Primary: A deep, professional blue (#003366 or similar).
+
+Secondary: A warm, energetic orange (#FF6600 or similar).
+
+Neutral: White, light grays (#F8F9FA), and dark gray/black for text.
+
+Typography: Use a clean, modern, and highly readable sans-serif font (e.g., Google Fonts: Inter, Poppins, or Open Sans).
+
+Core Values (Eliability, Reliability): These should be subtly woven into the website's copy and design. For example, in the "About Us" section, a tagline could be "Built on Reliability and Proven Eliability" or use a value proposition like "Delivering Reliable, Expert Solutions."
+
+The "Our Partners" Section: This will be a dedicated section on the homepage or a separate page where partner logos are displayed. The logos will be animated (e.g., a slow, continuous scroll/marquee or fade-in/up on scroll) and perfectly aligned horizontally.
+
+Navigation & Services Dropdown: The primary navigation will include "Home," "Services," and "Contact." When a user hovers over "Services," a vertical dropdown menu will appear, listing all the core service categories. Each item will be a clickable link.
+
+II. Page-by-Page Breakdown
+1. Home Page (index.html)
+This is the most critical page, designed to make a powerful first impression and guide users to the services.
+
+Header/Navigation:
+
+Logo: MEDRISK Consulting Ltd with the tagline "Bright Solutions, Valuable Results" below or beside it.
+
+Navigation Links: Home | Services (Dropdown) | Contact
+
+"Book a Meeting" / "Get a Quote" CTA: A prominent button (in the orange accent color).
+
+Hero Section:
+
+Background: A high-quality, professional image related to consulting (e.g., a modern office, a team in a meeting, abstract professional imagery).
+
+Headline: "Bright Solutions, Valuable Results." or "Elevating Your Business to World-Class Standards."
+
+Sub-headline: A concise summary of Medrisk's value proposition (e.g., "We partner with organizations to enhance profitability, optimize operations, and empower workforces through expert consultancy and training.").
+
+CTA Buttons: "Our Services" (links to services) and "Contact Us."
+
+Core Value Proposition (The "Why Medrisk"):
+
+A section with 4-5 icon-and-text blocks summarizing key benefits.
+
+Enhanced Profitability
+
+Access to Talented Workforce
+
+Reduced Costs & Overheads
+
+Better Customer Experience
+
+Unmatched Expertise & Reliability
+
+Our Services (A Featured Preview):
+
+Display the main service categories (Corporate Training, Management Consultancy, HR, Accounting, etc.) in a grid (3 columns).
+
+Each service block has a title, a brief description (1-2 sentences), and a prominent "Learn More" button.
+
+Our Partners Section:
+
+Title: "Our Partners"
+
+Content: A horizontally scrolling/animated row of partner logos, replacing the "Working with the Best Clients and Partners" title. (Will be populated with placeholder logos or actual client logos).
+
+Client Testimonials:
+
+A carousel or grid displaying quotes from satisfied clients to build social proof.
+
+Footer:
+
+Logo, company name.
+
+Quick Links (Home, Services, Contact).
+
+Contact Information (Phone, Email, Website).
+
+Social Media Icons (LinkedIn, Twitter, etc.).
+
+Copyright notice.
+
+2. Services Page (services.html)
+This is the main hub for all the services, expanding on the preview from the homepage.
+
+Header: Same as Home page.
+
+Hero Section: "Our Comprehensive Consulting Services."
+
+Introduction: A brief paragraph summarizing Medrisk's diverse expertise.
+
+Services Grid: A complete list of all services in a grid format. Each service will have:
+
+Icon (representing the service).
+
+Service Title.
+
+Concise Description (a shortened version of the suggested content).
+
+"Learn More" Button that links to the corresponding service details page. (See below).
+
+Core Value/Team Section: A section re-emphasizing the "Bright Solutions, Valuable Results" motto and the expertise of the Medrisk team.
+
+CTA: A call to action section like "Ready to Transform Your Business?" with a contact button.
+
+Footer: Same as Home page.
+
+3. Detailed Service Pages (service-detail.html - Dynamically Loaded)
+This architecture allows for a single template page that loads content based on which "Learn More" button is clicked, or separate static pages (e.g., corporate-training.html, management-consultancy.html). A dynamic approach (using JavaScript) is more efficient.
+
+Header: Same as Home page.
+
+Hero Section: A personalized hero banner for the specific service (e.g., "Corporate Training: Elevating Workforce Excellence").
+
+Content Sections: This is where the rich, suggested content you provided will be placed. The content will be structured with:
+
+Overview: The introductory paragraph.
+
+Key Highlights/Benefits: A bulleted or icon-based list of the key service benefits.
+
+Deep Dive: Detailed descriptions of the sub-services (e.g., for "Accounting," having sections on "Accounting Services" and "Bookkeeping Services").
+
+Why Choose This Service: A concluding section summarizing the value proposition.
+
+"Reach Out To Us" / "Book a Meeting" CTA: A section allowing users to take the next step.
+
+Phone: 0790 409 121
+
+Email: info@medriskconsulting.co.ke
+
+A "Book a Meeting" button linking to a scheduling platform (Calendly, etc.).
+
+Related Services: A horizontal list of 3-4 other services the user might be interested in.
+
+Footer: Same as Home page.
+
+4. About Us Page (about.html)
+Header: Same as Home page.
+
+Hero Section: "Who We Are."
+
+Our Story: A narrative about Medrisk Consulting Ltd, its history, values, and mission.
+
+Core Values: A section specifically highlighting "Eliability" and "Reliability" as core tenets of their business. Explain what these mean for their clients.
+
+The Medrisk Team: A section featuring team members (can be placeholder images for now). This adds a human touch and builds trust.
+
+Why Choose Medrisk: A summary of the benefits of working with them.
+
+Footer: Same as Home page.
+
+5. Contact Us Page (contact.html)
+Header: Same as Home page.
+
+Hero Section: "Get in Touch."
+
+Contact Form: A simple form for users to send a message (Name, Email, Phone, Subject, Message).
+
+Contact Information (Sidebar or below form):
+
+Phone: 0790 409 121
+
+Email: info@medriskconsulting.co.ke
+
+Website: www.medriskconsulting.co.ke
+
+Physical Address: (If available).
+
+Google Maps Embed: An embedded map showing the company's location.
+
+CTA: A final call to action to reinforce the benefits of contacting them.
+
+Footer: Same as Home page.
+
+III. Development & Implementation Notes
+HTML Structure (index.html, services.html, about.html, contact.html, service-detail.html): Use a clean, semantic HTML5 structure. The service-detail.html page can be a template that populates content dynamically or be duplicated for each service.
+
+CSS Styling (style.css):
+
+Color Management: Use CSS variables (custom properties) to define the primary and secondary colors for easy maintenance.
+
+Navigation: Implement a pure CSS dropdown menu for the "Services" tab.
+
+Animations: Use CSS animations (@keyframes) for the partner logo scroll/marquee. Use JavaScript for scroll-triggered animations (fade-in, slide-up) for a modern feel.
+
+Mobile Responsiveness: Use media queries to ensure the website looks flawless on all devices (desktop, tablet, and mobile). The navigation should collapse into a "hamburger" menu on smaller screens.
+
+Alignment: Ensure the text in the "Our Services" section is perfectly aligned as requested.
+
+JavaScript (script.js):
+
+Navigation: Toggle the hamburger menu on mobile.
+
+Service Dropdown: Enhance the user experience for the dropdown.
+
+"Learn More" Button Logic: Handle the click event to navigate to the appropriate service detail page. For a static page, this is a simple link. For a dynamic page, pass a parameter in the URL (e.g., ?service=corporate-training) to load the correct content.
+
+Scroll Animations: Implement Intersection Observer API for scroll-triggered animations.
+
+Content Integration: Meticulously copy the detailed, suggested content for each service into its designated place within the service-detail.html structure. Structure the content with proper headings (<h3>, <h4>), paragraphs (<p>), and lists (<ul>, <ol>) for readability.
+
+Images & Icons:
+
+Use professional, high-quality stock photos that are relevant to consulting and business.
+
+Use a consistent icon set (e.g., Font Awesome) for service icons, benefits, and social media.
