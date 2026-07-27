@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>Our Services · Medrisk Consulting</title>
+  <link rel="icon" href="images/fav.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="images/fav.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* ===== RESET & PALETTE ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    :root {
+      --dark-navy: #115276;
+      --teal: #146185;
+      --primary-green: #71B34E;
+      --light-green: #7BC156;
+      --lime-accent: #8DC967;
+      --off-white: #E8EBEC;
+      --dark-gray: #17181A;
+      --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--off-white);
+      color: var(--dark-gray);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* ===== FLOATING NAV (same as index) ===== */
+    .navbar {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(95%, 1280px);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-radius: 60px;
+      box-shadow: 0 10px 30px rgba(17, 82, 118, 0.08);
+      padding: 8px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 999;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.25s;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-logo img {
+      height: 44px;
+      width: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    .nav-logo h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dark-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .nav-logo span {
+      font-size: 0.65rem;
+      font-weight: 600;
+      color: var(--primary-green);
+      background: rgba(113, 179, 78, 0.08);
+      padding: 2px 14px;
+      border-radius: 40px;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(113, 179, 78, 0.15);
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark-gray);
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover { color: var(--primary-green); }
+    .nav-links a.active { color: var(--primary-green); font-weight: 600; }
+    .dropdown {
+      position: relative;
+      cursor: pointer;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 40px;
+      left: -18px;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      min-width: 210px;
+      border-radius: 28px;
+      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+      padding: 10px 0;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 24px;
+      color: var(--dark-gray);
+      font-weight: 450;
+      border-left: 3px solid transparent;
+      transition: background 0.15s, color 0.15s;
+    }
+    .dropdown-content a:hover {
+      background: rgba(113, 179, 78, 0.04);
+      color: var(--primary-green);
+      border-left-color: var(--primary-green);
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+    .nav-cta {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 8px 24px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.25s;
+      box-shadow: 0 4px 14px rgba(113, 179, 78, 0.25);
+      white-space: nowrap;
+    }
+    .nav-cta:hover {
+      background: #5f9e3e !important;
+      transform: scale(0.96);
+      color: white !important;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      z-index: 1001;
+    }
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background: var(--dark-gray);
+      border-radius: 10px;
+      transition: 0.25s;
+    }
+
+    /* ===== MOBILE OVERLAY ===== */
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 82, 118, 0.94);
+      backdrop-filter: blur(14px);
+      z-index: 998;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px;
+    }
+    .mobile-overlay.open { display: flex; animation: fadeIn 0.3s ease; }
+    @keyframes fadeIn { from { opacity:0; transform:scale(0.96); } to { opacity:1; transform:scale(1); } }
+    .mobile-overlay a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .mobile-overlay a:hover { color: var(--light-green); }
+    .mobile-overlay .dropdown-mobile { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+    .mobile-overlay .dropdown-mobile .dropdown-label {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mobile-overlay .dropdown-mobile .dropdown-label i { font-size: 0.7rem; transition: transform 0.3s; }
+    .mobile-overlay .dropdown-mobile .dropdown-label.open i { transform: rotate(180deg); }
+    .mobile-overlay .dropdown-mobile .sub-links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      margin-top: 6px;
+    }
+    .mobile-overlay .dropdown-mobile .sub-links.open { display: flex; }
+    .mobile-overlay .dropdown-mobile .sub-links a { font-size: 1rem; opacity: 0.8; }
+    .mobile-overlay .mobile-cta {
+      background: var(--primary-green);
+      color: white !important;
+      padding: 12px 32px;
+      border-radius: 60px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .mobile-overlay .mobile-cta:hover { background: #5f9e3e !important; }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 5% 60px;
+      position: relative;
+      background: var(--dark-navy);
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/services-hero.jpg') center center / cover no-repeat;
+      z-index: 0;
+    }
+    .page-hero-bg::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(17, 82, 118, 0.60);
+      z-index: 1;
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      max-width: 800px;
+    }
+    .page-hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .page-hero-content h1 span { color: var(--light-green); }
+    .page-hero-content p {
+      font-size: 1.15rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== FLOATING SHAPES ===== */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(113, 179, 78, 0.06);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatShape 20s infinite alternate ease-in-out;
+    }
+    .shape-1 { width: 300px; height: 300px; top: -80px; right: -60px; background: rgba(113, 179, 78, 0.04); }
+    .shape-2 { width: 200px; height: 200px; bottom: 40px; left: -40px; background: rgba(123, 193, 86, 0.05); animation-duration: 25s; }
+    .shape-3 { width: 150px; height: 150px; top: 30%; right: 10%; background: rgba(141, 201, 103, 0.04); animation-duration: 18s; }
+    @keyframes floatShape {
+      0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      33% { transform: translate(30px, -40px) scale(1.1) rotate(120deg); }
+      66% { transform: translate(-20px, 30px) scale(0.9) rotate(240deg); }
+      100% { transform: translate(10px, -10px) scale(1.05) rotate(360deg); }
+    }
+
+    /* ===== SERVICES SECTION ===== */
+    .services-page {
+      padding: 60px 5% 80px;
+      position: relative;
+      background: var(--off-white);
+    }
+    .services-page .bg-shapes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .services-page .bg-shapes div {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.03;
+    }
+    .services-page .bg-shapes .s1 { width: 400px; height: 400px; top: -100px; right: -100px; background: var(--primary-green); }
+    .services-page .bg-shapes .s2 { width: 250px; height: 250px; bottom: 50px; left: -80px; background: var(--teal); }
+    .services-page .bg-shapes .s3 { width: 180px; height: 180px; top: 40%; left: 30%; background: var(--lime-accent); }
+
+    .services-page .container { position: relative; z-index: 1; }
+
+    .section-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--dark-navy);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      text-align: center;
+      color: var(--teal);
+      max-width: 600px;
+      margin: 0 auto 50px;
+      font-size: 1.05rem;
+    }
+
+    /* ===== SERVICE CARDS with varied shapes ===== */
+    .service-masonry {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .service-item {
+      background: var(--white);
+      border-radius: 40px;
+      padding: 32px 28px;
+      transition: all 0.35s cubic-bezier(0.15, 0.85, 0.3, 1);
+      box-shadow: 0 8px 28px rgba(17, 82, 118, 0.04);
+      border: 1px solid rgba(0,0,0,0.02);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .service-item:nth-child(1) { border-radius: 40px 40px 40px 10px; }
+    .service-item:nth-child(2) { border-radius: 40px 10px 40px 40px; }
+    .service-item:nth-child(3) { border-radius: 10px 40px 40px 40px; }
+    .service-item:nth-child(4) { border-radius: 40px 40px 10px 40px; }
+    .service-item:nth-child(5) { border-radius: 40px 10px 40px 10px; }
+    .service-item:nth-child(6) { border-radius: 10px 40px 10px 40px; }
+
+    .service-item::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(113, 179, 78, 0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      transition: all 0.6s;
+      pointer-events: none;
+    }
+    .service-item:hover::before {
+      transform: scale(2);
+      opacity: 0.5;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px) scale(1.01);
+      box-shadow: 0 30px 60px rgba(17, 82, 118, 0.08);
+      border-color: rgba(113, 179, 78, 0.10);
+    }
+
+    .service-item .icon-wrap {
+      font-size: 2.4rem;
+      color: var(--primary-green);
+      background: rgba(113, 179, 78, 0.06);
+      width: 70px;
+      height: 70px;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      transition: all 0.3s;
+    }
+    .service-item:hover .icon-wrap {
+      background: var(--primary-green);
+      color: white;
+      transform: rotate(-6deg) scale(1.05);
+    }
+
+    .service-item h3 {
+      font-size: 1.3rem;
+      color: var(--dark-navy);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .service-item p {
+      color: var(--teal);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      flex: 1;
+    }
+    .service-item .learn-more {
+      margin-top: 22px;
+      color: var(--primary-green);
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.25s;
+      border-bottom: 2px solid transparent;
+      align-self: flex-start;
+    }
+    .service-item .learn-more:hover { gap: 14px; border-bottom-color: var(--primary-green); }
+
+    /* ===== COUNTERS SECTION ===== */
+    .counters-section {
+      padding: 60px 5%;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .counters-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/counters-bg.jpg') center center / cover no-repeat;
+      opacity: 0.03;
+      pointer-events: none;
+    }
+    .counters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    .counter-item {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 32px;
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: all 0.3s;
+    }
+    .counter-item:hover { transform: translateY(-4px); background: white; box-shadow: 0 12px 32px rgba(17,82,118,0.04); }
+    .counter-item .num {
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--dark-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .counter-item .num span { color: var(--primary-green); }
+    .counter-item .label {
+      font-size: 0.9rem;
+      color: var(--teal);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 60px 5%;
+      background: var(--dark-navy);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(113, 179, 78, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-section h2 {
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section p {
+      color: rgba(255,255,255,0.7);
+      max-width: 500px;
+      margin: 0 auto 28px;
+      font-size: 1.05rem;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section .btn-primary {
+      background: var(--primary-green);
+      color: white;
+      padding: 14px 44px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s;
+      box-shadow: 0 8px 24px rgba(113, 179, 78, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+    .cta-section .btn-primary:hover { background: #5f9e3e; transform: translateY(-3px); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--dark-navy);
+      color: rgba(255,255,255,0.8);
+      padding: 40px 5% 20px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 32px;
+      max-width: 1280px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding-bottom: 24px;
+    }
+    .footer h4 { color: white; margin-bottom: 14px; font-weight: 600; }
+    .footer a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 6px;
+      transition: color 0.15s;
+      font-size: 0.9rem;
+    }
+    .footer a:hover { color: var(--light-green); }
+    .footer .socials { display: flex; gap: 12px; margin-top: 10px; }
+    .footer .socials a {
+      background: rgba(255,255,255,0.05);
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-size: 1rem;
+    }
+    .footer .copy {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 20px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ===== REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px) scale(0.97);
+      transition: opacity 0.7s cubic-bezier(0.15, 0.85, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.15, 0.85, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media screen and (max-width: 820px) {
+      .navbar { padding: 8px 16px; top: 10px; border-radius: 40px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .page-hero { min-height: 40vh; padding: 120px 5% 40px; }
+      .service-masonry { grid-template-columns: 1fr; }
+      .service-item:nth-child(1),
+      .service-item:nth-child(2),
+      .service-item:nth-child(3),
+      .service-item:nth-child(4),
+      .service-item:nth-child(5),
+      .service-item:nth-child(6) { border-radius: 32px; }
+      .counters-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media screen and (max-width: 480px) {
+      .nav-logo h1 { font-size: 1.1rem; }
+      .nav-logo span { font-size: 0.5rem; padding: 2px 8px; }
+      .counter-item .num { font-size: 2.4rem; }
+      .service-masonry { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">
+      <img src="images/logo.jpg" alt="Medrisk Consulting" onerror="this.style.display='none'">
+      <h1>MEDRISK</h1>
+      <span>Bright Solutions</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <div class="dropdown" id="servicesDropdown">
+        <a href="#" style="cursor:default;" class="active">Services <i class="fas fa-chevron-down" style="font-size:0.6rem; margin-left:4px;"></i></a>
+        <div class="dropdown-content">
+          <a href="#services">Corporate Training</a>
+          <a href="#services">Management Consultancy</a>
+          <a href="#services">HR Management</a>
+          <a href="#services">Accounting & Bookkeeping</a>
+          <a href="#services">Audit & Advisory</a>
+          <a href="#services">Pension & Investment</a>
+        </div>
+      </div>
+      <a href="index.html#contact">Contact</a>
+      <a href="#" class="nav-cta"><i class="fas fa-calendar-check" style="margin-right:6px;"></i>Book a Meeting</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== MOBILE OVERLAY ===== -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <a href="index.html">Home</a>
+    <div class="dropdown-mobile">
+      <div class="dropdown-label" id="mobileDropdownLabel">
+        Services <i class="fas fa-chevron-down"></i>
+      </div>
+      <div class="sub-links" id="mobileSubLinks">
+        <a href="#services">Corporate Training</a>
+        <a href="#services">Management Consultancy</a>
+        <a href="#services">HR Management</a>
+        <a href="#services">Accounting & Bookkeeping</a>
+        <a href="#services">Audit & Advisory</a>
+        <a href="#services">Pension & Investment</a>
+      </div>
+    </div>
+    <a href="index.html#contact">Contact</a>
+    <a href="#" class="mobile-cta"><i class="fas fa-calendar-check" style="margin-right:8px;"></i>Book a Meeting</a>
+  </div>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" id="top">
+    <div class="page-hero-bg"></div>
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="page-hero-content">
+      <h1>Our <span>Services</span></h1>
+      <p>Comprehensive, tailored solutions designed to accelerate your business growth and drive measurable results.</p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES MASONRY ===== -->
+  <section class="services-page" id="services">
+    <div class="bg-shapes">
+      <div class="s1"></div>
+      <div class="s2"></div>
+      <div class="s3"></div>
+    </div>
+    <div class="container">
+      <h2 class="section-title reveal">What We Deliver</h2>
+      <p class="section-sub reveal">Every engagement is crafted to meet your unique challenges with precision and creativity.</p>
+      <div class="service-masonry">
+        <!-- 1 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h3>Corporate Training</h3>
+          <p>High‑impact, interactive workshops that build a talented, committed workforce and foster a culture of continuous learning.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 2 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-briefcase"></i></div>
+          <h3>Management Consultancy</h3>
+          <p>Strategic outsourcing, operational improvement, and growth strategies to help you stay ahead of the competition.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 3 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-user-tie"></i></div>
+          <h3>Human Resource Management</h3>
+          <p>Cutting‑edge HR solutions from organization design to performance engineering and leadership coaching.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 4 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-book-open"></i></div>
+          <h3>Accounting & Bookkeeping</h3>
+          <p>Meticulous financial tracking, reporting, and strategic advisory to empower informed business decisions.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 5 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-file-signature"></i></div>
+          <h3>Audit & Advisory</h3>
+          <p>Internal and external audits to ensure transparency, regulatory compliance, and robust governance.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <!-- 6 -->
+        <div class="service-item reveal">
+          <div class="icon-wrap"><i class="fas fa-piggy-bank"></i></div>
+          <h3>Pension & Investment</h3>
+          <p>Actuarial guidance, pension liquidation, and investment advisory for long‑term financial security.</p>
+          <a href="#" class="learn-more">Explore <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COUNTERS ===== -->
+  <section class="counters-section" id="counters">
+    <h2 class="section-title reveal">Our Impact in Numbers</h2>
+    <p class="section-sub reveal">Real results from real partnerships.</p>
+    <div class="counters-grid">
+      <div class="counter-item reveal">
+        <div class="num"><span class="counter" data-target="120">0</span>+</div>
+        <div class="label">Clients Served</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="num"><span class="counter" data-target="15">0</span>+</div>
+        <div class="label">Years of Excellence</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="num"><span class="counter" data-target="98">0</span>%</div>
+        <div class="label">Client Satisfaction</div>
+      </div>
+      <div class="counter-item reveal">
+        <div class="num"><span class="counter" data-target="200">0</span>+</div>
+        <div class="label">Training Sessions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <h2>Ready to Transform Your Business?</h2>
+    <p>Let's discuss how our services can drive your success.</p>
+    <a href="index.html#contact" class="btn-primary"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="contact">
+    <div class="footer-grid">
+      <div>
+        <h4>MEDRISK</h4>
+        <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
+        <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">© <span id="year"></span> Medrisk Consulting Ltd</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="#top">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
+        <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
+        <a href="#"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">© <span id="year2"></span> Medrisk Consulting Ltd · Built with reliability & expertise</div>
+  </footer>
+
+  <script>
+    // Auto copyright
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('year2').textContent = new Date().getFullYear();
+
+    // Mobile hamburger
+    const hamburger = document.getElementById('hamburger');
+    const overlay = document.getElementById('mobileOverlay');
+    hamburger.addEventListener('click', () => {
+      overlay.classList.toggle('open');
+    });
+    document.querySelectorAll('.mobile-link, .mobile-cta').forEach(link => {
+      link.addEventListener('click', () => overlay.classList.remove('open'));
+    });
+
+    // Mobile dropdown
+    const dropdownLabel = document.getElementById('mobileDropdownLabel');
+    const subLinks = document.getElementById('mobileSubLinks');
+    dropdownLabel.addEventListener('click', () => {
+      dropdownLabel.classList.toggle('open');
+      subLinks.classList.toggle('open');
+    });
+
+    // Desktop dropdown
+    const dropdown = document.getElementById('servicesDropdown');
+    dropdown.addEventListener('click', (e) => {
+      if (window.innerWidth <= 820) {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+      }
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.10, rootMargin: '0px 0px -20px 0px' });
+    reveals.forEach(el => observer.observe(el));
+
+    // ===== COUNTER ANIMATION =====
+    const counters = document.querySelectorAll('.counter');
+    let counterStarted = false;
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !counterStarted) {
+          counterStarted = true;
+          counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-target'));
+            let current = 0;
+            const increment = Math.ceil(target / 80);
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= target) {
+                counter.textContent = target;
+                clearInterval(timer);
+              } else {
+                counter.textContent = current;
+              }
+            }, 25);
+          });
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const counterSection = document.querySelector('.counters-section');
+    if (counterSection) counterObserver.observe(counterSection);
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === "#" || href === "") return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const offset = 100;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
