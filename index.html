@@ -40,6 +40,13 @@
       overflow-x: hidden;
     }
 
+    /* ===== CONTAINER - CENTERED WITH PROPER PADDING ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
     /* ===== NAVIGATION ===== */
     .navbar {
       position: fixed;
@@ -196,7 +203,7 @@
     }
     .mobile-overlay .mobile-cta:hover { background: #5f9e3e !important; }
 
-    /* ===== HERO WITH BACKGROUND VIDEO ===== */
+    /* ===== HERO WITH BACKGROUND VIDEO - FULL COVER ===== */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -204,10 +211,8 @@
       padding: 130px 5% 70px;
       position: relative;
       overflow: hidden;
-      background: var(--dark-navy);
     }
 
-    /* Video container */
     .hero-video-wrapper {
       position: absolute;
       top: 0;
@@ -230,7 +235,6 @@
       object-fit: cover;
     }
 
-    /* Dark overlay for text readability */
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -349,13 +353,14 @@
 
     /* ===== ABOUT INTRO ===== */
     .about-intro {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--white);
       position: relative;
     }
-    .about-intro .container {
+    .about-intro .about-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 24px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
@@ -433,9 +438,14 @@
 
     /* ===== SERVICES SHOWCASE ===== */
     .services-showcase {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--off-white);
       position: relative;
+    }
+    .services-showcase .services-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .services-showcase .section-label {
       display: block;
@@ -467,8 +477,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .service-card-modern {
@@ -545,13 +553,14 @@
 
     /* ===== VALUES SECTION ===== */
     .values-section {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--white);
       position: relative;
     }
-    .values-section .container {
+    .values-section .values-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 24px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
@@ -625,10 +634,15 @@
 
     /* ===== STATS ===== */
     .stats-showcase {
-      padding: 50px 5%;
+      padding: 50px 0;
       background: var(--dark-navy);
       position: relative;
       overflow: hidden;
+    }
+    .stats-showcase .stats-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .stats-showcase::before {
       content: '';
@@ -644,8 +658,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
       position: relative;
       z-index: 1;
     }
@@ -667,16 +679,19 @@
 
     /* ===== TESTIMONIALS ===== */
     .testimonials-section {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--off-white);
       position: relative;
+    }
+    .testimonials-section .testimonials-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .testimonial-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto;
     }
     .testimonial-card {
       background: white;
@@ -730,10 +745,15 @@
 
     /* ===== PARTNERS ===== */
     .partners-section {
-      padding: 40px 5%;
+      padding: 40px 0;
       background: var(--white);
       border-top: 1px solid rgba(0,0,0,0.03);
       border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .partners-section .partners-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .partners-section .partner-label {
       text-align: center;
@@ -774,10 +794,15 @@
 
     /* ===== CTA ===== */
     .cta-simple {
-      padding: 50px 5%;
+      padding: 50px 0;
       background: var(--dark-navy);
       text-align: center;
       position: relative;
+    }
+    .cta-simple .cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .cta-simple::before {
       content: '';
@@ -794,27 +819,51 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
     }
     .cta-simple p {
       color: rgba(255,255,255,0.7);
       max-width: 500px;
       margin: 0 auto 24px;
       font-size: 1rem;
+      position: relative;
+      z-index: 1;
     }
+    .cta-simple .btn-primary {
+      background: var(--primary-green);
+      color: white;
+      padding: 14px 44px;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s;
+      box-shadow: 0 8px 24px rgba(113, 179, 78, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+    .cta-simple .btn-primary:hover { background: #5f9e3e; transform: translateY(-3px); }
 
     /* ===== FOOTER ===== */
     .footer {
       background: var(--dark-navy);
       color: rgba(255,255,255,0.8);
-      padding: 40px 5% 20px;
+      padding: 40px 0 20px;
       border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .footer .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 32px;
-      max-width: 1280px;
-      margin: 0 auto;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       padding-bottom: 24px;
     }
@@ -840,6 +889,15 @@
       font-size: 0.8rem;
       margin-top: 20px;
       color: rgba(255,255,255,0.3);
+    }
+    .footer .copy .developer {
+      color: var(--light-green);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer .copy .developer:hover {
+      color: var(--lime-accent);
+      text-decoration: underline;
     }
 
     /* ===== SCROLL ANIMATIONS ===== */
@@ -884,6 +942,7 @@
     .stagger-children.visible > *:nth-child(4) { transition-delay: 0.35s; opacity: 1; transform: translateY(0); }
     .stagger-children.visible > *:nth-child(5) { transition-delay: 0.45s; opacity: 1; transform: translateY(0); }
     .stagger-children.visible > *:nth-child(6) { transition-delay: 0.55s; opacity: 1; transform: translateY(0); }
+    .stagger-children.visible > *:nth-child(7) { transition-delay: 0.65s; opacity: 1; transform: translateY(0); }
 
     /* ===== RESPONSIVE ===== */
     @media screen and (max-width: 820px) {
@@ -892,12 +951,12 @@
       .hamburger { display: flex; }
       .hero { padding: 110px 5% 50px; }
       .hero-float { display: none; }
-      .about-intro .container {
+      .about-intro .about-inner {
         grid-template-columns: 1fr;
         gap: 30px;
       }
       .about-intro .about-image img { height: 250px; }
-      .values-section .container {
+      .values-section .values-inner {
         grid-template-columns: 1fr;
         gap: 30px;
       }
@@ -917,6 +976,16 @@
       .about-intro .about-image img { height: 200px; }
       .values-section .values-image img { height: 200px; }
       .service-card-modern .card-img { height: 160px; }
+      .about-intro .about-inner,
+      .values-section .values-inner,
+      .services-showcase .services-inner,
+      .testimonials-section .testimonials-inner,
+      .partners-section .partners-inner,
+      .stats-showcase .stats-inner,
+      .cta-simple .cta-inner,
+      .footer .footer-inner {
+        padding: 0 16px;
+      }
     }
   </style>
 </head>
@@ -932,7 +1001,7 @@
       </div>
     </div>
     <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
+      <a href="#" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="service-detail.html">Services</a>
       <a href="contact.html">Contact</a>
@@ -945,25 +1014,21 @@
 
   <!-- ===== MOBILE OVERLAY ===== -->
   <div class="mobile-overlay" id="mobileOverlay">
-    <a href="index.html" class="active">Home</a>
+    <a href="#" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="service-detail.html">Services</a>
     <a href="contact.html">Contact</a>
     <a href="booking.html" class="mobile-cta"><i class="fas fa-calendar-check" style="margin-right:8px;"></i>Book a Meeting</a>
   </div>
 
-  <!-- ===== HERO WITH BACKGROUND VIDEO ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero" id="home">
-    <!-- Background Video -->
     <div class="hero-video-wrapper">
       <video autoplay muted loop playsinline>
         <source src="images/hero-video.mp4" type="video/mp4">
-        <!-- Fallback image if video doesn't load -->
       </video>
     </div>
-    <!-- Dark Overlay -->
     <div class="hero-overlay"></div>
-    
     <div class="hero-float"><i class="fas fa-chart-line"></i></div>
     <div class="hero-content drop-animate" id="heroContent">
       <div class="hero-badge"><i class="fas fa-rocket" style="margin-right:6px;"></i> Trusted by industry leaders</div>
@@ -978,9 +1043,9 @@
 
   <!-- ===== ABOUT INTRO ===== -->
   <section class="about-intro" id="about">
-    <div class="container">
+    <div class="about-inner">
       <div class="about-image drop-animate">
-        <img src="images/about-home1.png" alt="About Medrisk">
+        <img src="images/about-home1.jpg" alt="About Medrisk">
         <div class="img-tag"><i class="fas fa-building" style="margin-right:6px;"></i> Since 2015</div>
       </div>
       <div class="about-text slide-up">
@@ -1008,76 +1073,102 @@
 
   <!-- ===== SERVICES SHOWCASE ===== -->
   <section class="services-showcase" id="services">
-    <span class="section-label drop-animate">What We Do</span>
-    <h2 class="section-title drop-animate">Our <span style="color: var(--primary-green);">Services</span></h2>
-    <p class="section-sub drop-animate">Comprehensive solutions tailored to your organization's needs.</p>
-    <div class="service-grid-modern stagger-children" id="serviceGrid">
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home1.webp" alt="Corporate Training">
-          <span class="card-badge">Popular</span>
+    <div class="services-inner">
+      <span class="section-label drop-animate">What We Do</span>
+      <h2 class="section-title drop-animate">Our <span style="color: var(--primary-green);">Services</span></h2>
+      <p class="section-sub drop-animate">Comprehensive solutions tailored to your organization's needs.</p>
+      <div class="service-grid-modern stagger-children" id="serviceGrid">
+        <!-- 1. Corporate Training -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home1.jpg" alt="Corporate Training">
+            <span class="card-badge">Popular</span>
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
+            <h3>Corporate Training</h3>
+            <p>We help organizations create a talented and committed workforce through specialized training workshops that deliver learning material with high impact, interactivity and creativity. Custom developed to address specific learning needs, our training workshops encourage in-depth discussion of learning topics and maximize trainee interaction.</p>
+            <a href="service-detail.html#corporate-training" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-chalkboard-teacher"></i></div>
-          <h3>Corporate Training</h3>
-          <p>High-impact workshops that build a talented, committed workforce through engaging learning experiences.</p>
-          <a href="service-detail.html#corporate-training" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+
+        <!-- 2. Management Consultancy -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home2.jpg" alt="Management Consultancy">
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-briefcase"></i></div>
+            <h3>Management Consultancy</h3>
+            <p>Outsourcing Management of Organizations is a fast-growing trend today. This is because organizations face tremendous pressure from competitors in the industry. The management consultant is hired to analyze and improve upon the company's services and profitability.</p>
+            <a href="service-detail.html#management-consultancy" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home2.jpeg" alt="Management Consultancy">
+
+        <!-- 3. Human Resource Management -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home3.jpg" alt="HR Management">
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-user-tie"></i></div>
+            <h3>Human Resource Management</h3>
+            <p>Medrisk Consulting Ltd has partnered with clients to help them enhance their people effectiveness by providing cutting edge HR solutions, tailor-made to the organization's DNA. We have pioneered several HR solutions across different sectors, including technology, retail, healthcare, hospitality, financial services, media and manufacturing.</p>
+            <a href="service-detail.html#hr-management" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-briefcase"></i></div>
-          <h3>Management Consultancy</h3>
-          <p>Strategic outsourcing and operational improvement to drive growth, efficiency, and profitability.</p>
-          <a href="service-detail.html#management-consultancy" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+
+        <!-- 4. Accounting & Bookkeeping -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home4.jpg" alt="Accounting">
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-book-open"></i></div>
+            <h3>Accounting & Bookkeeping</h3>
+            <p>Whether you're a startup or an established business, keeping track of your financials is essential to making informed business decisions. Accounting is the process of tracking income and expenses. An accountant is responsible for offering strategic financial advice in addition to being aware of the company's financial situation.</p>
+            <a href="service-detail.html#accounting" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home3.webp" alt="HR Management">
+
+        <!-- 5. Internal & External Audit -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home5.jpg" alt="Audit">
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-file-signature"></i></div>
+            <h3>Internal & External Audit</h3>
+            <p>Internal audit is a process that evaluates an organization's operations, governing policies, risk management and quality control practices. The finery of an internal audit is the fact that it is done by an independent and unbiased organization outside of the management team of the organization being audited.</p>
+            <a href="service-detail.html#audit" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-user-tie"></i></div>
-          <h3>Human Resource Management</h3>
-          <p>Cutting-edge HR solutions from organization design to performance engineering and leadership coaching.</p>
-          <a href="service-detail.html#hr-management" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+
+        <!-- 6. Pension Scheme Liquidation -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home6.jpg" alt="Pension">
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-piggy-bank"></i></div>
+            <h3>Pension Scheme Liquidation</h3>
+            <p>A scheme wind up is where the scheme ceases to exist, after the scheme assets have been used to secure member benefits and any remaining amount has been either distributed to members or returned to the employer.</p>
+            <a href="service-detail.html#pension" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
-      </div>
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home4.webp" alt="Accounting">
-        </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-book-open"></i></div>
-          <h3>Accounting & Bookkeeping</h3>
-          <p>Meticulous financial tracking, reporting, and strategic advisory for informed business decisions.</p>
-          <a href="service-detail.html#accounting" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home5.jpg" alt="Audit">
-        </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-file-signature"></i></div>
-          <h3>Audit & Advisory</h3>
-          <p>Internal and external audits to ensure transparency, regulatory compliance, and robust governance.</p>
-          <a href="service-detail.html#audit" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="service-card-modern">
-        <div class="card-img">
-          <img src="images/service-home6.jpg" alt="Hospital Management">
-          <span class="card-badge" style="background: rgba(17,82,118,0.9);">Specialized</span>
-        </div>
-        <div class="card-body">
-          <div class="icon-box"><i class="fas fa-hospital"></i></div>
-          <h3>Hospital Management</h3>
-          <p>Comprehensive solutions for healthcare facilities, drawing from our expertise with leading partners.</p>
-          <a href="service-detail.html#hospital-management" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+
+        <!-- 7. Hospital Management -->
+        <div class="service-card-modern">
+          <div class="card-img">
+            <img src="images/service-home7.jpg" alt="Hospital Management">
+            <span class="card-badge" style="background: rgba(17,82,118,0.9);">Specialized</span>
+          </div>
+          <div class="card-body">
+            <div class="icon-box"><i class="fas fa-hospital"></i></div>
+            <h3>Hospital Management</h3>
+            <p>Drawing from our expertise with Healthcare Designers Limited and Dimetrical Limited, we offer comprehensive hospital management consultancy. We help healthcare facilities optimize operations, enhance patient care, and achieve operational excellence through tailored strategies.</p>
+            <a href="service-detail.html#hospital-management" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -1085,7 +1176,7 @@
 
   <!-- ===== VALUES SECTION ===== -->
   <section class="values-section" id="values">
-    <div class="container">
+    <div class="values-inner">
       <div class="values-content slide-up">
         <span class="section-label">Our Values</span>
         <h2>What We <span>Stand For</span></h2>
@@ -1107,62 +1198,66 @@
 
   <!-- ===== STATS ===== -->
   <section class="stats-showcase" id="stats">
-    <div class="stats-grid">
-      <div class="stat-item fade-scale">
-        <div class="num"><span class="counter" data-target="120">0</span>+</div>
-        <div class="label">Clients Served</div>
-      </div>
-      <div class="stat-item fade-scale">
-        <div class="num"><span class="counter" data-target="15">0</span>+</div>
-        <div class="label">Years Experience</div>
-      </div>
-      <div class="stat-item fade-scale">
-        <div class="num"><span class="counter" data-target="98">0</span>%</div>
-        <div class="label">Client Satisfaction</div>
-      </div>
-      <div class="stat-item fade-scale">
-        <div class="num"><span class="counter" data-target="200">0</span>+</div>
-        <div class="label">Training Sessions</div>
+    <div class="stats-inner">
+      <div class="stats-grid">
+        <div class="stat-item fade-scale">
+          <div class="num"><span class="counter" data-target="120">0</span>+</div>
+          <div class="label">Clients Served</div>
+        </div>
+        <div class="stat-item fade-scale">
+          <div class="num"><span class="counter" data-target="15">0</span>+</div>
+          <div class="label">Years Experience</div>
+        </div>
+        <div class="stat-item fade-scale">
+          <div class="num"><span class="counter" data-target="98">0</span>%</div>
+          <div class="label">Client Satisfaction</div>
+        </div>
+        <div class="stat-item fade-scale">
+          <div class="num"><span class="counter" data-target="200">0</span>+</div>
+          <div class="label">Training Sessions</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
   <section class="testimonials-section" id="testimonials">
-    <span class="section-label drop-animate" style="text-align:center; display:block;">Testimonials</span>
-    <h2 class="section-title drop-animate">What Our <span style="color: var(--primary-green);">Clients Say</span></h2>
-    <p class="section-sub drop-animate">Real feedback from partners who trust Medrisk.</p>
-    <div class="testimonial-grid stagger-children" id="testimonialGrid">
-      <div class="testimonial-card">
-        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-        <p>"Medrisk transformed our HR operations, saving over 20% in overhead costs."</p>
-        <div class="author">
-          <div class="avatar">GM</div>
-          <div class="info">
-            <h5>Grace M.</h5>
-            <span>CEO, HealthPlus</span>
+    <div class="testimonials-inner">
+      <span class="section-label drop-animate" style="text-align:center; display:block;">Testimonials</span>
+      <h2 class="section-title drop-animate">What Our <span style="color: var(--primary-green);">Clients Say</span></h2>
+      <p class="section-sub drop-animate">Real feedback from partners who trust Medrisk.</p>
+      <div class="testimonial-grid stagger-children" id="testimonialGrid">
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Medrisk transformed our HR operations, saving over 20% in overhead costs."</p>
+          <div class="author">
+            <div class="avatar">GM</div>
+            <div class="info">
+              <h5>Grace M.</h5>
+              <span>CEO, HealthPlus</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-        <p>"Their corporate training workshops are exceptional. Our team's productivity soared."</p>
-        <div class="author">
-          <div class="avatar">JK</div>
-          <div class="info">
-            <h5>James K.</h5>
-            <span>Head of People, TechNova</span>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Their corporate training workshops are exceptional. Our team's productivity soared."</p>
+          <div class="author">
+            <div class="avatar">JK</div>
+            <div class="info">
+              <h5>James K.</h5>
+              <span>Head of People, TechNova</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
-        <p>"Reliable, professional, and results-driven. Medrisk is our go-to consultancy partner."</p>
-        <div class="author">
-          <div class="avatar">FW</div>
-          <div class="info">
-            <h5>Faith W.</h5>
-            <span>Director, FinEdge</span>
+        <div class="testimonial-card">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <p>"Reliable, professional, and results-driven. Medrisk is our go-to consultancy partner."</p>
+          <div class="author">
+            <div class="avatar">FW</div>
+            <div class="info">
+              <h5>Faith W.</h5>
+              <span>Director, FinEdge</span>
+            </div>
           </div>
         </div>
       </div>
@@ -1171,63 +1266,73 @@
 
   <!-- ===== PARTNERS ===== -->
   <section class="partners-section">
-    <div class="partner-label">Trusted By Leading Organizations</div>
-    <div class="partner-wrapper">
-      <div class="partner-scroll">
-        <span>✦ Healthcare Designers</span>
-        <span>✦ Dimetrical Limited</span>
-        <span>✦ TechNova Solutions</span>
-        <span>✦ FinEdge Partners</span>
-        <span>✦ HealthPlus Group</span>
-        <span>✦ African Business Hub</span>
-        <span>✦ Healthcare Designers</span>
-        <span>✦ Dimetrical Limited</span>
-        <span>✦ TechNova Solutions</span>
-        <span>✦ FinEdge Partners</span>
-        <span>✦ HealthPlus Group</span>
-        <span>✦ African Business Hub</span>
+    <div class="partners-inner">
+      <div class="partner-label">Our Partners</div>
+      <div class="partner-wrapper">
+        <div class="partner-scroll">
+          <span>✦ Healthcare Designers</span>
+          <span>✦ Dimetrical Limited</span>
+          <span>✦ TechNova Solutions</span>
+          <span>✦ FinEdge Partners</span>
+          <span>✦ HealthPlus Group</span>
+          <span>✦ African Business Hub</span>
+          <span>✦ Healthcare Designers</span>
+          <span>✦ Dimetrical Limited</span>
+          <span>✦ TechNova Solutions</span>
+          <span>✦ FinEdge Partners</span>
+          <span>✦ HealthPlus Group</span>
+          <span>✦ African Business Hub</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="cta-simple" id="contact">
-    <h2>Ready to Transform Your Business?</h2>
-    <p>Let's discuss how our services can drive your success.</p>
-    <a href="contact.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+    <div class="cta-inner">
+      <h2>Ready to Transform Your Business?</h2>
+      <p>Let's discuss how our services can drive your success.</p>
+      <a href="contact.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer-grid">
-      <div>
-        <h4>Medrisk Consulting</h4>
-        <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
-        <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">© <span id="year"></span> Medrisk Consulting Ltd</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="service-detail.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
-        <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
-        <a href="https://www.medriskconsulting.co.ke"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <div class="socials">
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h4>Medrisk Consulting</h4>
+          <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">&copy; <span id="year"></span> Medrisk Consulting Ltd</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="#">Home</a>
+          <a href="about.html">About</a>
+          <a href="service-detail.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Meeting</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
+          <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
+          <a href="#"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
         </div>
       </div>
+      <div class="copy">
+        &copy; <span id="year2"></span> Medrisk Consulting Ltd · 
+        Developed by <a href="https://www.worldways-webdevelopers.co.ke" target="_blank" class="developer">Worldways Web Developers</a>
+      </div>
     </div>
-    <div class="copy">© <span id="year2"></span> Medrisk Consulting Ltd · Built with reliability & expertise</div>
   </footer>
 
   <script>
@@ -1305,7 +1410,7 @@
       });
     });
 
-    // Video fallback: if video fails, show background image
+    // Video fallback
     const video = document.querySelector('.hero-video-wrapper video');
     if (video) {
       video.addEventListener('error', function() {
@@ -1327,3 +1432,4 @@
   </script>
 </body>
 </html>
+```

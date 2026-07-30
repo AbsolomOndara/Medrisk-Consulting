@@ -36,7 +36,7 @@
       overflow-x: hidden;
     }
 
-    /* ===== NAVIGATION (MATCHES INDEX.HTML - NO DROPDOWN) ===== */
+    /* ===== NAVIGATION ===== */
     .navbar {
       position: fixed;
       top: 16px;
@@ -264,7 +264,7 @@
 
     /* ===== ABOUT CONTENT ===== */
     .about-section {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--white);
       position: relative;
     }
@@ -284,6 +284,7 @@
     .about-inner {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 0 24px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 50px;
@@ -378,9 +379,14 @@
 
     /* ===== TEAM SECTION ===== */
     .team-section {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--off-white);
       position: relative;
+    }
+    .team-section .team-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .team-section .section-title {
       text-align: center;
@@ -400,8 +406,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     .team-card {
       background: var(--white);
@@ -483,9 +487,14 @@
 
     /* ===== TIMELINE / VALUES ===== */
     .timeline-section {
-      padding: 70px 5%;
+      padding: 70px 0;
       background: var(--white);
       position: relative;
+    }
+    .timeline-section .timeline-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .timeline-section .section-title {
       text-align: center;
@@ -505,8 +514,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
     }
     .timeline-item {
       background: var(--off-white);
@@ -539,10 +546,15 @@
 
     /* ===== STATS COUNTERS ===== */
     .stats-section {
-      padding: 60px 5%;
+      padding: 60px 0;
       background: var(--dark-navy);
       position: relative;
       overflow: hidden;
+    }
+    .stats-section .stats-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .stats-section::before {
       content: '';
@@ -558,8 +570,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 30px;
-      max-width: 1000px;
-      margin: 0 auto;
       position: relative;
       z-index: 1;
     }
@@ -591,9 +601,14 @@
 
     /* ===== CTA ===== */
     .cta-section {
-      padding: 60px 5%;
+      padding: 60px 0;
       background: var(--white);
       text-align: center;
+    }
+    .cta-section .cta-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .cta-section h2 {
       font-size: 2rem;
@@ -626,15 +641,18 @@
     .footer {
       background: var(--dark-navy);
       color: rgba(255,255,255,0.8);
-      padding: 40px 5% 20px;
+      padding: 40px 0 20px;
       border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .footer .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
     .footer-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 32px;
-      max-width: 1280px;
-      margin: 0 auto;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       padding-bottom: 24px;
     }
@@ -660,6 +678,15 @@
       font-size: 0.8rem;
       margin-top: 20px;
       color: rgba(255,255,255,0.3);
+    }
+    .footer .copy .developer {
+      color: var(--light-green);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer .copy .developer:hover {
+      color: var(--lime-accent);
+      text-decoration: underline;
     }
 
     /* ===== REVEAL ===== */
@@ -717,12 +744,20 @@
       .about-image img { height: 180px; }
       .team-grid { grid-template-columns: 1fr; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
+      .about-inner,
+      .team-section .team-inner,
+      .timeline-section .timeline-inner,
+      .stats-section .stats-inner,
+      .cta-section .cta-inner,
+      .footer .footer-inner {
+        padding: 0 16px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- ===== NAVIGATION (NO DROPDOWN - MATCHES INDEX.HTML) ===== -->
+  <!-- ===== NAVIGATION ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-logo">
       <img src="images/logo.jpg" alt="Medrisk Consulting" onerror="this.style.display='none'">
@@ -836,67 +871,69 @@
 
   <!-- ===== TEAM SECTION ===== -->
   <section class="team-section" id="team">
-    <h2 class="section-title reveal">Meet Our <span style="color: var(--primary-green);">Team</span></h2>
-    <p class="section-sub reveal">Passionate professionals dedicated to your success.</p>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-img">
-          <img src="images/team1.png" alt="Team Member">
-          <div class="social-overlay">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-envelope"></i></a>
+    <div class="team-inner">
+      <h2 class="section-title reveal">Meet Our <span style="color: var(--primary-green);">Team</span></h2>
+      <p class="section-sub reveal">Passionate professionals dedicated to your success.</p>
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-img">
+            <img src="images/team1.png" alt="Team Member">
+            <div class="social-overlay">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>James Mwangi</h3>
+            <div class="role">Managing Director</div>
+            <p>20+ years of experience in management consultancy and strategic advisory.</p>
           </div>
         </div>
-        <div class="team-info">
-          <h3>James Mwangi</h3>
-          <div class="role">Managing Director</div>
-          <p>20+ years of experience in management consultancy and strategic advisory.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img">
-          <img src="images/team1.png" alt="Team Member">
-          <div class="social-overlay">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-envelope"></i></a>
+        <div class="team-card reveal">
+          <div class="team-img">
+            <img src="images/team1.png" alt="Team Member">
+            <div class="social-overlay">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>Grace Akinyi</h3>
+            <div class="role">Head of HR Solutions</div>
+            <p>Expert in organization design, performance engineering, and leadership coaching.</p>
           </div>
         </div>
-        <div class="team-info">
-          <h3>Grace Akinyi</h3>
-          <div class="role">Head of HR Solutions</div>
-          <p>Expert in organization design, performance engineering, and leadership coaching.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img">
-          <img src="images/team1.png" alt="Team Member">
-          <div class="social-overlay">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-envelope"></i></a>
+        <div class="team-card reveal">
+          <div class="team-img">
+            <img src="images/team1.png" alt="Team Member">
+            <div class="social-overlay">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-envelope"></i></a>
+            </div>
+          </div>
+          <div class="team-info">
+            <h3>David Ochieng</h3>
+            <div class="role">Senior Consultant</div>
+            <p>Specializes in accounting, audit, and financial advisory services.</p>
           </div>
         </div>
-        <div class="team-info">
-          <h3>David Ochieng</h3>
-          <div class="role">Senior Consultant</div>
-          <p>Specializes in accounting, audit, and financial advisory services.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-img">
-          <img src="images/team1.png" alt="Team Member">
-          <div class="social-overlay">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-envelope"></i></a>
+        <div class="team-card reveal">
+          <div class="team-img">
+            <img src="images/team1.png" alt="Team Member">
+            <div class="social-overlay">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-envelope"></i></a>
+            </div>
           </div>
-        </div>
-        <div class="team-info">
-          <h3>Faith Wanjiku</h3>
-          <div class="role">Training & Development Lead</div>
-          <p>Expert in corporate training, curriculum design, and talent development.</p>
+          <div class="team-info">
+            <h3>Faith Wanjiku</h3>
+            <div class="role">Training & Development Lead</div>
+            <p>Expert in corporate training, curriculum design, and talent development.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -904,97 +941,109 @@
 
   <!-- ===== TIMELINE / MILESTONES ===== -->
   <section class="timeline-section" id="milestones">
-    <h2 class="section-title reveal">Our <span style="color: var(--primary-green);">Journey</span></h2>
-    <p class="section-sub reveal">Key milestones that have shaped our growth.</p>
-    <div class="timeline-grid">
-      <div class="timeline-item reveal">
-        <div class="year">2015</div>
-        <h4>Founded</h4>
-        <p>Medrisk Consulting Ltd was established with a vision to transform organizations through expert consultancy.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="year">2017</div>
-        <h4>Expansion</h4>
-        <p>Expanded services to include HR management and corporate training solutions.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="year">2019</div>
-        <h4>Partnerships</h4>
-        <p>Partnered with Healthcare Designers Limited and Dimetrical Limited for hospital management solutions.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="year">2022</div>
-        <h4>Growth</h4>
-        <p>Reached 120+ clients across multiple sectors including technology, retail, healthcare, and finance.</p>
-      </div>
-      <div class="timeline-item reveal">
-        <div class="year">2025</div>
-        <h4>Innovation</h4>
-        <p>Continuing to pioneer innovative solutions and expand our impact across East Africa.</p>
+    <div class="timeline-inner">
+      <h2 class="section-title reveal">Our <span style="color: var(--primary-green);">Journey</span></h2>
+      <p class="section-sub reveal">Key milestones that have shaped our growth.</p>
+      <div class="timeline-grid">
+        <div class="timeline-item reveal">
+          <div class="year">2015</div>
+          <h4>Founded</h4>
+          <p>Medrisk Consulting Ltd was established with a vision to transform organizations through expert consultancy.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2017</div>
+          <h4>Expansion</h4>
+          <p>Expanded services to include HR management and corporate training solutions.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2019</div>
+          <h4>Partnerships</h4>
+          <p>Partnered with Healthcare Designers Limited and Dimetrical Limited for hospital management solutions.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2022</div>
+          <h4>Growth</h4>
+          <p>Reached 120+ clients across multiple sectors including technology, retail, healthcare, and finance.</p>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="year">2025</div>
+          <h4>Innovation</h4>
+          <p>Continuing to pioneer innovative solutions and expand our impact across East Africa.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== STATS COUNTERS ===== -->
   <section class="stats-section" id="stats">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="num"><span class="counter" data-target="120">0</span>+</div>
-        <div class="label">Clients Served</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="num"><span class="counter" data-target="15">0</span>+</div>
-        <div class="label">Years of Excellence</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="num"><span class="counter" data-target="98">0</span>%</div>
-        <div class="label">Client Satisfaction</div>
-      </div>
-      <div class="stat-item reveal">
-        <div class="num"><span class="counter" data-target="200">0</span>+</div>
-        <div class="label">Training Sessions</div>
+    <div class="stats-inner">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <div class="num"><span class="counter" data-target="120">0</span>+</div>
+          <div class="label">Clients Served</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="num"><span class="counter" data-target="15">0</span>+</div>
+          <div class="label">Years of Excellence</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="num"><span class="counter" data-target="98">0</span>%</div>
+          <div class="label">Client Satisfaction</div>
+        </div>
+        <div class="stat-item reveal">
+          <div class="num"><span class="counter" data-target="200">0</span>+</div>
+          <div class="label">Training Sessions</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
   <section class="cta-section">
-    <h2>Ready to Work With Us?</h2>
-    <p>Let's discuss how we can help your organization achieve its goals.</p>
-    <a href="contact.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+    <div class="cta-inner">
+      <h2>Ready to Work With Us?</h2>
+      <p>Let's discuss how we can help your organization achieve its goals.</p>
+      <a href="contact.html" class="btn-primary"><i class="fas fa-arrow-right"></i> Get in Touch</a>
+    </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer" id="contact">
-    <div class="footer-grid">
-      <div>
-        <h4>Medrisk Consulting</h4>
-        <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
-        <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">© <span id="year"></span> Medrisk Consulting Ltd</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="index.html">Home</a>
-        <a href="#top">About</a>
-        <a href="service-detail.html">Services</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
-        <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
-        <a href="#"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
-      </div>
-      <div>
-        <h4>Follow Us</h4>
-        <div class="socials">
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <h4>Medrisk Consulting</h4>
+          <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
+          <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">&copy; <span id="year"></span> Medrisk Consulting Ltd</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="#top">About</a>
+          <a href="service-detail.html">Services</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Meeting</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
+          <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
+          <a href="#"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
+        </div>
+        <div>
+          <h4>Follow Us</h4>
+          <div class="socials">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
         </div>
       </div>
+      <div class="copy">
+        &copy; <span id="year2"></span> Medrisk Consulting Ltd · 
+        Developed by <a href="https://www.worldways-webdevelopers.co.ke" target="_blank" class="developer">Worldways Web Developers</a>
+      </div>
     </div>
-    <div class="copy">© <span id="year2"></span> Medrisk Consulting Ltd · Built with reliability & expertise</div>
   </footer>
 
   <script>
@@ -1069,4 +1118,3 @@
   </script>
 </body>
 </html>
-```
