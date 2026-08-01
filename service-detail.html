@@ -194,12 +194,12 @@
 
     /* ===== HERO ===== */
     .page-hero {
-      min-height: 50vh;
+      min-height: 40vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 140px 5% 60px;
+      padding: 120px 5% 40px;
       position: relative;
       background: var(--dark-navy);
       overflow: hidden;
@@ -220,7 +220,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(17, 82, 118, 0.60);
+      background: rgba(17, 82, 118, 0.65);
       z-index: 1;
     }
     .page-hero-content {
@@ -230,14 +230,14 @@
       max-width: 800px;
     }
     .page-hero-content h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 700;
       letter-spacing: -0.02em;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .page-hero-content h1 span { color: var(--light-green); }
     .page-hero-content p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: rgba(255,255,255,0.8);
       max-width: 600px;
       margin: 0 auto;
@@ -247,14 +247,14 @@
     .shape {
       position: absolute;
       border-radius: 50%;
-      background: rgba(113, 179, 78, 0.06);
+      background: rgba(113, 179, 78, 0.05);
       pointer-events: none;
       z-index: 0;
       animation: floatShape 20s infinite alternate ease-in-out;
     }
-    .shape-1 { width: 300px; height: 300px; top: -80px; right: -60px; background: rgba(113, 179, 78, 0.04); }
-    .shape-2 { width: 200px; height: 200px; bottom: 40px; left: -40px; background: rgba(123, 193, 86, 0.05); animation-duration: 25s; }
-    .shape-3 { width: 150px; height: 150px; top: 30%; right: 10%; background: rgba(141, 201, 103, 0.04); animation-duration: 18s; }
+    .shape-1 { width: 250px; height: 250px; top: -80px; right: -60px; background: rgba(113, 179, 78, 0.03); }
+    .shape-2 { width: 180px; height: 180px; bottom: 40px; left: -40px; background: rgba(123, 193, 86, 0.04); animation-duration: 25s; }
+    .shape-3 { width: 120px; height: 120px; top: 30%; right: 10%; background: rgba(141, 201, 103, 0.03); animation-duration: 18s; }
     @keyframes floatShape {
       0% { transform: translate(0, 0) scale(1) rotate(0deg); }
       33% { transform: translate(30px, -40px) scale(1.1) rotate(120deg); }
@@ -262,9 +262,9 @@
       100% { transform: translate(10px, -10px) scale(1.05) rotate(360deg); }
     }
 
-    /* ===== SERVICE DETAIL SECTIONS ===== */
+    /* ===== SERVICE DETAIL SECTIONS - VERTICAL LAYOUT ===== */
     .service-detail-section {
-      padding: 70px 0;
+      padding: 50px 0;
       position: relative;
       overflow: hidden;
     }
@@ -282,54 +282,50 @@
       opacity: 0.03;
       z-index: 0;
     }
-    .service-detail-section .bg-shape.s1 { width: 400px; height: 400px; top: -150px; right: -100px; background: var(--primary-green); }
-    .service-detail-section .bg-shape.s2 { width: 300px; height: 300px; bottom: -100px; left: -80px; background: var(--teal); }
+    .service-detail-section .bg-shape.s1 { width: 350px; height: 350px; top: -120px; right: -80px; background: var(--primary-green); }
+    .service-detail-section .bg-shape.s2 { width: 250px; height: 250px; bottom: -80px; left: -60px; background: var(--teal); }
 
     .service-detail-inner {
-      max-width: 1200px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
       position: relative;
       z-index: 1;
     }
-    .service-detail-inner.reverse {
-      direction: rtl;
-    }
-    .service-detail-inner.reverse .service-text {
-      direction: ltr;
-    }
 
     .service-image {
-      border-radius: 32px;
+      width: 100%;
+      max-width: 700px;
+      border-radius: 20px;
       overflow: hidden;
-      box-shadow: 0 20px 50px rgba(17, 82, 118, 0.08);
+      box-shadow: 0 15px 40px rgba(17, 82, 118, 0.08);
       transition: all 0.4s;
       position: relative;
+      margin-bottom: 24px;
     }
     .service-image img {
       width: 100%;
-      height: 320px;
+      height: 300px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.3, 1);
     }
     .service-image:hover img {
-      transform: scale(1.04);
+      transform: scale(1.03);
     }
     .service-image .image-overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      padding: 20px;
-      background: linear-gradient(to top, rgba(17,82,118,0.6), transparent);
+      padding: 16px 20px;
+      background: linear-gradient(to top, rgba(17,82,118,0.7), transparent);
       color: white;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       opacity: 0;
       transition: opacity 0.3s;
     }
@@ -337,11 +333,16 @@
       opacity: 1;
     }
 
+    .service-text {
+      width: 100%;
+      max-width: 700px;
+      text-align: left;
+    }
     .service-text h2 {
-      font-size: 2rem;
+      font-size: 1.7rem;
       font-weight: 700;
       color: var(--dark-navy);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
     .service-text h2 .highlight { color: var(--primary-green); }
@@ -349,36 +350,37 @@
       display: inline-block;
       background: rgba(113, 179, 78, 0.10);
       color: var(--primary-green);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 600;
-      padding: 4px 16px;
+      padding: 3px 14px;
       border-radius: 40px;
-      margin-bottom: 14px;
+      margin-bottom: 10px;
       letter-spacing: 0.3px;
     }
     .service-text p {
       color: var(--teal);
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.7;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .service-text ul {
       list-style: none;
       padding: 0;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
     .service-text ul li {
-      padding: 6px 0;
+      padding: 4px 0;
       color: var(--dark-gray);
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 10px;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
     }
     .service-text ul li i {
       color: var(--primary-green);
-      font-size: 1rem;
-      width: 20px;
+      font-size: 0.9rem;
+      width: 18px;
+      margin-top: 2px;
     }
     .service-text .btn-service {
       display: inline-flex;
@@ -386,37 +388,37 @@
       gap: 8px;
       background: var(--primary-green);
       color: white;
-      padding: 12px 32px;
+      padding: 10px 28px;
       border-radius: 60px;
       font-weight: 600;
+      font-size: 0.9rem;
       text-decoration: none;
       transition: all 0.25s;
       box-shadow: 0 6px 20px rgba(113, 179, 78, 0.20);
-      margin-top: 8px;
+      margin-top: 4px;
     }
     .service-text .btn-service:hover {
       background: #5f9e3e;
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: 0 10px 28px rgba(113, 179, 78, 0.30);
     }
 
-    /* ===== HOSPITAL MANAGEMENT SPECIAL ===== */
+    /* ===== HOSPITAL MANAGEMENT SPECIAL - VERTICAL ===== */
     .hospital-special {
       background: linear-gradient(135deg, var(--dark-navy) 0%, var(--teal) 100%);
       color: white;
-      padding: 70px 0;
+      padding: 50px 0;
       position: relative;
       overflow: hidden;
     }
     .hospital-special .hospital-inner {
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 0 24px;
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
     }
     .hospital-special::before {
@@ -424,40 +426,54 @@
       position: absolute;
       top: -50%;
       right: -20%;
-      width: 500px;
-      height: 500px;
+      width: 400px;
+      height: 400px;
       background: radial-gradient(circle, rgba(113, 179, 78, 0.06) 0%, transparent 70%);
       border-radius: 50%;
     }
+    .hospital-special .hospital-inner .hs-image {
+      width: 100%;
+      max-width: 700px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    .hospital-special .hospital-inner .hs-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .hospital-special .hospital-inner .hs-image img:hover { transform: scale(1.02); }
+    .hospital-special .hospital-inner .hs-text {
+      width: 100%;
+      max-width: 700px;
+      text-align: left;
+    }
     .hospital-special .hospital-inner .hs-text h2 {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       color: white;
     }
     .hospital-special .hospital-inner .hs-text h2 span { color: var(--light-green); }
     .hospital-special .hospital-inner .hs-text p {
       color: rgba(255,255,255,0.8);
       line-height: 1.7;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
     }
     .hospital-special .hospital-inner .hs-text ul li {
       color: rgba(255,255,255,0.85);
-      padding: 6px 0;
+      padding: 4px 0;
       display: flex;
       align-items: center;
       gap: 10px;
+      font-size: 0.9rem;
     }
     .hospital-special .hospital-inner .hs-text ul li i { color: var(--light-green); }
-    .hospital-special .hospital-inner .hs-image img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 32px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-      transition: transform 0.5s;
-    }
-    .hospital-special .hospital-inner .hs-image img:hover { transform: scale(1.03); }
 
     /* ===== FOOTER ===== */
     .footer {
@@ -514,31 +530,13 @@
     /* ===== REVEAL ===== */
     .reveal {
       opacity: 0;
-      transform: translateY(40px) scale(0.97);
-      transition: opacity 0.8s cubic-bezier(0.15, 0.85, 0.3, 1),
-                  transform 0.8s cubic-bezier(0.15, 0.85, 0.3, 1);
+      transform: translateY(30px) scale(0.97);
+      transition: opacity 0.7s cubic-bezier(0.15, 0.85, 0.3, 1),
+                  transform 0.7s cubic-bezier(0.15, 0.85, 0.3, 1);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
-    }
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
     }
 
     /* ===== RESPONSIVE ===== */
@@ -546,32 +544,23 @@
       .navbar { padding: 8px 16px; top: 10px; border-radius: 40px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
-      .page-hero { min-height: 40vh; padding: 120px 5% 40px; }
-      .service-detail-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
-      .service-detail-inner.reverse {
-        direction: ltr;
-      }
-      .service-image img { height: 240px; }
-      .hospital-special .hospital-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-      }
+      .page-hero { min-height: 35vh; padding: 100px 5% 30px; }
+      .service-image img { height: 220px; }
+      .service-detail-inner { padding: 0 16px; }
+      .hospital-special .hospital-inner { padding: 0 16px; }
       .hospital-special .hospital-inner .hs-image img { height: 220px; }
+      .service-text h2 { font-size: 1.4rem; }
     }
+
     @media screen and (max-width: 480px) {
       .nav-logo .brand h1 { font-size: 1rem; }
       .nav-logo .brand span { font-size: 0.45rem; }
       .nav-logo img { height: 32px; }
-      .service-text h2 { font-size: 1.5rem; }
+      .service-text h2 { font-size: 1.2rem; }
       .service-image img { height: 180px; }
-      .service-detail-inner,
-      .hospital-special .hospital-inner,
-      .footer .footer-inner {
-        padding: 0 16px;
-      }
+      .service-detail-section { padding: 35px 0; }
+      .hospital-special { padding: 35px 0; }
+      .hospital-special .hospital-inner .hs-image img { height: 180px; }
     }
   </style>
 </head>
@@ -623,12 +612,12 @@
   <section class="service-detail-section" id="corporate-training">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service1.png" alt="Corporate Training">
         <div class="image-overlay"><i class="fas fa-chalkboard-teacher"></i> Corporate Training</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-star" style="margin-right:4px;"></i> Featured</span>
         <h2>Corporate <span class="highlight">Training</span></h2>
         <p><strong>Welcome to Medrisk: Elevating Workforce Excellence through Dynamic Training Workshops</strong></p>
@@ -651,12 +640,12 @@
   <section class="service-detail-section" id="accounting">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service4.jpg" alt="Accounting">
         <div class="image-overlay"><i class="fas fa-book-open"></i> Accounting</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-calculator" style="margin-right:4px;"></i> Financial</span>
         <h2>Accounting & <span class="highlight">Bookkeeping</span></h2>
         <p>Whether you're embarking on a new startup venture or steering an established enterprise, having a firm grip on your financials is a cornerstone of successful decision-making. Our suite of financial management services, including comprehensive accounting and meticulous bookkeeping, is designed to empower your business with the tools and insights you need to thrive.</p>
@@ -690,12 +679,12 @@
   <section class="service-detail-section" id="management-consultancy">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service2.jpg" alt="Management Consultancy">
         <div class="image-overlay"><i class="fas fa-briefcase"></i> Management Consultancy</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-rocket" style="margin-right:4px;"></i> Strategic</span>
         <h2>Management <span class="highlight">Consultancy</span></h2>
         <p><strong>Management Consultancy Services: Elevate Your Business Strategy</strong></p>
@@ -726,12 +715,12 @@
   <section class="service-detail-section" id="audit">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service5.jpg" alt="Audit">
         <div class="image-overlay"><i class="fas fa-file-signature"></i> Audit & Advisory</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-shield-alt" style="margin-right:4px;"></i> Assurance</span>
         <h2>Internal & <span class="highlight">External Audit</span></h2>
         <p><strong>Internal & External Audit Services: Ensuring Organizational Excellence</strong></p>
@@ -771,12 +760,12 @@
   <section class="service-detail-section" id="hr-management">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service3.avif" alt="HR Management">
         <div class="image-overlay"><i class="fas fa-user-tie"></i> HR Management</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-users" style="margin-right:4px;"></i> People First</span>
         <h2>Human Resource <span class="highlight">Management</span></h2>
         <p><strong>Human Resource Management Services: Empowering Your People, Fueling Your Success</strong></p>
@@ -810,12 +799,12 @@
   <section class="service-detail-section" id="credit-control">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service6.jpg" alt="Credit Control">
         <div class="image-overlay"><i class="fas fa-credit-card"></i> Credit Control</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-chart-pie" style="margin-right:4px;"></i> Financial Resilience</span>
         <h2>Credit Control & <span class="highlight">Data Recovery</span></h2>
         <p><strong>Credit Control & Data Recovery: Empowering Financial Resilience</strong></p>
@@ -857,12 +846,12 @@
   <section class="service-detail-section" id="project-management">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service7.jpg" alt="Project Management">
         <div class="image-overlay"><i class="fas fa-tasks"></i> Project Management</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-project-diagram" style="margin-right:4px;"></i> Precision</span>
         <h2>Project <span class="highlight">Management</span></h2>
         <p><strong>Project Management Services: Navigating Success with Precision</strong></p>
@@ -910,12 +899,12 @@
   <section class="service-detail-section" id="pension">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service8.jpg" alt="Pension">
         <div class="image-overlay"><i class="fas fa-piggy-bank"></i> Pension & Investment</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-chart-pie" style="margin-right:4px;"></i> Future Ready</span>
         <h2>Pension Scheme <span class="highlight">Liquidation</span></h2>
         <p><strong>Pension Scheme Management: Nurturing Your Financial Future</strong></p>
@@ -963,12 +952,12 @@
   <section class="service-detail-section" id="investment-advisory">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service9.jpg" alt="Investment Advisory">
         <div class="image-overlay"><i class="fas fa-chart-line"></i> Investment Advisory</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-chart-pie" style="margin-right:4px;"></i> Strategic Growth</span>
         <h2>Investment <span class="highlight">Advisory</span></h2>
         <p><strong>Investment Advisory: Navigating Your Financial Future</strong></p>
@@ -1016,12 +1005,12 @@
   <section class="service-detail-section" id="tax-advisory">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service10.jpg" alt="Tax Advisory">
         <div class="image-overlay"><i class="fas fa-file-invoice-dollar"></i> Tax Advisory</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-calculator" style="margin-right:4px;"></i> Financial Strategy</span>
         <h2>Tax <span class="highlight">Advisory</span></h2>
         <p><strong>Tax Advisory: Navigating Your Tax Landscape with Expertise</strong></p>
@@ -1069,12 +1058,12 @@
   <section class="service-detail-section" id="actuarial-consultancy">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner">
-      <div class="service-image reveal-left">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service11.jpg" alt="Actuarial Consultancy">
         <div class="image-overlay"><i class="fas fa-chart-bar"></i> Actuarial Consultancy</div>
       </div>
-      <div class="service-text reveal-right">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-calculator" style="margin-right:4px;"></i> Data Driven</span>
         <h2>Actuarial <span class="highlight">Consultancy</span></h2>
         <p><strong>Actuarial Consultancy: Your Gateway to Informed Financial Choices</strong></p>
@@ -1117,12 +1106,12 @@
   <section class="service-detail-section" id="insurance-consultation">
     <div class="bg-shape s1"></div>
     <div class="bg-shape s2"></div>
-    <div class="service-detail-inner reverse">
-      <div class="service-image reveal-right">
+    <div class="service-detail-inner reveal">
+      <div class="service-image">
         <img src="images/service12.jpg" alt="Insurance Consultation">
         <div class="image-overlay"><i class="fas fa-shield-alt"></i> Insurance Consultation</div>
       </div>
-      <div class="service-text reveal-left">
+      <div class="service-text">
         <span class="service-tag"><i class="fas fa-shield-alt" style="margin-right:4px;"></i> Protection</span>
         <h2>Insurance <span class="highlight">Consultation</span></h2>
         <p><strong>Insurance Consultation: Your Customized Shield Against Uncertainties</strong></p>
@@ -1161,8 +1150,11 @@
 
   <!-- ===== HOSPITAL MANAGEMENT SPECIAL FEATURE ===== -->
   <section class="hospital-special" id="hospital-management">
-    <div class="hospital-inner">
-      <div class="hs-text reveal-left">
+    <div class="hospital-inner reveal">
+      <div class="hs-image">
+        <img src="images/service13.png" alt="Hospital Management">
+      </div>
+      <div class="hs-text">
         <h2>Hospital <span>Management</span> Solutions</h2>
         <p>Drawing from our expertise with <strong>Healthcare Designers Limited</strong> and <strong>Dimetrical Limited</strong>, we offer comprehensive hospital management consultancy.</p>
         <p>We help healthcare facilities optimize operations, enhance patient care, and achieve operational excellence through tailored strategies.</p>
@@ -1175,9 +1167,6 @@
           <li><i class="fas fa-check-circle"></i> Technology Integration & Digital Health</li>
         </ul>
         <a href="booking.html" class="btn-service" style="background: var(--light-green); color: var(--dark-navy); box-shadow: 0 6px 20px rgba(123,193,86,0.25);">Explore Hospital Solutions <i class="fas fa-arrow-right"></i></a>
-      </div>
-      <div class="hs-image reveal-right">
-        <img src="images/service13.png" alt="Hospital Management">
       </div>
     </div>
   </section>
@@ -1236,15 +1225,15 @@
       link.addEventListener('click', () => overlay.classList.remove('open'));
     });
 
-    // Scroll reveal - multiple classes
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, { threshold: 0.10, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.10, rootMargin: '0px 0px -20px 0px' });
     revealElements.forEach(el => observer.observe(el));
 
     // Smooth anchor scroll
@@ -1264,3 +1253,4 @@
   </script>
 </body>
 </html>
+```
