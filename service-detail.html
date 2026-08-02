@@ -1,3 +1,6 @@
+I've redesigned the service-detail page with a full-width layout that maximizes content space while maintaining proper padding. The design now uses a wider container with only 1-inch padding on each side, creating a more immersive and professional experience.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,14 +195,14 @@
     }
     .mobile-overlay .mobile-cta:hover { background: #5f9e3e !important; }
 
-    /* ===== HERO ===== */
+    /* ===== HERO - FULL WIDTH ===== */
     .page-hero {
-      min-height: 40vh;
+      min-height: 45vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 120px 5% 40px;
+      padding: 120px 5% 50px;
       position: relative;
       background: var(--dark-navy);
       overflow: hidden;
@@ -227,19 +230,20 @@
       position: relative;
       z-index: 2;
       color: white;
-      max-width: 800px;
+      max-width: 900px;
+      padding: 0 20px;
     }
     .page-hero-content h1 {
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
     .page-hero-content h1 span { color: var(--light-green); }
     .page-hero-content p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: rgba(255,255,255,0.8);
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto;
     }
 
@@ -262,9 +266,9 @@
       100% { transform: translate(10px, -10px) scale(1.05) rotate(360deg); }
     }
 
-    /* ===== SERVICE DETAIL SECTIONS - VERTICAL LAYOUT ===== */
+    /* ===== SERVICE DETAIL SECTIONS - FULL WIDTH ===== */
     .service-detail-section {
-      padding: 50px 0;
+      padding: 60px 0;
       position: relative;
       overflow: hidden;
     }
@@ -286,9 +290,9 @@
     .service-detail-section .bg-shape.s2 { width: 250px; height: 250px; bottom: -80px; left: -60px; background: var(--teal); }
 
     .service-detail-inner {
-      max-width: 900px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -298,23 +302,23 @@
 
     .service-image {
       width: 100%;
-      max-width: 700px;
+      max-width: 1000px;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 15px 40px rgba(17, 82, 118, 0.08);
       transition: all 0.4s;
       position: relative;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
     .service-image img {
       width: 100%;
-      height: 300px;
+      height: 360px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.3, 1);
     }
     .service-image:hover img {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
     .service-image .image-overlay {
       position: absolute;
@@ -335,14 +339,14 @@
 
     .service-text {
       width: 100%;
-      max-width: 700px;
+      max-width: 1000px;
       text-align: left;
     }
     .service-text h2 {
-      font-size: 1.7rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--dark-navy);
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
     .service-text h2 .highlight { color: var(--primary-green); }
@@ -350,36 +354,36 @@
       display: inline-block;
       background: rgba(113, 179, 78, 0.10);
       color: var(--primary-green);
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      padding: 3px 14px;
+      padding: 4px 16px;
       border-radius: 40px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       letter-spacing: 0.3px;
     }
     .service-text p {
       color: var(--teal);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 12px;
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 14px;
     }
     .service-text ul {
       list-style: none;
       padding: 0;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
     .service-text ul li {
-      padding: 4px 0;
+      padding: 5px 0;
       color: var(--dark-gray);
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 0.9rem;
+      gap: 12px;
+      font-size: 0.95rem;
     }
     .service-text ul li i {
       color: var(--primary-green);
-      font-size: 0.9rem;
-      width: 18px;
+      font-size: 1rem;
+      width: 20px;
       margin-top: 2px;
     }
     .service-text .btn-service {
@@ -388,14 +392,14 @@
       gap: 8px;
       background: var(--primary-green);
       color: white;
-      padding: 10px 28px;
+      padding: 12px 32px;
       border-radius: 60px;
       font-weight: 600;
-      font-size: 0.9rem;
+      font-size: 1rem;
       text-decoration: none;
       transition: all 0.25s;
       box-shadow: 0 6px 20px rgba(113, 179, 78, 0.20);
-      margin-top: 4px;
+      margin-top: 6px;
     }
     .service-text .btn-service:hover {
       background: #5f9e3e;
@@ -403,18 +407,18 @@
       box-shadow: 0 10px 28px rgba(113, 179, 78, 0.30);
     }
 
-    /* ===== HOSPITAL MANAGEMENT SPECIAL - VERTICAL ===== */
+    /* ===== HOSPITAL MANAGEMENT SPECIAL - FULL WIDTH ===== */
     .hospital-special {
       background: linear-gradient(135deg, var(--dark-navy) 0%, var(--teal) 100%);
       color: white;
-      padding: 50px 0;
+      padding: 60px 0;
       position: relative;
       overflow: hidden;
     }
     .hospital-special .hospital-inner {
-      max-width: 900px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
       position: relative;
       z-index: 1;
       display: flex;
@@ -433,15 +437,15 @@
     }
     .hospital-special .hospital-inner .hs-image {
       width: 100%;
-      max-width: 700px;
+      max-width: 1000px;
       border-radius: 20px;
       overflow: hidden;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     .hospital-special .hospital-inner .hs-image img {
       width: 100%;
-      height: 300px;
+      height: 360px;
       object-fit: cover;
       display: block;
       transition: transform 0.5s;
@@ -449,29 +453,29 @@
     .hospital-special .hospital-inner .hs-image img:hover { transform: scale(1.02); }
     .hospital-special .hospital-inner .hs-text {
       width: 100%;
-      max-width: 700px;
+      max-width: 1000px;
       text-align: left;
     }
     .hospital-special .hospital-inner .hs-text h2 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: white;
     }
     .hospital-special .hospital-inner .hs-text h2 span { color: var(--light-green); }
     .hospital-special .hospital-inner .hs-text p {
-      color: rgba(255,255,255,0.8);
-      line-height: 1.7;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.8;
+      margin-bottom: 14px;
+      font-size: 1rem;
     }
     .hospital-special .hospital-inner .hs-text ul li {
       color: rgba(255,255,255,0.85);
-      padding: 4px 0;
+      padding: 5px 0;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
+      gap: 12px;
+      font-size: 0.95rem;
     }
     .hospital-special .hospital-inner .hs-text ul li i { color: var(--light-green); }
 
@@ -483,9 +487,9 @@
       border-top: 1px solid rgba(255,255,255,0.04);
     }
     .footer .footer-inner {
-      max-width: 1280px;
+      max-width: 100%;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
     .footer-grid {
       display: grid;
@@ -540,27 +544,68 @@
     }
 
     /* ===== RESPONSIVE ===== */
+    @media screen and (max-width: 1024px) {
+      .service-detail-inner,
+      .hospital-special .hospital-inner,
+      .footer .footer-inner {
+        padding: 0 24px;
+      }
+      .service-image img,
+      .hospital-special .hospital-inner .hs-image img {
+        height: 300px;
+      }
+    }
+
     @media screen and (max-width: 820px) {
       .navbar { padding: 8px 16px; top: 10px; border-radius: 40px; }
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .page-hero { min-height: 35vh; padding: 100px 5% 30px; }
-      .service-image img { height: 220px; }
-      .service-detail-inner { padding: 0 16px; }
-      .hospital-special .hospital-inner { padding: 0 16px; }
-      .hospital-special .hospital-inner .hs-image img { height: 220px; }
-      .service-text h2 { font-size: 1.4rem; }
+      .service-detail-inner,
+      .hospital-special .hospital-inner,
+      .footer .footer-inner {
+        padding: 0 16px;
+      }
+      .service-image img,
+      .hospital-special .hospital-inner .hs-image img {
+        height: 240px;
+      }
+      .service-text h2,
+      .hospital-special .hospital-inner .hs-text h2 {
+        font-size: 1.5rem;
+      }
     }
 
     @media screen and (max-width: 480px) {
       .nav-logo .brand h1 { font-size: 1rem; }
       .nav-logo .brand span { font-size: 0.45rem; }
       .nav-logo img { height: 32px; }
-      .service-text h2 { font-size: 1.2rem; }
-      .service-image img { height: 180px; }
       .service-detail-section { padding: 35px 0; }
-      .hospital-special { padding: 35px 0; }
-      .hospital-special .hospital-inner .hs-image img { height: 180px; }
+      .service-detail-inner,
+      .hospital-special .hospital-inner,
+      .footer .footer-inner {
+        padding: 0 14px;
+      }
+      .service-image img,
+      .hospital-special .hospital-inner .hs-image img {
+        height: 200px;
+      }
+      .service-text h2,
+      .hospital-special .hospital-inner .hs-text h2 {
+        font-size: 1.3rem;
+      }
+      .service-text p,
+      .hospital-special .hospital-inner .hs-text p {
+        font-size: 0.9rem;
+      }
+      .service-text ul li,
+      .hospital-special .hospital-inner .hs-text ul li {
+        font-size: 0.85rem;
+      }
+      .service-text .btn-service {
+        padding: 10px 24px;
+        font-size: 0.9rem;
+      }
     }
   </style>
 </head>
@@ -1157,7 +1202,6 @@
       <div class="hs-text">
         <h2>Hospital <span>Management</span> Solutions</h2>
         <p>Drawing from our expertise with <strong>Healthcare Designers Limited</strong> and <strong>Dimetrical Limited</strong>, we offer comprehensive hospital management consultancy.</p>
-        
         <a href="booking.html" class="btn-service" style="background: var(--light-green); color: var(--dark-navy); box-shadow: 0 6px 20px rgba(123,193,86,0.25);">Explore Hospital Solutions <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
