@@ -1,6 +1,3 @@
-I've redesigned the service-detail page with a full-width layout that maximizes content space while maintaining proper padding. The design now uses a wider container with only 1-inch padding on each side, creating a more immersive and professional experience.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +11,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===== RESET & PALETTE ===== */
     * {
       margin: 0;
       padding: 0;
@@ -59,7 +55,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       border: 1px solid rgba(255, 255, 255, 0.3);
       transition: all 0.25s;
     }
-
     .nav-logo {
       display: flex;
       align-items: center;
@@ -88,7 +83,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       color: var(--primary-green);
       letter-spacing: 0.3px;
     }
-
     .nav-links {
       display: flex;
       align-items: center;
@@ -117,7 +111,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       background: var(--primary-green);
       border-radius: 4px;
     }
-
     .nav-cta {
       background: var(--primary-green);
       color: white !important;
@@ -135,7 +128,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       color: white !important;
     }
     .nav-cta::after { display: none !important; }
-
     .hamburger {
       display: none;
       flex-direction: column;
@@ -195,7 +187,7 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     }
     .mobile-overlay .mobile-cta:hover { background: #5f9e3e !important; }
 
-    /* ===== HERO - FULL WIDTH ===== */
+    /* ===== HERO ===== */
     .page-hero {
       min-height: 45vh;
       display: flex;
@@ -230,24 +222,23 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       position: relative;
       z-index: 2;
       color: white;
-      max-width: 900px;
+      max-width: 800px;
       padding: 0 20px;
     }
     .page-hero-content h1 {
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 700;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
     }
     .page-hero-content h1 span { color: var(--light-green); }
     .page-hero-content p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: rgba(255,255,255,0.8);
-      max-width: 650px;
+      max-width: 600px;
       margin: 0 auto;
     }
 
-    /* ===== FLOATING SHAPES ===== */
     .shape {
       position: absolute;
       border-radius: 50%;
@@ -266,7 +257,7 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       100% { transform: translate(10px, -10px) scale(1.05) rotate(360deg); }
     }
 
-    /* ===== SERVICE DETAIL SECTIONS - FULL WIDTH ===== */
+    /* ===== SERVICE DETAIL SECTIONS ===== */
     .service-detail-section {
       padding: 60px 0;
       position: relative;
@@ -278,7 +269,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     .service-detail-section:nth-child(odd) {
       background: var(--off-white);
     }
-
     .service-detail-section .bg-shape {
       position: absolute;
       border-radius: 50%;
@@ -290,9 +280,9 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     .service-detail-section .bg-shape.s2 { width: 250px; height: 250px; bottom: -80px; left: -60px; background: var(--teal); }
 
     .service-detail-inner {
-      max-width: 100%;
+      max-width: 850px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -302,8 +292,7 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
 
     .service-image {
       width: 100%;
-      max-width: 1000px;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 15px 40px rgba(17, 82, 118, 0.08);
       transition: all 0.4s;
@@ -312,14 +301,12 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     }
     .service-image img {
       width: 100%;
-      height: 360px;
+      height: 340px;
       object-fit: cover;
       display: block;
       transition: transform 0.6s cubic-bezier(0.15, 0.85, 0.3, 1);
     }
-    .service-image:hover img {
-      transform: scale(1.02);
-    }
+    .service-image:hover img { transform: scale(1.02); }
     .service-image .image-overlay {
       position: absolute;
       bottom: 0;
@@ -333,13 +320,10 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .service-image:hover .image-overlay {
-      opacity: 1;
-    }
+    .service-image:hover .image-overlay { opacity: 1; }
 
     .service-text {
       width: 100%;
-      max-width: 1000px;
       text-align: left;
     }
     .service-text h2 {
@@ -367,25 +351,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       line-height: 1.8;
       margin-bottom: 14px;
     }
-    .service-text ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 18px;
-    }
-    .service-text ul li {
-      padding: 5px 0;
-      color: var(--dark-gray);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.95rem;
-    }
-    .service-text ul li i {
-      color: var(--primary-green);
-      font-size: 1rem;
-      width: 20px;
-      margin-top: 2px;
-    }
     .service-text .btn-service {
       display: inline-flex;
       align-items: center;
@@ -407,7 +372,59 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       box-shadow: 0 10px 28px rgba(113, 179, 78, 0.30);
     }
 
-    /* ===== HOSPITAL MANAGEMENT SPECIAL - FULL WIDTH ===== */
+    /* ===== FEATURE CONTAINERS (NO TICKS) ===== */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 24px;
+      margin: 16px 0 20px;
+    }
+    .feature-card {
+      background: rgba(113, 179, 78, 0.04);
+      border-radius: 12px;
+      padding: 14px 18px;
+      border-left: 3px solid var(--primary-green);
+    }
+    .feature-card .feature-title {
+      font-weight: 700;
+      color: var(--dark-navy);
+      font-size: 0.95rem;
+      display: block;
+      margin-bottom: 2px;
+    }
+    .feature-card .feature-desc {
+      color: var(--teal);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 18px;
+    }
+    .feature-list li {
+      padding: 8px 0 8px 28px;
+      position: relative;
+      color: var(--dark-gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+    .feature-list li:last-child { border-bottom: none; }
+    .feature-list li::before {
+      content: '✦';
+      position: absolute;
+      left: 4px;
+      top: 8px;
+      color: var(--primary-green);
+      font-size: 0.9rem;
+    }
+    .feature-list li strong {
+      color: var(--dark-navy);
+    }
+
+    /* ===== HOSPITAL MANAGEMENT ===== */
     .hospital-special {
       background: linear-gradient(135deg, var(--dark-navy) 0%, var(--teal) 100%);
       color: white;
@@ -416,9 +433,9 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       overflow: hidden;
     }
     .hospital-special .hospital-inner {
-      max-width: 100%;
+      max-width: 850px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
       position: relative;
       z-index: 1;
       display: flex;
@@ -437,15 +454,14 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     }
     .hospital-special .hospital-inner .hs-image {
       width: 100%;
-      max-width: 1000px;
-      border-radius: 20px;
+      border-radius: 16px;
       overflow: hidden;
       margin-bottom: 28px;
       box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     .hospital-special .hospital-inner .hs-image img {
       width: 100%;
-      height: 360px;
+      height: 340px;
       object-fit: cover;
       display: block;
       transition: transform 0.5s;
@@ -453,7 +469,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     .hospital-special .hospital-inner .hs-image img:hover { transform: scale(1.02); }
     .hospital-special .hospital-inner .hs-text {
       width: 100%;
-      max-width: 1000px;
       text-align: left;
     }
     .hospital-special .hospital-inner .hs-text h2 {
@@ -469,15 +484,16 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       margin-bottom: 14px;
       font-size: 1rem;
     }
-    .hospital-special .hospital-inner .hs-text ul li {
+    .hospital-special .hospital-inner .hs-text .feature-list li {
       color: rgba(255,255,255,0.85);
-      padding: 5px 0;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.95rem;
+      border-bottom-color: rgba(255,255,255,0.05);
     }
-    .hospital-special .hospital-inner .hs-text ul li i { color: var(--light-green); }
+    .hospital-special .hospital-inner .hs-text .feature-list li::before {
+      color: var(--light-green);
+    }
+    .hospital-special .hospital-inner .hs-text .feature-list li strong {
+      color: white;
+    }
 
     /* ===== FOOTER ===== */
     .footer {
@@ -487,9 +503,9 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       border-top: 1px solid rgba(255,255,255,0.04);
     }
     .footer .footer-inner {
-      max-width: 100%;
+      max-width: 850px;
       margin: 0 auto;
-      padding: 0 28px;
+      padding: 0 24px;
     }
     .footer-grid {
       display: grid;
@@ -531,7 +547,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       text-decoration: underline;
     }
 
-    /* ===== REVEAL ===== */
     .reveal {
       opacity: 0;
       transform: translateY(30px) scale(0.97);
@@ -547,15 +562,10 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     @media screen and (max-width: 1024px) {
       .service-detail-inner,
       .hospital-special .hospital-inner,
-      .footer .footer-inner {
-        padding: 0 24px;
-      }
+      .footer .footer-inner { padding: 0 20px; }
       .service-image img,
-      .hospital-special .hospital-inner .hs-image img {
-        height: 300px;
-      }
+      .hospital-special .hospital-inner .hs-image img { height: 300px; }
     }
-
     @media screen and (max-width: 820px) {
       .navbar { padding: 8px 16px; top: 10px; border-radius: 40px; }
       .nav-links { display: none; }
@@ -563,49 +573,31 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       .page-hero { min-height: 35vh; padding: 100px 5% 30px; }
       .service-detail-inner,
       .hospital-special .hospital-inner,
-      .footer .footer-inner {
-        padding: 0 16px;
-      }
+      .footer .footer-inner { padding: 0 16px; }
       .service-image img,
-      .hospital-special .hospital-inner .hs-image img {
-        height: 240px;
-      }
+      .hospital-special .hospital-inner .hs-image img { height: 240px; }
       .service-text h2,
-      .hospital-special .hospital-inner .hs-text h2 {
-        font-size: 1.5rem;
-      }
+      .hospital-special .hospital-inner .hs-text h2 { font-size: 1.5rem; }
+      .feature-grid { grid-template-columns: 1fr; }
     }
-
     @media screen and (max-width: 480px) {
       .nav-logo .brand h1 { font-size: 1rem; }
       .nav-logo .brand span { font-size: 0.45rem; }
       .nav-logo img { height: 32px; }
-      .service-detail-section { padding: 35px 0; }
+      .service-detail-section { padding: 40px 0; }
       .service-detail-inner,
       .hospital-special .hospital-inner,
-      .footer .footer-inner {
-        padding: 0 14px;
-      }
+      .footer .footer-inner { padding: 0 14px; }
       .service-image img,
-      .hospital-special .hospital-inner .hs-image img {
-        height: 200px;
-      }
+      .hospital-special .hospital-inner .hs-image img { height: 200px; }
       .service-text h2,
-      .hospital-special .hospital-inner .hs-text h2 {
-        font-size: 1.3rem;
-      }
+      .hospital-special .hospital-inner .hs-text h2 { font-size: 1.3rem; }
       .service-text p,
-      .hospital-special .hospital-inner .hs-text p {
-        font-size: 0.9rem;
-      }
-      .service-text ul li,
-      .hospital-special .hospital-inner .hs-text ul li {
-        font-size: 0.85rem;
-      }
-      .service-text .btn-service {
-        padding: 10px 24px;
-        font-size: 0.9rem;
-      }
+      .hospital-special .hospital-inner .hs-text p { font-size: 0.9rem; }
+      .feature-card { padding: 10px 14px; }
+      .feature-card .feature-desc { font-size: 0.85rem; }
+      .feature-list li { font-size: 0.85rem; padding: 6px 0 6px 24px; }
+      .service-text .btn-service { padding: 10px 24px; font-size: 0.9rem; }
     }
   </style>
 </head>
@@ -668,12 +660,12 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Welcome to Medrisk: Elevating Workforce Excellence through Dynamic Training Workshops</strong></p>
         <p>At Medrisk, we specialize in partnering with organizations to cultivate a highly skilled and dedicated workforce. Our core offering revolves around meticulously designed training workshops that harness the power of impactful learning, interactivity, and innovation. These workshops are thoughtfully tailored to address specific learning needs, fostering profound discussions and facilitating robust trainee participation.</p>
         <p><strong>Key Highlights of Our Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Learning Solutions:</strong> Our expertise lies in crafting customized training workshops that precisely target your organization's learning requirements. Through in-depth analysis, we create bespoke content to drive optimal skill development.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Engaging and Interactive:</strong> We believe in the transformative potential of engaging learning experiences. Our workshops are designed to spark dynamic discussions and encourage trainees to actively participate, ensuring that knowledge is absorbed and applied effectively.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Global Expertise:</strong> Medrisk boasts a network of accomplished instructors and subject matter experts with a wealth of experience in delivering impactful learning worldwide. Regardless of geographic boundaries, we deliver consistent excellence.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Innovative Approaches:</strong> Embracing modern training principles and cutting-edge methods, our workshops are infused with creativity and innovation. We utilize experiential tools and inventive learning content to enhance engagement and knowledge retention.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>High Impact Learning:</strong> Our commitment to excellence shines through in the high impact training we provide. Medrisk's trainers excel in transferring knowledge, stimulating curiosity, and fostering expansive thinking, leading to tangible, positive outcomes.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Learning Solutions:</strong> Our expertise lies in crafting customized training workshops that precisely target your organization's learning requirements. Through in-depth analysis, we create bespoke content to drive optimal skill development.</li>
+          <li><strong>Engaging and Interactive:</strong> We believe in the transformative potential of engaging learning experiences. Our workshops are designed to spark dynamic discussions and encourage trainees to actively participate, ensuring that knowledge is absorbed and applied effectively.</li>
+          <li><strong>Global Expertise:</strong> Medrisk boasts a network of accomplished instructors and subject matter experts with a wealth of experience in delivering impactful learning worldwide. Regardless of geographic boundaries, we deliver consistent excellence.</li>
+          <li><strong>Innovative Approaches:</strong> Embracing modern training principles and cutting-edge methods, our workshops are infused with creativity and innovation. We utilize experiential tools and inventive learning content to enhance engagement and knowledge retention.</li>
+          <li><strong>High Impact Learning:</strong> Our commitment to excellence shines through in the high impact training we provide. Medrisk's trainers excel in transferring knowledge, stimulating curiosity, and fostering expansive thinking, leading to tangible, positive outcomes.</li>
         </ul>
         <p><strong>Why Choose Medrisk:</strong> In today's ever-evolving landscape, cultivating a proficient workforce is imperative. Medrisk empowers your organization to rise above challenges by nurturing talent through our exceptional training workshops. By fostering a culture of continuous learning, we ensure your employees are equipped with the skills and insights necessary to thrive in a competitive world. Join hands with Medrisk and unlock the potential of your workforce through unparalleled training experiences. Contact us today to embark on a journey of transformation and growth.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -697,22 +689,22 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Accounting Services: Unveiling Financial Clarity</strong></p>
         <p>Our accounting experts delve deep into your financial landscape, meticulously tracking and analyzing every income stream and expense. Beyond the numbers, our accountants offer strategic financial advice tailored to your goals, ensuring every move aligns with your long-term vision. With an eye on tax optimization and compliance, we provide the assurance you need to navigate complex financial landscapes.</p>
         <p><strong>Our Accounting Services include:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Financial Tracking and Reporting</li>
-          <li><i class="fas fa-check-circle"></i> Financial Analysis and Strategy</li>
-          <li><i class="fas fa-check-circle"></i> Tax Compliance and Optimization</li>
-          <li><i class="fas fa-check-circle"></i> Expert Financial Advice</li>
-          <li><i class="fas fa-check-circle"></i> Comprehensive Financial Reporting</li>
+        <ul class="feature-list">
+          <li>Financial Tracking and Reporting</li>
+          <li>Financial Analysis and Strategy</li>
+          <li>Tax Compliance and Optimization</li>
+          <li>Expert Financial Advice</li>
+          <li>Comprehensive Financial Reporting</li>
         </ul>
         <p><strong>Bookkeeping Services: The Foundation of Financial Excellence</strong></p>
         <p>At the heart of a well-managed business lies precise and organized financial data. Our dedicated bookkeeping team ensures every transaction is accurately recorded and classified, enabling a clear view of your financial journey. From invoicing to expense tracking and payroll management, our bookkeepers handle the details, allowing you to focus on what truly matters – growing your business.</p>
         <p><strong>Our Bookkeeping Services encompass:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Transaction Recording and Organization</li>
-          <li><i class="fas fa-check-circle"></i> Financial Statement Preparation</li>
-          <li><i class="fas fa-check-circle"></i> Payroll Management</li>
-          <li><i class="fas fa-check-circle"></i> Invoice Generation and Management</li>
-          <li><i class="fas fa-check-circle"></i> Expense Tracking and Categorization</li>
+        <ul class="feature-list">
+          <li>Transaction Recording and Organization</li>
+          <li>Financial Statement Preparation</li>
+          <li>Payroll Management</li>
+          <li>Invoice Generation and Management</li>
+          <li>Expense Tracking and Categorization</li>
         </ul>
         <p>Together, our accounting and bookkeeping services provide a comprehensive approach to financial management. Whether you're seeking to optimize your tax strategy, understand your cash flow, or streamline your financial operations, our team is here to guide you every step of the way. Empower your business with the insights and expertise it deserves. Contact us today to learn how our financial management services can elevate your business to new heights.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -735,20 +727,38 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Management Consultancy Services: Elevate Your Business Strategy</strong></p>
         <p>In today's rapidly evolving business landscape, staying ahead of competitors is a strategic imperative. Our Management Consultancy services are designed to empower your organization with the expertise and insights needed to thrive and innovate in a dynamic market. Amidst industry pressures and shifting market dynamics, our seasoned management consultants provide a fresh perspective on your business. We analyze, strategize, and optimize, helping you achieve maximum efficiency and profitability while navigating a competitive landscape.</p>
         <p><strong>Key Benefits of Strategic Outsourcing:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Specialized Expertise:</strong> Leverage the expertise of specialized vendors who excel in specific areas, ensuring tasks are executed with precision.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Resource Allocation:</strong> Redirect resources from non-core functions to core activities, enhancing your business's ability to achieve its goals.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Cost Efficiency:</strong> Cut costs by eliminating the need to invest in infrastructure, training, and personnel for non-core functions.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Focused Innovation:</strong> Shift your team's focus towards strategic initiatives, fostering innovation, and delivering exceptional services.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Flexible Scalability:</strong> Scale operations seamlessly to meet demand fluctuations, avoiding the need for extensive internal adjustments.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Time Savings:</strong> Free up internal resources from non-core tasks, allowing your team to concentrate on driving growth.</li>
-        </ul>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="feature-title">Specialized Expertise</span>
+            <span class="feature-desc">Leverage the expertise of specialized vendors who excel in specific areas, ensuring tasks are executed with precision.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Resource Allocation</span>
+            <span class="feature-desc">Redirect resources from non-core functions to core activities, enhancing your business's ability to achieve its goals.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Cost Efficiency</span>
+            <span class="feature-desc">Cut costs by eliminating the need to invest in infrastructure, training, and personnel for non-core functions.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Focused Innovation</span>
+            <span class="feature-desc">Shift your team's focus towards strategic initiatives, fostering innovation, and delivering exceptional services.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Flexible Scalability</span>
+            <span class="feature-desc">Scale operations seamlessly to meet demand fluctuations, avoiding the need for extensive internal adjustments.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Time Savings</span>
+            <span class="feature-desc">Free up internal resources from non-core tasks, allowing your team to concentrate on driving growth.</span>
+          </div>
+        </div>
         <p><strong>Our Comprehensive Management Consultancy Services Include:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> Strategic Analysis: In-depth examination of your business processes to identify bottlenecks and growth opportunities.</li>
-          <li><i class="fas fa-check-circle"></i> Customized Strategies: Collaborative strategy development tailored to your organization's objectives and market trends.</li>
-          <li><i class="fas fa-check-circle"></i> Implementation and Monitoring: Seamless strategy implementation and continuous monitoring to ensure effective results.</li>
-          <li><i class="fas fa-check-circle"></i> Change Management: Support during the transition to outsourced operations, ensuring a smooth integration process.</li>
+        <ul class="feature-list">
+          <li><strong>Strategic Analysis:</strong> In-depth examination of your business processes to identify bottlenecks and growth opportunities.</li>
+          <li><strong>Customized Strategies:</strong> Collaborative strategy development tailored to your organization's objectives and market trends.</li>
+          <li><strong>Implementation and Monitoring:</strong> Seamless strategy implementation and continuous monitoring to ensure effective results.</li>
+          <li><strong>Change Management:</strong> Support during the transition to outsourced operations, ensuring a smooth integration process.</li>
         </ul>
         <p>Unlock your organization's potential with our Management Consultancy services. By embracing strategic outsourcing and harnessing expert insights, you position your business for success. Contact us today to learn how our consultancy services can elevate your organization's performance, drive innovation, and enhance profitability.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -772,28 +782,28 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>In the realm of corporate governance and operational effectiveness, our Internal & External Audit services stand as pillars of integrity, transparency, and risk management. Whether you're aiming to uphold the highest standards of compliance or seeking an impartial evaluation of your operations, our comprehensive audit services are designed to cater to your unique organizational needs.</p>
         <p><strong>Internal Audit: Navigating Organizational Performance</strong></p>
         <p>Our internal audit process is a meticulous examination of your organization's internal operations, governance policies, risk management practices, and quality control procedures. Core facets of our internal audit services include:</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Independent Evaluation:</strong> Our internal audit is conducted by an independent and unbiased entity, offering an objective assessment of your processes.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Mitigation:</strong> We identify potential risks within your operations, enabling you to proactively manage and mitigate them.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Operational Efficiency:</strong> Streamline processes, optimize resource allocation, and reduce redundancies through our operational efficiency assessment.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Governance Alignment:</strong> Our audit ensures that your governance policies align with industry regulations and best practices.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Quality Enhancement:</strong> Scrutinize quality control procedures to ensure consistency and excellence across your operations.</li>
+        <ul class="feature-list">
+          <li><strong>Independent Evaluation:</strong> Our internal audit is conducted by an independent and unbiased entity, offering an objective assessment of your processes.</li>
+          <li><strong>Risk Mitigation:</strong> We identify potential risks within your operations, enabling you to proactively manage and mitigate them.</li>
+          <li><strong>Operational Efficiency:</strong> Streamline processes, optimize resource allocation, and reduce redundancies through our operational efficiency assessment.</li>
+          <li><strong>Governance Alignment:</strong> Our audit ensures that your governance policies align with industry regulations and best practices.</li>
+          <li><strong>Quality Enhancement:</strong> Scrutinize quality control procedures to ensure consistency and excellence across your operations.</li>
         </ul>
         <p><strong>External Audit: Amplifying Transparency and Reliability</strong></p>
         <p>Our external audit services provide an impartial and comprehensive evaluation of your financial statements and business operations. Key highlights of our external audit offerings include:</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Financial Integrity:</strong> Gain a clear and accurate understanding of your financial health through our meticulous verification of financial statements.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Compliance Assurance:</strong> We ensure that your organization adheres to regulatory requirements, industry standards, and accounting principles.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Stakeholder Trust:</strong> Through transparent reporting, our external audit enhances stakeholder confidence and bolsters your organization's credibility.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Identification:</strong> Identify and address financial and operational risks proactively, safeguarding your organization's stability.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Performance Insights:</strong> Leverage valuable insights into business performance for informed decision-making and strategic planning.</li>
+        <ul class="feature-list">
+          <li><strong>Financial Integrity:</strong> Gain a clear and accurate understanding of your financial health through our meticulous verification of financial statements.</li>
+          <li><strong>Compliance Assurance:</strong> We ensure that your organization adheres to regulatory requirements, industry standards, and accounting principles.</li>
+          <li><strong>Stakeholder Trust:</strong> Through transparent reporting, our external audit enhances stakeholder confidence and bolsters your organization's credibility.</li>
+          <li><strong>Risk Identification:</strong> Identify and address financial and operational risks proactively, safeguarding your organization's stability.</li>
+          <li><strong>Performance Insights:</strong> Leverage valuable insights into business performance for informed decision-making and strategic planning.</li>
         </ul>
         <p><strong>Why Choose Our Audit Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Expertise:</strong> Our seasoned auditors bring extensive industry knowledge and experience to the table, ensuring a comprehensive and insightful audit.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Unbiased Assessment:</strong> As an external entity, we offer an impartial evaluation, providing an objective perspective on your operations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Enhanced Governance:</strong> Our audit services contribute to robust corporate governance, upholding ethical standards and accountability.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Guidance:</strong> Beyond assessment, we offer actionable recommendations to drive operational excellence, risk management, and financial integrity.</li>
+        <ul class="feature-list">
+          <li><strong>Expertise:</strong> Our seasoned auditors bring extensive industry knowledge and experience to the table, ensuring a comprehensive and insightful audit.</li>
+          <li><strong>Unbiased Assessment:</strong> As an external entity, we offer an impartial evaluation, providing an objective perspective on your operations.</li>
+          <li><strong>Enhanced Governance:</strong> Our audit services contribute to robust corporate governance, upholding ethical standards and accountability.</li>
+          <li><strong>Strategic Guidance:</strong> Beyond assessment, we offer actionable recommendations to drive operational excellence, risk management, and financial integrity.</li>
         </ul>
         <p>Elevate your organization's transparency, accountability, and operational effectiveness with our Internal & External Audit services. Contact us today to discover how our audit expertise can empower your organization to excel in today's intricate business landscape.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -819,20 +829,38 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>As pioneers of innovation in HR solutions, we take pride in our ability to drive transformative change across a multitude of sectors. Our impact extends across diverse industries including technology, retail, healthcare, hospitality, financial services, media, and manufacturing. Rooted in deep industry insights, our tailored strategies seamlessly align with the distinct demands of your sector, translating into tangible results that elevate your organization to new heights.</p>
         <p><strong>Meeting the Growing Needs of Your Team</strong></p>
         <p>Growth is synonymous with evolving needs, and as your organization flourishes, so does the demand for seasoned HR expertise. At Medrisk Consulting Ltd, we understand the challenge of sourcing and attracting mature HR talent who possess the skill set and leadership acumen to steer your human resource endeavors. Our Human Resource Management services encompass:</p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Talent Sourcing:</strong> Our experts identify and attract the crème de la crème of HR professionals, ensuring your organization is led by individuals who can drive progress.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Employee Engagement:</strong> Foster a vibrant and motivated workplace culture through targeted strategies that enhance employee satisfaction and performance.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Performance Enhancement:</strong> Maximize employee potential by implementing robust performance evaluation systems that contribute to organizational objectives.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Learning & Growth:</strong> Create comprehensive learning pathways that empower your workforce to stay ahead with new skills and industry trends.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>HR Compliance:</strong> Navigate intricate HR regulations seamlessly, ensuring your organization remains aligned with labor laws and industry standards.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Succession Planning:</strong> Future-proof your leadership by identifying and nurturing internal talent poised for leadership roles.</li>
-        </ul>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <span class="feature-title">Talent Sourcing</span>
+            <span class="feature-desc">Our experts identify and attract the crème de la crème of HR professionals, ensuring your organization is led by individuals who can drive progress.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Employee Engagement</span>
+            <span class="feature-desc">Foster a vibrant and motivated workplace culture through targeted strategies that enhance employee satisfaction and performance.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Performance Enhancement</span>
+            <span class="feature-desc">Maximize employee potential by implementing robust performance evaluation systems that contribute to organizational objectives.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Learning &amp; Growth</span>
+            <span class="feature-desc">Create comprehensive learning pathways that empower your workforce to stay ahead with new skills and industry trends.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">HR Compliance</span>
+            <span class="feature-desc">Navigate intricate HR regulations seamlessly, ensuring your organization remains aligned with labor laws and industry standards.</span>
+          </div>
+          <div class="feature-card">
+            <span class="feature-title">Succession Planning</span>
+            <span class="feature-desc">Future-proof your leadership by identifying and nurturing internal talent poised for leadership roles.</span>
+          </div>
+        </div>
         <p><strong>Why Opt for Our Human Resource Management Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Precision:</strong> Our HR strategies are masterfully crafted to suit your organizational identity, ensuring seamless alignment with your goals.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Industry Excellence:</strong> With a proven track record spanning diverse sectors, we bring sector-specific expertise to your HR management.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Cutting-Edge Innovation:</strong> Embrace HR practices at the forefront of innovation, driving your organization's triumph in an ever-evolving landscape.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Talent Attraction:</strong> Magnetize and retain top-tier HR talent, positioning your organization to thrive in dynamic environments.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Precision:</strong> Our HR strategies are masterfully crafted to suit your organizational identity, ensuring seamless alignment with your goals.</li>
+          <li><strong>Industry Excellence:</strong> With a proven track record spanning diverse sectors, we bring sector-specific expertise to your HR management.</li>
+          <li><strong>Cutting-Edge Innovation:</strong> Embrace HR practices at the forefront of innovation, driving your organization's triumph in an ever-evolving landscape.</li>
+          <li><strong>Talent Attraction:</strong> Magnetize and retain top-tier HR talent, positioning your organization to thrive in dynamic environments.</li>
         </ul>
         <p>Empower your organization's most invaluable asset its people with our revolutionary Human Resource Management services. Get in touch today to explore how our strategic HR expertise can propel your workforce to unprecedented achievements and fuel sustainable organizational growth.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -857,29 +885,29 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Our Comprehensive Solutions: Fueling Financial Success</strong></p>
         <p>At Medrisk Consulting Limited, we grasp the pivotal role credit control plays in your business's prosperity. Our Credit Control & Data Recovery services are meticulously crafted to empower your enterprise with nimble credit management strategies and seamless data recovery solutions.</p>
         <p><strong>1. Streamlined Credit Management:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Efficient Payment Processing:</strong> We expedite payment collection, curbing delays, and fostering robust cash flow.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Debt Recovery:</strong> Our adept professionals employ tactical debt recovery techniques, ensuring outstanding payments are swiftly retrieved.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Credit Analysis:</strong> Evaluate the creditworthiness of potential clients, making informed decisions while minimizing the risk of bad debt.</li>
+        <ul class="feature-list">
+          <li><strong>Efficient Payment Processing:</strong> We expedite payment collection, curbing delays, and fostering robust cash flow.</li>
+          <li><strong>Debt Recovery:</strong> Our adept professionals employ tactical debt recovery techniques, ensuring outstanding payments are swiftly retrieved.</li>
+          <li><strong>Credit Analysis:</strong> Evaluate the creditworthiness of potential clients, making informed decisions while minimizing the risk of bad debt.</li>
         </ul>
         <p><strong>2. Data Recovery & Management:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Data Retrieval:</strong> Our experts retrieve critical lost data, salvaging precious information due to a variety of factors.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Data Backup Solutions:</strong> Implement resilient data backup strategies to forestall data loss and ensure continuous business operations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Data Security:</strong> Fortify data protection with advanced security measures, aligning seamlessly with data privacy regulations.</li>
+        <ul class="feature-list">
+          <li><strong>Data Retrieval:</strong> Our experts retrieve critical lost data, salvaging precious information due to a variety of factors.</li>
+          <li><strong>Data Backup Solutions:</strong> Implement resilient data backup strategies to forestall data loss and ensure continuous business operations.</li>
+          <li><strong>Data Security:</strong> Fortify data protection with advanced security measures, aligning seamlessly with data privacy regulations.</li>
         </ul>
         <p><strong>3. Expert Management & Advisory:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Dedicated Professionals:</strong> Our proficient credit control experts adeptly manage your credit processes, liberating your focus on core business growth.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Advice:</strong> Benefit from expert guidance on tailored credit management strategies designed to suit your business's distinctive demands.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Effortless Compliance:</strong> Stay aligned with evolving credit and data protection regulations, mitigating risks and potential liabilities.</li>
+        <ul class="feature-list">
+          <li><strong>Dedicated Professionals:</strong> Our proficient credit control experts adeptly manage your credit processes, liberating your focus on core business growth.</li>
+          <li><strong>Strategic Advice:</strong> Benefit from expert guidance on tailored credit management strategies designed to suit your business's distinctive demands.</li>
+          <li><strong>Effortless Compliance:</strong> Stay aligned with evolving credit and data protection regulations, mitigating risks and potential liabilities.</li>
         </ul>
         <p><strong>Why Choose Our Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Core Competency Focus:</strong> Reclaim precious time and resources, channeling your energy into business expansion and innovation.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Seasoned Professionals:</strong> Our adept experts wield vast knowledge and skill, ensuring effective credit control and data recovery.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Excellence:</strong> Recognizing each business's uniqueness, our solutions are custom-tailored to harmonize with your specific needs.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Mitigation:</strong> Our strategies shield against bad debt and data loss risks, enhancing financial stability and operational robustness.</li>
+        <ul class="feature-list">
+          <li><strong>Core Competency Focus:</strong> Reclaim precious time and resources, channeling your energy into business expansion and innovation.</li>
+          <li><strong>Seasoned Professionals:</strong> Our adept experts wield vast knowledge and skill, ensuring effective credit control and data recovery.</li>
+          <li><strong>Tailored Excellence:</strong> Recognizing each business's uniqueness, our solutions are custom-tailored to harmonize with your specific needs.</li>
+          <li><strong>Risk Mitigation:</strong> Our strategies shield against bad debt and data loss risks, enhancing financial stability and operational robustness.</li>
         </ul>
         <p>Empower your business with agile credit control and robust data recovery solutions that invigorate financial triumph. Reach out today to explore how our specialized services can harmonize cash flow, reinforce data security, and elevate your business's holistic performance.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -904,35 +932,35 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Our Comprehensive Project Management Approach:</strong></p>
         <p>Project management is a symphony of details harmonized for success. Our services encompass:</p>
         <p><strong>1. Time Control:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Planning:</strong> Articulate project milestones, tasks, and deadlines to ensure a seamless and punctual project journey.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Timely Execution:</strong> Vigilantly monitor and manage project timelines to ensure on-time delivery, intervening promptly to rectify deviations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Resource Optimization:</strong> Skillfully allocate resources to prevent bottlenecks, ensuring the project progresses smoothly.</li>
+        <ul class="feature-list">
+          <li><strong>Strategic Planning:</strong> Articulate project milestones, tasks, and deadlines to ensure a seamless and punctual project journey.</li>
+          <li><strong>Timely Execution:</strong> Vigilantly monitor and manage project timelines to ensure on-time delivery, intervening promptly to rectify deviations.</li>
+          <li><strong>Resource Optimization:</strong> Skillfully allocate resources to prevent bottlenecks, ensuring the project progresses smoothly.</li>
         </ul>
         <p><strong>2. Quality Control:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Elevated Standards:</strong> Imbue projects with unwavering quality by adhering to rigorous standards that meet or exceed specifications.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Continuous Vigilance:</strong> Regularly assess project progress against quality benchmarks, enabling timely refinements and enhancements.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Stakeholder Satisfaction:</strong> Prioritize stakeholder needs and expectations, ensuring project outcomes that resonate.</li>
+        <ul class="feature-list">
+          <li><strong>Elevated Standards:</strong> Imbue projects with unwavering quality by adhering to rigorous standards that meet or exceed specifications.</li>
+          <li><strong>Continuous Vigilance:</strong> Regularly assess project progress against quality benchmarks, enabling timely refinements and enhancements.</li>
+          <li><strong>Stakeholder Satisfaction:</strong> Prioritize stakeholder needs and expectations, ensuring project outcomes that resonate.</li>
         </ul>
         <p><strong>3. Financial Control:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Budget Adherence:</strong> Maintain strict financial oversight to ensure projects stay aligned with budget parameters.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Cost Efficiency:</strong> Implement strategies to optimize costs and prevent budget overruns, safeguarding financial integrity.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Resource Allocation:</strong> Diligently manage financial resources, optimizing spending for optimal project impact.</li>
+        <ul class="feature-list">
+          <li><strong>Budget Adherence:</strong> Maintain strict financial oversight to ensure projects stay aligned with budget parameters.</li>
+          <li><strong>Cost Efficiency:</strong> Implement strategies to optimize costs and prevent budget overruns, safeguarding financial integrity.</li>
+          <li><strong>Resource Allocation:</strong> Diligently manage financial resources, optimizing spending for optimal project impact.</li>
         </ul>
         <p><strong>4. Claims Minimization:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Proactive Risk Management:</strong> Identify and address potential risks proactively, diminishing the likelihood of claims.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Swift Dispute Resolution:</strong> Employ effective resolution tactics to address issues promptly and prevent claims escalation.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Open Communication:</strong> Foster transparent communication among stakeholders to preempt misunderstandings and disputes.</li>
+        <ul class="feature-list">
+          <li><strong>Proactive Risk Management:</strong> Identify and address potential risks proactively, diminishing the likelihood of claims.</li>
+          <li><strong>Swift Dispute Resolution:</strong> Employ effective resolution tactics to address issues promptly and prevent claims escalation.</li>
+          <li><strong>Open Communication:</strong> Foster transparent communication among stakeholders to preempt misunderstandings and disputes.</li>
         </ul>
         <p><strong>Why Opt for Our Project Management Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Holistic Oversight:</strong> Our services span every project facet, ensuring seamless coordination and execution.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Seasoned Expertise:</strong> Rely on our experienced project management professionals, well-versed in handling diverse project intricacies.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Results-Focused:</strong> We are dedicated to delivering successful project outcomes that mirror your vision and aspirations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Mitigation:</strong> Our strategic approaches curtail claims and disputes, fortifying your project's path to success.</li>
+        <ul class="feature-list">
+          <li><strong>Holistic Oversight:</strong> Our services span every project facet, ensuring seamless coordination and execution.</li>
+          <li><strong>Seasoned Expertise:</strong> Rely on our experienced project management professionals, well-versed in handling diverse project intricacies.</li>
+          <li><strong>Results-Focused:</strong> We are dedicated to delivering successful project outcomes that mirror your vision and aspirations.</li>
+          <li><strong>Risk Mitigation:</strong> Our strategic approaches curtail claims and disputes, fortifying your project's path to success.</li>
         </ul>
         <p>Experience the art of precision project management. Collaborate with Medrisk Consulting Ltd to achieve projects that shine with punctuality, precision, and budgetary alignment. Connect with us today to discover how our specialized expertise can elevate your projects and instill sustained excellence.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -957,35 +985,35 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p><strong>Our Comprehensive Pension Scheme Services:</strong></p>
         <p>At the heart of our Pension Scheme management lies a commitment to safeguarding the future of your workforce. Our services encompass:</p>
         <p><strong>1. Scheme Establishment and Design:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Solutions:</strong> Collaboratively design pension schemes that resonate with your organizational values, aspirations, and the unique needs of your employees.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Regulatory Adherence:</strong> Ensure your pension scheme meets all legal requirements, providing participants with confidence and trust.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Versatile Options:</strong> Choose from an array of pension scheme models, including defined benefit, defined contribution, and hybrid formats.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Solutions:</strong> Collaboratively design pension schemes that resonate with your organizational values, aspirations, and the unique needs of your employees.</li>
+          <li><strong>Regulatory Adherence:</strong> Ensure your pension scheme meets all legal requirements, providing participants with confidence and trust.</li>
+          <li><strong>Versatile Options:</strong> Choose from an array of pension scheme models, including defined benefit, defined contribution, and hybrid formats.</li>
         </ul>
         <p><strong>2. Contributions and Investments:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Seamless Contributions:</strong> Facilitate effortless contributions from both employees and employers, ensuring consistent and timely funding.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Prudent Investment Strategies:</strong> Safeguard and optimize pension assets through expert investment management, fostering growth while minimizing risk.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Member Empowerment:</strong> Equip scheme participants with investment insights and tools to make informed decisions about their financial future.</li>
+        <ul class="feature-list">
+          <li><strong>Seamless Contributions:</strong> Facilitate effortless contributions from both employees and employers, ensuring consistent and timely funding.</li>
+          <li><strong>Prudent Investment Strategies:</strong> Safeguard and optimize pension assets through expert investment management, fostering growth while minimizing risk.</li>
+          <li><strong>Member Empowerment:</strong> Equip scheme participants with investment insights and tools to make informed decisions about their financial future.</li>
         </ul>
         <p><strong>3. Member Services and Communication:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Comprehensive Support:</strong> Offer scheme members easy access to reliable information about contributions, benefits, and retirement planning.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Personalized Retirement Planning:</strong> Provide members with tailored retirement planning resources, empowering them to navigate their financial journey.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Transparent Communication:</strong> Foster open and transparent communication with scheme members, keeping them engaged and informed.</li>
+        <ul class="feature-list">
+          <li><strong>Comprehensive Support:</strong> Offer scheme members easy access to reliable information about contributions, benefits, and retirement planning.</li>
+          <li><strong>Personalized Retirement Planning:</strong> Provide members with tailored retirement planning resources, empowering them to navigate their financial journey.</li>
+          <li><strong>Transparent Communication:</strong> Foster open and transparent communication with scheme members, keeping them engaged and informed.</li>
         </ul>
         <p><strong>4. Scheme Wind Up and Liquidation:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Efficient Wind Up:</strong> Streamline the process of scheme wind up, ensuring a seamless transition while adhering to legal requirements.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Benefit Security:</strong> Prioritize the secure distribution of member benefits, considering legal mandates and individual circumstances.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Stakeholder Engagement:</strong> Communicate transparently with members and employers, guiding them through the wind-up process.</li>
+        <ul class="feature-list">
+          <li><strong>Efficient Wind Up:</strong> Streamline the process of scheme wind up, ensuring a seamless transition while adhering to legal requirements.</li>
+          <li><strong>Benefit Security:</strong> Prioritize the secure distribution of member benefits, considering legal mandates and individual circumstances.</li>
+          <li><strong>Stakeholder Engagement:</strong> Communicate transparently with members and employers, guiding them through the wind-up process.</li>
         </ul>
         <p><strong>Why Opt for Our Pension Scheme Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Expertise You Can Trust:</strong> Our seasoned professionals bring extensive experience and knowledge, ensuring comprehensive pension scheme management.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored to Your Needs:</strong> Our solutions are designed to fit your organization's unique requirements, fostering alignment with your goals.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Compliance Assurance:</strong> Rest easy knowing your pension scheme adheres to all regulatory standards, minimizing legal complexities.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Employee Well-Being:</strong> Strengthen employee loyalty and satisfaction by offering a robust and dependable pension scheme.</li>
+        <ul class="feature-list">
+          <li><strong>Expertise You Can Trust:</strong> Our seasoned professionals bring extensive experience and knowledge, ensuring comprehensive pension scheme management.</li>
+          <li><strong>Tailored to Your Needs:</strong> Our solutions are designed to fit your organization's unique requirements, fostering alignment with your goals.</li>
+          <li><strong>Compliance Assurance:</strong> Rest easy knowing your pension scheme adheres to all regulatory standards, minimizing legal complexities.</li>
+          <li><strong>Employee Well-Being:</strong> Strengthen employee loyalty and satisfaction by offering a robust and dependable pension scheme.</li>
         </ul>
         <p>Experience the peace of mind that comes with well-managed pension schemes. Collaborate with Medrisk Consulting Ltd to lay a strong foundation for your employees' financial future and reinforce your commitment to their well-being. Contact us today to explore how our Pension Scheme services can enhance your benefits offerings and contribute to long-term financial security.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -1009,36 +1037,36 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>Welcome to Medrisk Consulting Ltd, your trusted partner on the path to strategic and informed investment decisions. Our Investment Advisory services are meticulously crafted to provide you with the insights and guidance needed to navigate the intricate world of investments. With a focus on optimizing your financial portfolio, enhancing performance, and aligning with your unique aspirations, we are committed to empowering you on your journey to financial success.</p>
         <p><strong>Our Comprehensive Investment Advisory Services:</strong></p>
         <p><strong>1. Investment Opportunities & Classes:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Diverse Exploration:</strong> Access a wide spectrum of investment opportunities and asset classes tailored to your risk tolerance and goals.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Informed Decision-Making:</strong> We analyze and present potential investments, ensuring you have a clear understanding of each opportunity.</li>
+        <ul class="feature-list">
+          <li><strong>Diverse Exploration:</strong> Access a wide spectrum of investment opportunities and asset classes tailored to your risk tolerance and goals.</li>
+          <li><strong>Informed Decision-Making:</strong> We analyze and present potential investments, ensuring you have a clear understanding of each opportunity.</li>
         </ul>
         <p><strong>2. Performance Evaluation:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Thorough Assessment:</strong> Our experts evaluate the performance of your existing investments, providing insights into growth, risk, and potential returns.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Data-Driven Insights:</strong> Make well-informed choices based on comprehensive evaluations, aligning your investments with your financial objectives.</li>
+        <ul class="feature-list">
+          <li><strong>Thorough Assessment:</strong> Our experts evaluate the performance of your existing investments, providing insights into growth, risk, and potential returns.</li>
+          <li><strong>Data-Driven Insights:</strong> Make well-informed choices based on comprehensive evaluations, aligning your investments with your financial objectives.</li>
         </ul>
         <p><strong>3. Optimal Portfolio Mix:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Allocation:</strong> Collaborate with us to build a well-balanced and diversified investment portfolio that matches your risk profile and aspirations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Management:</strong> Minimize risks and optimize returns by strategically allocating investments across various asset classes.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Allocation:</strong> Collaborate with us to build a well-balanced and diversified investment portfolio that matches your risk profile and aspirations.</li>
+          <li><strong>Risk Management:</strong> Minimize risks and optimize returns by strategically allocating investments across various asset classes.</li>
         </ul>
         <p><strong>4. Asset-Liability Matching:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Holistic Harmony:</strong> Align investments with your financial commitments and obligations, ensuring stability and long-term financial health.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Mitigation:</strong> Our approach minimizes the impact of potential liabilities, safeguarding your overall financial well-being.</li>
+        <ul class="feature-list">
+          <li><strong>Holistic Harmony:</strong> Align investments with your financial commitments and obligations, ensuring stability and long-term financial health.</li>
+          <li><strong>Risk Mitigation:</strong> Our approach minimizes the impact of potential liabilities, safeguarding your overall financial well-being.</li>
         </ul>
         <p><strong>5. Investment Policy Statement:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Blueprint:</strong> Craft a comprehensive investment policy statement outlining your financial goals, risk tolerance, and investment strategies.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Guiding Principles:</strong> Your investment policy statement serves as a beacon, ensuring consistent decisions in line with your financial vision.</li>
+        <ul class="feature-list">
+          <li><strong>Strategic Blueprint:</strong> Craft a comprehensive investment policy statement outlining your financial goals, risk tolerance, and investment strategies.</li>
+          <li><strong>Guiding Principles:</strong> Your investment policy statement serves as a beacon, ensuring consistent decisions in line with your financial vision.</li>
         </ul>
         <p><strong>Why Choose Our Investment Advisory Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Expert Guidance:</strong> Our seasoned advisors bring extensive industry expertise, offering you tailored insights and analysis.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Personalized Recommendations:</strong> We adapt our recommendations to suit your individual financial landscape, goals, and risk tolerance.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Informed Decision-Making:</strong> Benefit from data-backed evaluations and insights, ensuring your investment choices are well-grounded.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Management:</strong> Our strategies prioritize risk mitigation and harmonize with your long-term financial outlook.</li>
+        <ul class="feature-list">
+          <li><strong>Expert Guidance:</strong> Our seasoned advisors bring extensive industry expertise, offering you tailored insights and analysis.</li>
+          <li><strong>Personalized Recommendations:</strong> We adapt our recommendations to suit your individual financial landscape, goals, and risk tolerance.</li>
+          <li><strong>Informed Decision-Making:</strong> Benefit from data-backed evaluations and insights, ensuring your investment choices are well-grounded.</li>
+          <li><strong>Risk Management:</strong> Our strategies prioritize risk mitigation and harmonize with your long-term financial outlook.</li>
         </ul>
         <p>Embark on a journey of financial growth and security with our Investment Advisory services. Reach out to Medrisk Consulting Ltd today to explore how our expertise can illuminate your path to optimized investment strategies, heightened performance, and a brighter financial horizon.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -1062,36 +1090,36 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>Welcome to Medrisk Consulting Ltd, your trusted partner in unraveling the complexities of taxes. Our Tax Advisory services are meticulously designed to empower individuals and businesses with strategic insights and solutions that optimize tax planning, reduce liabilities, and ensure regulatory compliance. With a personalized approach and innovative strategies, we are dedicated to guiding you towards financial efficiency and tranquility.</p>
         <p><strong>Our Comprehensive Tax Advisory Services:</strong></p>
         <p><strong>1. Personalized Tax Planning:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Analysis:</strong> Our experts delve deep into your financial landscape, identifying potential tax-saving opportunities and crafting personalized strategies.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Solutions:</strong> Design tax plans that seamlessly align with your unique financial objectives, maximizing benefits while minimizing liabilities.</li>
+        <ul class="feature-list">
+          <li><strong>Strategic Analysis:</strong> Our experts delve deep into your financial landscape, identifying potential tax-saving opportunities and crafting personalized strategies.</li>
+          <li><strong>Tailored Solutions:</strong> Design tax plans that seamlessly align with your unique financial objectives, maximizing benefits while minimizing liabilities.</li>
         </ul>
         <p><strong>2. Business Tax Strategies:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Optimized Structures:</strong> Evaluate and recommend tax-efficient business structures that boost profitability and enhance risk management.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Leveraging Incentives:</strong> Harness available tax credits and incentives to lower your tax burden and fuel business growth.</li>
+        <ul class="feature-list">
+          <li><strong>Optimized Structures:</strong> Evaluate and recommend tax-efficient business structures that boost profitability and enhance risk management.</li>
+          <li><strong>Leveraging Incentives:</strong> Harness available tax credits and incentives to lower your tax burden and fuel business growth.</li>
         </ul>
         <p><strong>3. Tax Compliance:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Regulatory Mastery:</strong> Navigate intricate tax regulations with confidence, ensuring full compliance and averting penalties.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Efficient Reporting:</strong> Streamline tax reporting processes for accuracy and timeliness in submissions.</li>
+        <ul class="feature-list">
+          <li><strong>Regulatory Mastery:</strong> Navigate intricate tax regulations with confidence, ensuring full compliance and averting penalties.</li>
+          <li><strong>Efficient Reporting:</strong> Streamline tax reporting processes for accuracy and timeliness in submissions.</li>
         </ul>
         <p><strong>4. Tax Problem Resolution:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Swift Issue Identification:</strong> Detect and address tax-related challenges promptly, preventing potential financial and legal ramifications.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Remedies:</strong> Develop comprehensive strategies to resolve tax problems, minimizing their impact on your financial well-being.</li>
+        <ul class="feature-list">
+          <li><strong>Swift Issue Identification:</strong> Detect and address tax-related challenges promptly, preventing potential financial and legal ramifications.</li>
+          <li><strong>Strategic Remedies:</strong> Develop comprehensive strategies to resolve tax problems, minimizing their impact on your financial well-being.</li>
         </ul>
         <p><strong>5. International Tax Planning:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Global Tax Strategy:</strong> Seamlessly navigate international taxation complexities, optimizing your global financial operations while upholding compliance.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Cross-Border Solutions:</strong> Leverage our expertise to tackle cross-border taxation intricacies, facilitating efficient and compliant international transactions.</li>
+        <ul class="feature-list">
+          <li><strong>Global Tax Strategy:</strong> Seamlessly navigate international taxation complexities, optimizing your global financial operations while upholding compliance.</li>
+          <li><strong>Cross-Border Solutions:</strong> Leverage our expertise to tackle cross-border taxation intricacies, facilitating efficient and compliant international transactions.</li>
         </ul>
         <p><strong>Why Choose Our Tax Advisory Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Expert Insight:</strong> Our seasoned tax advisors bring profound industry knowledge and experience, providing you with expert analysis and tailored solutions.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Customized Approach:</strong> We cater our recommendations to your unique financial landscape, goals, and specific tax obligations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Innovative Strategies:</strong> Benefit from innovative tax planning that optimizes your tax position and nurtures financial growth.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Management:</strong> Our approaches prioritize risk mitigation, ensuring compliance and minimizing potential liabilities.</li>
+        <ul class="feature-list">
+          <li><strong>Expert Insight:</strong> Our seasoned tax advisors bring profound industry knowledge and experience, providing you with expert analysis and tailored solutions.</li>
+          <li><strong>Customized Approach:</strong> We cater our recommendations to your unique financial landscape, goals, and specific tax obligations.</li>
+          <li><strong>Innovative Strategies:</strong> Benefit from innovative tax planning that optimizes your tax position and nurtures financial growth.</li>
+          <li><strong>Risk Management:</strong> Our approaches prioritize risk mitigation, ensuring compliance and minimizing potential liabilities.</li>
         </ul>
         <p>Embark on a journey of informed tax management with our Tax Advisory services. Connect with Medrisk Consulting Ltd today to explore how our expertise can illuminate your path to optimized tax planning, compliance, and a future brimming with financial success.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -1115,31 +1143,31 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>Welcome to Medrisk Consulting Ltd, your trusted partner in harnessing the strategic prowess of actuarial expertise. Our Actuarial Consultancy services are meticulously crafted to empower individuals, businesses, and organizations with insightful guidance that shapes investment, insurance, and pension-related decisions. With a focus on precise analysis and data-driven recommendations, we stand ready to illuminate your path through the intricate realm of actuarial science.</p>
         <p><strong>Our Comprehensive Actuarial Consultancy Services:</strong></p>
         <p><strong>1. Investment Advisory:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Insights:</strong> Unlock data-driven analyses guiding investment choices for optimal returns aligned with your financial aspirations.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Assessment:</strong> Our experts quantify and manage investment risks, assisting you in making prudent decisions to bolster your financial portfolio.</li>
+        <ul class="feature-list">
+          <li><strong>Strategic Insights:</strong> Unlock data-driven analyses guiding investment choices for optimal returns aligned with your financial aspirations.</li>
+          <li><strong>Risk Assessment:</strong> Our experts quantify and manage investment risks, assisting you in making prudent decisions to bolster your financial portfolio.</li>
         </ul>
         <p><strong>2. Insurance Solutions:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Coverage:</strong> Receive tailored recommendations for insurance coverage in harmony with your risk profile, safeguarding your financial well-being.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Claims Analysis:</strong> Our experts navigate insurance claims, ensuring smooth processes and equitable settlements.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Coverage:</strong> Receive tailored recommendations for insurance coverage in harmony with your risk profile, safeguarding your financial well-being.</li>
+          <li><strong>Claims Analysis:</strong> Our experts navigate insurance claims, ensuring smooth processes and equitable settlements.</li>
         </ul>
         <p><strong>3. Pension Optimization:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Robust Planning:</strong> Craft pension strategies that ensure a secure future, harnessing actuarial modeling to guarantee sustainable retirement solutions.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Mitigation:</strong> Identify and manage potential pension liabilities through strategic planning, reducing risk exposure.</li>
+        <ul class="feature-list">
+          <li><strong>Robust Planning:</strong> Craft pension strategies that ensure a secure future, harnessing actuarial modeling to guarantee sustainable retirement solutions.</li>
+          <li><strong>Risk Mitigation:</strong> Identify and manage potential pension liabilities through strategic planning, reducing risk exposure.</li>
         </ul>
         <p><strong>4. Data-Driven Insights:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Quantitative Analysis:</strong> Capitalize on data's power for informed decisions, employing actuarial techniques to model and project financial outcomes.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Scenario Planning:</strong> Explore diverse scenarios to assess potential outcomes, empowering proactive, well-informed decisions.</li>
+        <ul class="feature-list">
+          <li><strong>Quantitative Analysis:</strong> Capitalize on data's power for informed decisions, employing actuarial techniques to model and project financial outcomes.</li>
+          <li><strong>Scenario Planning:</strong> Explore diverse scenarios to assess potential outcomes, empowering proactive, well-informed decisions.</li>
         </ul>
         <p><strong>Why Opt for Our Actuarial Consultancy Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Expert Actuarial Insight:</strong> Our seasoned professionals bring profound industry knowledge, offering you tailored analyses and expert solutions.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Holistic Approach:</strong> We provide a panoramic view of your financial landscape, considering all aspects for well-rounded and informed decisions.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Data-Powered Recommendations:</strong> Rely on precise data analysis and modeling, emboldening your navigation of intricate financial choices.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Strategic Alignment:</strong> Our recommendations are finely tuned to match your unique financial goals, risk appetite, and long-term visions.</li>
+        <ul class="feature-list">
+          <li><strong>Expert Actuarial Insight:</strong> Our seasoned professionals bring profound industry knowledge, offering you tailored analyses and expert solutions.</li>
+          <li><strong>Holistic Approach:</strong> We provide a panoramic view of your financial landscape, considering all aspects for well-rounded and informed decisions.</li>
+          <li><strong>Data-Powered Recommendations:</strong> Rely on precise data analysis and modeling, emboldening your navigation of intricate financial choices.</li>
+          <li><strong>Strategic Alignment:</strong> Our recommendations are finely tuned to match your unique financial goals, risk appetite, and long-term visions.</li>
         </ul>
         <p>Experience the precision and foresight of actuarial science as you chart your financial course. Connect with Medrisk Consulting Ltd today to explore how our Actuarial Consultancy services can illuminate your path to optimized investments, insurance coverage, pension planning, and data-driven financial triumph.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -1163,29 +1191,29 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
         <p>Welcome to Medrisk Consulting Ltd, your steadfast ally in traversing the intricate realm of insurance. Our Insurance Consultation services are meticulously curated to offer you personalized insurance solutions through a team of adept Financial Advisors. We stand committed to understanding your distinct needs and vulnerabilities, forging partnerships with over 10 esteemed underwriters in Kenya. This empowers us to provide an extensive spectrum of insurance options, ensuring not only affordability but also comprehensive coverage across diverse classes of insurance.</p>
         <p><strong>Our Comprehensive Insurance Consultation Services:</strong></p>
         <p><strong>1. Personalized Assessment:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Holistic Insight:</strong> Our Financial Advisors delve deep into your individual or business requirements, gaining a profound understanding of your distinctive needs.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Risk Profiling:</strong> Identify potential vulnerabilities and exposures, enabling us to propose insurance options tailored to your specific circumstances.</li>
+        <ul class="feature-list">
+          <li><strong>Holistic Insight:</strong> Our Financial Advisors delve deep into your individual or business requirements, gaining a profound understanding of your distinctive needs.</li>
+          <li><strong>Risk Profiling:</strong> Identify potential vulnerabilities and exposures, enabling us to propose insurance options tailored to your specific circumstances.</li>
         </ul>
         <p><strong>2. Extensive Underwriter Partnerships:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Diverse Coverage Spectrum:</strong> Capitalizing on our affiliations with over 10 underwriters, we present an array of insurance classes catering to a wide array of needs.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Budget-Friendly Rates:</strong> Access competitive and cost-effective insurance rates without compromising the depth and quality of coverage.</li>
+        <ul class="feature-list">
+          <li><strong>Diverse Coverage Spectrum:</strong> Capitalizing on our affiliations with over 10 underwriters, we present an array of insurance classes catering to a wide array of needs.</li>
+          <li><strong>Budget-Friendly Rates:</strong> Access competitive and cost-effective insurance rates without compromising the depth and quality of coverage.</li>
         </ul>
         <p><strong>3. Comprehensive Classes of Insurance:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Motor Insurance:</strong> Shield your vehicles with comprehensive motor insurance, providing a financial safety net against accidents, theft, and damages.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Medical Insurance:</strong> Nurture peace of mind with meticulously tailored medical insurance plans, enveloping you in a cocoon of healthcare support.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>WIBA (Work Injury Benefit Act):</strong> Safeguard against workplace injury risks with WIBA coverage, extending financial protection to employees during work-related accidents.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Group Personal Accident:</strong> Extend a mantle of financial security to your team through group personal accident insurance, cushioning them against unforeseen injuries.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>And Beyond:</strong> Explore a rich tapestry of insurance classes, each meticulously crafted to cater to distinct risk scenarios and provide comprehensive safeguarding.</li>
+        <ul class="feature-list">
+          <li><strong>Motor Insurance:</strong> Shield your vehicles with comprehensive motor insurance, providing a financial safety net against accidents, theft, and damages.</li>
+          <li><strong>Medical Insurance:</strong> Nurture peace of mind with meticulously tailored medical insurance plans, enveloping you in a cocoon of healthcare support.</li>
+          <li><strong>WIBA (Work Injury Benefit Act):</strong> Safeguard against workplace injury risks with WIBA coverage, extending financial protection to employees during work-related accidents.</li>
+          <li><strong>Group Personal Accident:</strong> Extend a mantle of financial security to your team through group personal accident insurance, cushioning them against unforeseen injuries.</li>
+          <li><strong>And Beyond:</strong> Explore a rich tapestry of insurance classes, each meticulously crafted to cater to distinct risk scenarios and provide comprehensive safeguarding.</li>
         </ul>
         <p><strong>Why Opt for Our Insurance Consultation Services:</strong></p>
-        <ul>
-          <li><i class="fas fa-check-circle"></i> <strong>Tailored Precision:</strong> Our Financial Advisors fashion insurance solutions meticulously aligned with your unique needs, ensuring coverage that resonates.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Trusted Underwriter Network:</strong> Benefit from our expansive network of reputable underwriters, ensuring access to dependable and quality insurance offerings.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Holistic Safeguarding:</strong> Traverse a spectrum of insurance classes, orchestrating a symphony of coverage that secures your financial well-being across multifarious risk landscapes.</li>
-          <li><i class="fas fa-check-circle"></i> <strong>Affordability Embodied:</strong> Revel in cost-effective and competitive insurance rates, opening avenues to comprehensive coverage for all.</li>
+        <ul class="feature-list">
+          <li><strong>Tailored Precision:</strong> Our Financial Advisors fashion insurance solutions meticulously aligned with your unique needs, ensuring coverage that resonates.</li>
+          <li><strong>Trusted Underwriter Network:</strong> Benefit from our expansive network of reputable underwriters, ensuring access to dependable and quality insurance offerings.</li>
+          <li><strong>Holistic Safeguarding:</strong> Traverse a spectrum of insurance classes, orchestrating a symphony of coverage that secures your financial well-being across multifarious risk landscapes.</li>
+          <li><strong>Affordability Embodied:</strong> Revel in cost-effective and competitive insurance rates, opening avenues to comprehensive coverage for all.</li>
         </ul>
         <p>Experience the strength of custom-tailored insurance solutions with Medrisk Consulting Ltd. Reach out to us today and embark on a journey where our Insurance Consultation services shield your financial future, shepherd you through uncertainties, and bestow upon you the tranquility of mind you rightfully deserve.</p>
         <a href="booking.html" class="btn-service">Book a Meeting <i class="fas fa-arrow-right"></i></a>
@@ -1202,6 +1230,15 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       <div class="hs-text">
         <h2>Hospital <span>Management</span> Solutions</h2>
         <p>Drawing from our expertise with <strong>Healthcare Designers Limited</strong> and <strong>Dimetrical Limited</strong>, we offer comprehensive hospital management consultancy.</p>
+        <p>We help healthcare facilities optimize operations, enhance patient care, and achieve operational excellence through tailored strategies.</p>
+        <ul class="feature-list">
+          <li>Hospital Operations Optimization</li>
+          <li>Patient Experience Enhancement</li>
+          <li>Healthcare Compliance & Governance</li>
+          <li>Staff Training & Development</li>
+          <li>Financial Management & Cost Control</li>
+          <li>Technology Integration & Digital Health</li>
+        </ul>
         <a href="booking.html" class="btn-service" style="background: var(--light-green); color: var(--dark-navy); box-shadow: 0 6px 20px rgba(123,193,86,0.25);">Explore Hospital Solutions <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -1247,11 +1284,9 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
   </footer>
 
   <script>
-    // Auto copyright
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('year2').textContent = new Date().getFullYear();
 
-    // Mobile hamburger
     const hamburger = document.getElementById('hamburger');
     const overlay = document.getElementById('mobileOverlay');
     hamburger.addEventListener('click', () => {
@@ -1261,7 +1296,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
       link.addEventListener('click', () => overlay.classList.remove('open'));
     });
 
-    // Scroll reveal
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1272,7 +1306,6 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
     }, { threshold: 0.10, rootMargin: '0px 0px -20px 0px' });
     revealElements.forEach(el => observer.observe(el));
 
-    // Smooth anchor scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -1289,4 +1322,3 @@ I've redesigned the service-detail page with a full-width layout that maximizes 
   </script>
 </body>
 </html>
-```
