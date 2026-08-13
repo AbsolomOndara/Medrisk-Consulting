@@ -3,7 +3,7 @@
   
   <!-- Homepage (Highest Priority) -->
   <url>
-    <loc>https://medriskconsultingltd.co.ke/</loc>
+    <loc>https://medriskconsulting.co.ke/</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- About Us -->
   <url>
-    <loc>https://medriskconsultingltd.co.ke/about.html</loc>
+    <loc>https://medriskconsulting.co.ke/about.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
 
   <!-- Services -->
   <url>
-    <loc>https://medriskconsultingltd.co.ke/service-detail.html</loc>
+    <loc>https://medriskconsulting.co.ke/service-detail.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -27,7 +27,7 @@
 
   <!-- Book a Meeting -->
   <url>
-    <loc>https://medriskconsultingltd.co.ke/booking.html</loc>
+    <loc>https://medriskconsulting.co.ke/booking.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -35,7 +35,7 @@
 
   <!-- Contact Us -->
   <url>
-    <loc>https://medriskconsultingltd.co.ke/contact.html</loc>
+    <loc>https://medriskconsulting.co.ke/contact.html</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
