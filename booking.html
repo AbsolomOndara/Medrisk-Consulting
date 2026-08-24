@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
     <title>Book a Meeting · Medrisk Consulting</title>
-    <link rel="icon" href="images/fav.jpg" type="image/jpeg">
-    <link rel="apple-touch-icon" href="images/fav.jpg">
+    <link rel="icon" href="images/logo.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
@@ -688,6 +688,45 @@
                 font-size: 2.8rem;
             }
         }
+        /* ===== 2026 MEDRISK BOOKING EXPERIENCE ===== */
+        :root{--ink:#092f45;--navy:#115276;--teal:#146185;--green:#71b34e;--lime:#a8e27c;--paper:#f4f7f5;--white:#fff;--line:rgba(9,47,69,.15);--muted:#56717f;--radius:22px;--max:1240px}
+        body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;display:block;min-height:100vh}
+        body::before{content:'';position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(rgba(9,47,69,.14) .55px,transparent .55px);background-size:7px 7px;z-index:-1}
+        .navbar{top:20px;width:min(calc(100% - 40px),1240px);height:76px;padding:0 20px 0 14px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(4,35,49,.88);box-shadow:0 20px 50px rgba(0,0,0,.18);color:white}
+        .nav-logo{gap:12px}.nav-logo img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:white;padding:3px}.nav-logo .brand h1{font-size:1rem;color:white;font-weight:800}.nav-logo .brand span{font-size:.56rem;letter-spacing:.1em;color:var(--lime);text-transform:uppercase}.nav-links{gap:28px}.nav-links a{color:white;font-size:.77rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.nav-links a.active{color:var(--lime)}.nav-links a.active::after{display:none}.nav-cta{padding:13px 20px;background:var(--green);color:#082e21!important;box-shadow:none;text-transform:none!important;letter-spacing:0!important}.nav-cta:hover{background:var(--lime)!important;color:#082e21!important;transform:translateY(-2px)}
+        .page-hero{min-height:570px;padding:164px max(5vw,24px) 150px;text-align:left;background:linear-gradient(118deg,#061f2b 0%,#092f45 58%,#115276 100%);isolation:isolate}
+        .page-hero::before{inset:auto -12% -58% auto;width:650px;height:650px;background:radial-gradient(circle,rgba(113,179,78,.28),transparent 66%);z-index:-1}.page-hero::after{content:'';inset:0;position:absolute;background:linear-gradient(90deg,transparent 49.7%,rgba(255,255,255,.075) 49.8%,rgba(255,255,255,.075) 50%,transparent 50.1%);background-size:92px 100%;opacity:.35;z-index:-1}
+        .page-hero>*{width:min(1240px,100%);margin-left:auto;margin-right:auto}.page-hero h1{max-width:760px;font-size:clamp(3.2rem,7vw,6.8rem);font-weight:800;line-height:.92;letter-spacing:-.065em}.page-hero h1 span{color:var(--lime);font-style:italic;font-weight:600}.page-hero p{max-width:610px;margin:28px auto 0 0;font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.65;color:rgba(255,255,255,.72)}
+        .booking-section{position:relative;margin-top:-92px;padding:0 20px 100px;z-index:2}.booking-container{width:min(1240px,100%);max-width:none;margin:auto;padding:0;display:grid;grid-template-columns:minmax(300px,.78fr) minmax(480px,1.22fr);background:white;border:1px solid rgba(9,47,69,.11);border-radius:30px;box-shadow:0 30px 80px rgba(6,31,43,.16);overflow:hidden}
+        .booking-intro{display:flex;flex-direction:column;align-items:flex-start;text-align:left;margin:0;padding:54px 46px;background:var(--ink);color:white;border:none;border-radius:0;position:relative;overflow:hidden}.booking-intro::after{content:'↗';position:absolute;right:-10px;bottom:-65px;font-size:15rem;font-weight:800;line-height:1;color:rgba(168,226,124,.08)}.booking-intro .eyebrow{display:flex;align-items:center;gap:9px;color:var(--lime);font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.booking-intro .eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(113,179,78,.12)}.booking-intro h2{font-size:clamp(2rem,3vw,3.15rem);line-height:1.06;letter-spacing:-.045em;margin:28px 0 18px}.booking-intro>p{color:rgba(255,255,255,.66);font-size:1rem;line-height:1.7}.booking-notes{display:grid;gap:18px;margin-top:42px;width:100%}.booking-note{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.13)}.booking-note i{width:42px;height:42px;display:grid;place-items:center;border-radius:50%;background:rgba(168,226,124,.12);color:var(--lime)}.booking-note strong{display:block;font-size:.85rem}.booking-note span{display:block;margin-top:2px;color:rgba(255,255,255,.52);font-size:.76rem}
+        .toggle-wrapper,.delivery-indicator,#bookingForm{grid-column:2}.toggle-wrapper{align-self:end;margin:48px 52px 18px;padding:5px;width:calc(100% - 104px);border-radius:15px;background:#edf2ef;border:1px solid rgba(9,47,69,.08)}.toggle-wrapper .toggle-label{border-radius:11px;padding:13px 20px;font-size:.82rem;font-weight:800;color:var(--muted);cursor:pointer}.toggle-wrapper .toggle-label.active{background:white;color:var(--ink);box-shadow:0 5px 16px rgba(9,47,69,.1)}.toggle-wrapper .toggle-label.active:first-child{color:#198754}
+        .delivery-indicator{margin:0 52px;padding:13px 16px;border-radius:12px;background:rgba(113,179,78,.09);border:1px solid rgba(113,179,78,.24);color:var(--muted);font-size:.78rem}.delivery-indicator .highlight-phone{color:var(--ink);font-weight:800}
+        #bookingForm{padding:30px 52px 54px}.form-group{margin-bottom:22px}.form-group label{display:block;margin-bottom:8px;color:var(--ink);font-size:.73rem;font-weight:800;text-transform:uppercase;letter-spacing:.055em}.field-hint{color:#80939c;text-transform:none;letter-spacing:0;font-weight:500}.form-group input,.form-group select,.form-group textarea{width:100%;border:1px solid rgba(9,47,69,.16);border-radius:13px;background:#f8faf9;color:var(--ink);padding:15px 16px;font:500 .94rem Inter;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}.form-group textarea{min-height:130px;resize:vertical}.form-group input:hover,.form-group select:hover,.form-group textarea:hover{border-color:rgba(9,47,69,.3);background:white}.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--green);background:white;box-shadow:0 0 0 4px rgba(113,179,78,.13)}.form-row{gap:18px}.required{color:#c24a3d}.char-counter{font-size:.68rem;color:#82939b}.submit-btn{min-height:58px;border-radius:999px;background:var(--green);color:#092d1d;font-size:.89rem;font-weight:900;box-shadow:0 12px 28px rgba(113,179,78,.26);transition:.22s}.submit-btn:hover{background:var(--lime);transform:translateY(-2px);box-shadow:0 16px 34px rgba(113,179,78,.32)}
+        .footer{background:#061f2b;color:white;padding:70px 0 24px}.footer .wrap{width:min(calc(100% - 40px),1240px);margin-inline:auto}.footer-grid{max-width:none;margin:0;display:grid;grid-template-columns:1.5fr .7fr .8fr;gap:8vw;padding:0 0 60px}.footer .brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-bottom:24px}.footer .logo-img{width:48px;height:48px;object-fit:contain;border-radius:12px;background:white;padding:3px}.footer .brand-copy{line-height:1}.footer .brand-copy strong{font-weight:800;font-size:1rem;display:block;color:white}.footer .brand-copy small{font-size:.56rem;letter-spacing:.1em;color:var(--lime);text-transform:uppercase}.footer p,.footer a{color:rgba(255,255,255,.6)}.footer p{font-size:.94rem;max-width:390px}.footer h3{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin:0 0 18px;color:white}.footer-links{display:grid;gap:10px}.footer-links a{text-decoration:none;font-size:.9rem}.footer-links a:hover{color:var(--lime)}.footer-bottom{display:flex;justify-content:space-between;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);font-size:.72rem;color:rgba(255,255,255,.38)}.footer-bottom a{color:rgba(255,255,255,.55);text-decoration:none}.footer-bottom a:hover{color:var(--lime)}
+        .toast{border-radius:15px;box-shadow:0 20px 55px rgba(6,31,43,.2)}
+        @media(max-width:900px){.navbar{height:66px;top:10px;width:calc(100% - 24px);padding:0 10px}.nav-logo img{width:42px;height:42px}.nav-links{display:none}.hamburger{display:flex}.hamburger span{background:white}.mobile-overlay{background:rgba(6,31,43,.97)}.booking-container{grid-template-columns:1fr}.booking-intro,.toggle-wrapper,.delivery-indicator,#bookingForm{grid-column:1}.booking-intro{padding:42px 34px}.toggle-wrapper{margin:34px 34px 16px;width:calc(100% - 68px)}.delivery-indicator{margin:0 34px}#bookingForm{padding:26px 34px 42px}.footer-grid{grid-template-columns:1fr;gap:38px}.footer-bottom{display:grid;gap:8px}}
+        @media(max-width:600px){.nav-logo .brand span{display:none}.page-hero{min-height:500px;padding:130px 22px 120px}.page-hero h1{font-size:clamp(3.2rem,16vw,4.8rem)}.booking-section{margin-top:-72px;padding:0 14px 74px}.booking-container{border-radius:22px}.booking-intro{padding:34px 24px}.booking-intro h2{font-size:2rem}.booking-notes{margin-top:30px}.toggle-wrapper{margin:26px 20px 14px;width:calc(100% - 40px)}.delivery-indicator{margin:0 20px;line-height:1.6}#bookingForm{padding:24px 20px 34px}.form-row{display:grid;grid-template-columns:1fr;gap:0}.submit-btn{width:100%}.footer .wrap{width:calc(100% - 28px)}}
+        /* ===== REFINED BOOKING LAYOUT ===== */
+        .page-hero{min-height:430px;padding:150px max(5vw,24px) 112px;background:linear-gradient(112deg,#061f2b 0%,#0b3a50 60%,#146185 100%)}
+        .page-hero h1{font-size:clamp(3rem,6vw,5.7rem);max-width:900px}
+        .page-hero p{margin-top:20px;max-width:660px;color:rgba(255,255,255,.78)}
+        .booking-section{margin-top:-58px;padding-bottom:110px}
+        .booking-container{grid-template-columns:minmax(0,1.35fr) minmax(330px,.65fr);grid-template-rows:auto auto 1fr;align-items:start;border-radius:24px;box-shadow:0 28px 75px rgba(6,31,43,.14)}
+        .toggle-wrapper{grid-column:1;grid-row:1;margin:38px 46px 14px;width:calc(100% - 92px);align-self:auto}
+        .delivery-indicator{grid-column:1;grid-row:2;margin:0 46px}
+        #bookingForm{grid-column:1;grid-row:3;padding:28px 46px 48px}
+        .booking-intro{grid-column:2;grid-row:1 / 4;align-self:stretch;min-height:100%;padding:48px 40px;background:#e9f3e5;color:var(--ink);border-left:1px solid rgba(9,47,69,.1)}
+        .booking-intro::after{right:-28px;bottom:-52px;color:var(--green);opacity:.3}
+        .booking-intro .eyebrow{color:#477b31}.booking-intro .eyebrow::before{background:var(--green)}
+        .booking-intro h2{color:var(--ink);font-size:clamp(2rem,2.7vw,3rem);margin-top:38px}
+        .booking-intro>p{color:var(--muted)}
+        .booking-notes{margin-top:auto;padding-top:42px;position:relative;z-index:1}
+        .booking-note{border-top-color:rgba(9,47,69,.13)}.booking-note i{background:white;color:#477b31;box-shadow:0 6px 18px rgba(9,47,69,.08)}.booking-note strong{color:var(--ink)}.booking-note span{color:var(--muted)}
+        .form-group input,.form-group select,.form-group textarea{background:white;border-color:rgba(9,47,69,.18);box-shadow:inset 0 1px 0 rgba(9,47,69,.02)}
+        .submit-btn{justify-content:center;background:var(--ink);color:white;box-shadow:none}.submit-btn:hover{background:var(--navy);color:white;box-shadow:0 14px 28px rgba(9,47,69,.2)}
+        @media(max-width:900px){.page-hero{min-height:400px;padding:130px 24px 100px}.booking-container{grid-template-columns:1fr;grid-template-rows:auto}.toggle-wrapper{grid-column:1;grid-row:1;margin:30px 32px 14px;width:calc(100% - 64px)}.delivery-indicator{grid-column:1;grid-row:2;margin:0 32px}#bookingForm{grid-column:1;grid-row:3;padding:26px 32px 38px}.booking-intro{grid-column:1;grid-row:4;padding:40px 32px;min-height:0;border-left:0;border-top:1px solid rgba(9,47,69,.1)}.booking-notes{margin-top:12px;padding-top:24px}}
+        @media(max-width:600px){.page-hero{min-height:390px;padding:124px 22px 94px}.page-hero h1{font-size:clamp(3rem,15vw,4.35rem)}.booking-section{margin-top:-46px}.toggle-wrapper{margin:22px 18px 12px;width:calc(100% - 36px)}.delivery-indicator{margin:0 18px}#bookingForm{padding:22px 18px 30px}.booking-intro{padding:34px 24px}.booking-intro h2{margin-top:26px}.booking-notes{padding-top:18px}.booking-note{grid-template-columns:38px 1fr}.booking-note i{width:38px;height:38px}}
+        @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
     </style>
 </head>
 <body>
@@ -734,7 +773,14 @@
 
             <!-- Friendly Intro -->
             <div class="booking-intro">
-
+                <span class="eyebrow">Start a conversation</span>
+                <h2>Your next move starts here.</h2>
+                <p>Tell us what you are working through. We will review your request and respond within 24 hours with a practical next step.</p>
+                <div class="booking-notes">
+                    <div class="booking-note"><i class="fas fa-clock"></i><div><strong>Response within 24 hours</strong><span>A real person will review your request.</span></div></div>
+                    <div class="booking-note"><i class="fas fa-comments"></i><div><strong>Choose how to send</strong><span>Continue through WhatsApp or email.</span></div></div>
+                    <div class="booking-note"><i class="fas fa-shield-alt"></i><div><strong>Your details stay private</strong><span>Shared only with the Medrisk team.</span></div></div>
+                </div>
             </div>
 
             <!-- Delivery Toggle -->
@@ -825,42 +871,11 @@
     </div>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="footer-grid">
-            <div>
-                <h4>Medrisk Consulting</h4>
-                <p style="color:rgba(255,255,255,0.4); margin-bottom:6px; font-size:0.9rem;">Bright Solutions, Valuable Results</p>
-                <p style="font-size:0.8rem; color:rgba(255,255,255,0.3);">&copy; <span id="year"></span> Medrisk Consulting Ltd</p>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="service-detail.html">Services</a>
-                <a href="booking.html">Book a Meeting</a>
-            </div>
-            <div>
-                <h4>Contact</h4>
-                <a href="tel:+254790409121"><i class="fas fa-phone" style="margin-right:8px;"></i>0790 409 121</a>
-                <a href="mailto:info@medriskconsulting.co.ke"><i class="fas fa-envelope" style="margin-right:8px;"></i>info@medriskconsulting.co.ke</a>
-                <a href="https://www.medriskconsulting.co.ke"><i class="fas fa-globe" style="margin-right:8px;"></i>www.medriskconsulting.co.ke</a>
-            </div>
-            <div>
-                <h4>Follow Us</h4>
-                <div class="socials">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copy">&copy; <span id="year2"></span> Medrisk Consulting Ltd · Built with reliability &amp; expertise</div>
-    </footer>
+    <footer class="footer"><div class="wrap"><div class="footer-grid"><div><a class="brand" href="index.html"><img class="logo-img" src="images/logo.jpg" alt="Medrisk Consulting logo"><span class="brand-copy"><strong>Medrisk Consulting</strong><small>Bright Solutions, Valuable Results</small></span></a><p>Practical consultancy and training for stronger organizations across Kenya and beyond.</p></div><div><h3>Explore</h3><div class="footer-links"><a href="about.html">About us</a><a href="service-detail.html">Services</a><a href="index.html#approach">Our approach</a><a href="booking.html">Book a meeting</a></div></div><div><h3>Contact</h3><div class="footer-links"><a href="tel:+254790409121">+254 790 409 121</a><a href="mailto:info@medriskconsulting.co.ke">info@medriskconsulting.co.ke</a><a href="https://medriskconsulting.co.ke/">medriskconsulting.co.ke</a></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Medrisk Consulting Ltd. All rights reserved.</span><span>Developed by <a href="https://www.worldways-webdevelopers.co.ke" target="_blank" rel="noopener noreferrer">WorldWays Web-Developers</a></span></div></div></footer>
 
     <script>
         // ===== AUTO COPYRIGHT =====
         document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('year2').textContent = new Date().getFullYear();
 
         // ===== MOBILE HAMBURGER =====
         const hamburger = document.getElementById('hamburger');
@@ -889,7 +904,7 @@
                     `<i class="fas fa-info-circle"></i> We'll send your request via <strong class="wa"><i class="fab fa-whatsapp"></i> WhatsApp</strong> to <span class="highlight-phone">0790 409 121</span>`;
             } else {
                 deliveryIndicator.innerHTML =
-                    `<i class="fas fa-info-circle"></i> We'll send your request via <strong class="email"><i class="fas fa-envelope"></i> Email</strong> to <span class="highlight-phone">absolomjayson46@gmail.com</span>`;
+                    `<i class="fas fa-info-circle"></i> We'll send your request via <strong class="email"><i class="fas fa-envelope"></i> Email</strong> to <span class="highlight-phone">info@medriskconsulting.co.ke</span>`;
             }
         }
 
@@ -1114,7 +1129,7 @@
                     5000
                 );
             } else {
-                const recipientEmail = 'absolomjayson46@gmail.com';
+                const recipientEmail = 'info@medriskconsulting.co.ke';
                 const subject = encodeURIComponent(`Booking Request from ${fullName}`);
                 const emailBody = encodeURIComponent(
                     `New Booking Request\n\n` +
