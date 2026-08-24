@@ -615,6 +615,72 @@
     @media(max-width:900px){.navbar{top:10px;height:66px;width:calc(100% - 28px);padding:0 12px}.nav-links{display:none}.hamburger{display:flex}.mobile-overlay{background:rgba(4,35,49,.97)}.page-hero{min-height:580px;padding:140px 20px 65px}.service-jump-inner{width:calc(100% - 28px);height:62px}.service-detail-section{padding:78px 0}.service-detail-inner,.hospital-special .hospital-inner{grid-template-columns:1fr;gap:34px;padding:0 20px}.service-detail-section:nth-of-type(even) .service-image{order:0}.service-image,.hospital-special .hospital-inner .hs-image{position:relative;top:auto;aspect-ratio:16/9}.service-image img,.hospital-special .hospital-inner .hs-image img{height:100%}.service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:2.7rem}.hospital-special{padding:78px 0}.footer-grid{grid-template-columns:1fr 1fr}.footer .copy{display:block}}
     @media(max-width:520px){.nav-logo .brand span{display:none}.nav-logo img{width:42px;height:42px}.page-hero-content h1{font-size:3.7rem}.page-hero-content p{font-size:1rem}.service-detail-inner,.hospital-special .hospital-inner{padding:0 14px}.service-image,.hospital-special .hospital-inner .hs-image{aspect-ratio:4/3}.service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:2.3rem}.feature-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.footer .footer-inner{padding:0 14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+
+    /* ===== FLUID RESPONSIVE SYSTEM ===== */
+    :where(.service-detail-inner,.hospital-inner,.footer-grid)>*{min-width:0}:where(h1,h2,h3,p,a,strong,span,li){overflow-wrap:break-word}.hamburger{touch-action:manipulation}.mobile-overlay{overscroll-behavior:contain}.service-jump-inner{scroll-snap-type:x proximity}.service-jump a{scroll-snap-align:center}
+
+    @media(max-width:1200px){
+      .page-hero{padding-inline:max(24px,calc((100vw - 1120px)/2));min-height:600px}
+      .service-detail-inner,.hospital-special .hospital-inner{gap:5vw}
+      .service-image,.hospital-special .hospital-inner .hs-image{top:92px}
+      .footer-grid{grid-template-columns:1.3fr .8fr 1fr .55fr;gap:4vw}
+    }
+
+    @media(max-width:1024px){
+      .page-hero{min-height:540px;padding-top:145px;padding-bottom:70px}.page-hero-content h1{font-size:clamp(3.5rem,8vw,5.8rem)}
+      .service-detail-section,.hospital-special{padding-block:88px}
+      .service-detail-inner,.hospital-special .hospital-inner{grid-template-columns:minmax(280px,.75fr) minmax(0,1.25fr);gap:42px;padding-inline:24px}
+      .service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:clamp(2.35rem,4.8vw,3.7rem)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:42px 8vw}
+    }
+
+    @media(max-width:900px){
+      .navbar{top:10px;width:calc(100% - 24px);height:66px;padding:0 10px}.nav-logo img{width:43px;height:43px}.nav-logo .brand h1{font-size:.9rem}.nav-logo .brand span{display:none}
+      .mobile-overlay{height:100dvh;padding:max(86px,12vh) max(28px,8vw) max(34px,env(safe-area-inset-bottom));justify-content:flex-start;overflow-y:auto;gap:18px}.mobile-overlay a{font:700 clamp(1.6rem,6vw,2.2rem) Manrope,sans-serif}.mobile-overlay .mobile-cta{width:min(100%,360px);text-align:center;font-size:1rem}
+      .page-hero{min-height:500px;padding:130px 20px 62px}.page-hero-content{max-width:720px}.page-hero-content:before{font-size:.67rem;margin-bottom:17px}.page-hero-content h1{font-size:clamp(3.25rem,10vw,5.2rem);margin-bottom:22px}.page-hero-content p{font-size:1.05rem}
+      .service-jump{top:0}.service-jump-inner{width:calc(100% - 20px);height:60px;gap:7px}.service-jump a{padding:9px 12px;font-size:.67rem}
+      .service-detail-section,.hospital-special{padding-block:76px;scroll-margin-top:60px}
+      .service-detail-inner,.hospital-special .hospital-inner{grid-template-columns:1fr;gap:34px;padding-inline:20px}
+      .service-detail-section:nth-of-type(even) .service-image{order:0}
+      .service-image,.hospital-special .hospital-inner .hs-image{position:relative;top:auto;width:min(100%,720px);aspect-ratio:16/9;margin:0 auto;border-radius:19px}
+      .service-image img,.hospital-special .hospital-inner .hs-image img{width:100%;height:100%;object-fit:cover}
+      .service-text,.hospital-special .hospital-inner .hs-text{max-width:760px;margin-inline:auto;width:100%}
+      .service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:clamp(2.4rem,7vw,3.7rem)}
+      .service-text p,.hospital-special .hospital-inner .hs-text p{font-size:.96rem;line-height:1.75}
+      .footer .footer-inner{padding-inline:20px}.footer-grid{grid-template-columns:1fr 1fr}.footer .copy{display:grid;gap:8px;line-height:1.6}
+    }
+
+    @media(max-width:700px){
+      .page-hero{min-height:440px;padding-top:116px;padding-bottom:52px}.page-hero-content h1{font-size:clamp(3rem,12vw,4.5rem);line-height:.94}.page-hero-content p{font-size:1rem;line-height:1.58}
+      .service-jump-inner{width:calc(100% - 12px);height:56px}.service-jump a{font-size:.64rem}
+      .service-detail-section,.hospital-special{padding-block:66px}.service-detail-inner,.hospital-special .hospital-inner{padding-inline:16px;gap:28px}
+      .service-image,.hospital-special .hospital-inner .hs-image{aspect-ratio:4/3;border-radius:16px}.service-image .image-overlay{padding:60px 17px 17px;font-size:.67rem}
+      .service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:clamp(2.2rem,9vw,3.2rem);margin:16px 0 23px}
+      .service-text p,.hospital-special .hospital-inner .hs-text p{font-size:.93rem;line-height:1.7}.service-text .service-tag{font-size:.61rem;padding:7px 10px}
+      .feature-grid{grid-template-columns:1fr}.feature-card{padding:14px}.feature-list li,.hospital-special .hospital-inner .hs-text .feature-list li{padding:10px 0 10px 25px;font-size:.88rem}
+      .service-text .btn-service,.hospital-special .btn-service{width:100%;min-height:52px;justify-content:center;text-align:center;padding:12px 17px}
+      .footer{padding-top:60px}.footer-grid{grid-template-columns:1fr;gap:35px;padding-bottom:42px}
+    }
+
+    @media(max-width:520px){
+      .navbar{width:calc(100% - 16px);padding-inline:8px}.nav-logo{gap:8px}.nav-logo img{width:41px;height:41px}.nav-logo .brand h1{font-size:.8rem}.hamburger{width:42px;height:42px}
+      .page-hero{min-height:400px;padding:106px 14px 46px}.page-hero-content:before{font-size:.59rem;letter-spacing:.1em}.page-hero-content h1{font-size:clamp(2.75rem,14vw,3.8rem)}.page-hero-content p{font-size:.94rem}
+      .service-jump-inner{padding-inline:2px}.service-jump a{padding:8px 10px}
+      .service-detail-section,.hospital-special{padding-block:56px}.service-detail-inner,.hospital-special .hospital-inner{padding-inline:12px}.service-image,.hospital-special .hospital-inner .hs-image{aspect-ratio:1/1}
+      .service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:clamp(2rem,10.8vw,2.85rem)}.service-text p,.hospital-special .hospital-inner .hs-text p{font-size:.9rem}
+      .feature-card .feature-title{font-size:.9rem}.feature-card .feature-desc{font-size:.82rem}.feature-list{padding-left:0}
+      .footer .footer-inner{padding-inline:14px}.footer h4{margin-bottom:13px}.socials{gap:8px}
+    }
+
+    @media(max-width:360px){
+      .nav-logo .brand h1{font-size:.74rem}.page-hero-content h1{font-size:2.6rem}.page-hero-content p{font-size:.9rem}
+      .service-detail-inner,.hospital-special .hospital-inner{padding-inline:10px}.service-text h2,.hospital-special .hospital-inner .hs-text h2{font-size:1.95rem}
+      .service-text p,.hospital-special .hospital-inner .hs-text p{font-size:.87rem}.feature-list li{font-size:.83rem}
+    }
+
+    @media(max-height:560px) and (orientation:landscape) and (max-width:900px){
+      .mobile-overlay{padding-top:76px}.mobile-overlay a{font-size:1.3rem}.page-hero{min-height:360px;padding-top:110px}.page-hero-content h1{font-size:3.4rem}.page-hero-content p{max-width:720px}
+    }
   </style>
 </head>
 <body>

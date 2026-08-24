@@ -30,6 +30,66 @@
     @media(max-width:1000px){.navlinks{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:80px 36px;transform:translateX(100%);transition:.3s}.navlinks.open{transform:none}.navlinks>a:not(.btn){font:700 2rem Manrope;text-transform:none}.menu{display:block;position:relative;z-index:2}.hero-grid,.story-grid,.values-head,.team-head{grid-template-columns:1fr}.hero-note{max-width:650px}.story-title{position:static}.purpose-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:repeat(2,1fr)}.cta-grid,.footer-grid{grid-template-columns:1fr}.cta-grid{align-items:start}}
     @media(max-width:600px){.wrap{width:min(calc(100% - 28px),var(--max))}.header{top:10px}.header.scrolled{top:8px}.nav{height:66px;padding:0 10px}.logo-img{width:42px;height:42px}.brand-copy small{display:none}.hero{min-height:720px}.hero-grid{padding:120px 0 60px}.hero-copy h1{font-size:4.4rem}.hero-note{padding:24px}.story,.purpose,.values,.team,.journey,.cta{padding:78px 0}.story-title h2{font-size:4rem}.purpose-card{min-height:340px;padding:26px}.value-row{grid-template-columns:42px 1fr}.value-row p{grid-column:2}.team-grid{grid-template-columns:1fr}.person{min-height:500px}.milestone{grid-template-columns:68px 22px 1fr;gap:10px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat{padding:24px 12px}.footer-bottom{display:block}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+    /* ===== FLUID RESPONSIVE SYSTEM ===== */
+    :where(.hero-grid,.story-grid,.purpose-grid,.values-head,.team-head,.team-grid,.milestone,.stats-grid,.cta-grid,.footer-grid)>*{min-width:0}
+    :where(h1,h2,h3,p,a,strong,span,blockquote){overflow-wrap:break-word}.menu{touch-action:manipulation}.navlinks{overscroll-behavior:contain}
+
+    @media(max-width:1200px){
+      .hero-grid{gap:4vw}.hero-copy h1{font-size:clamp(4rem,8.8vw,7rem)}
+      .story-grid{gap:6vw}.values-head,.team-head{gap:6vw}
+      .team-grid{grid-template-columns:repeat(2,1fr)}.person{min-height:560px}
+    }
+
+    @media(max-width:1000px){
+      .navlinks{height:100dvh;inset:-12px 0 0;padding:max(96px,12vh) max(30px,8vw) max(36px,env(safe-area-inset-bottom));gap:20px;overflow-y:auto}
+      .navlinks>a:not(.btn){font-size:clamp(1.6rem,6vw,2.4rem);line-height:1.15}.navlinks .btn{width:min(100%,360px);margin-top:12px}
+      .hero{min-height:0;align-items:stretch}.hero-grid{grid-template-columns:1fr;gap:42px;padding:145px 0 78px}.hero-copy h1{font-size:clamp(4rem,12vw,7rem)}.hero-note{max-width:720px;padding:30px}
+      .story,.purpose,.values,.team,.journey,.cta{padding-block:90px}
+      .story-grid,.values-head,.team-head{grid-template-columns:1fr;gap:38px}.story-title{position:static}.story-title h2{font-size:clamp(3.2rem,9vw,5.5rem)}
+      .purpose-grid{grid-template-columns:1fr}.purpose-card{min-height:0}.purpose-card h3{margin-top:45px}
+      .value-row{grid-template-columns:55px minmax(190px,.7fr) 1.3fr;gap:20px}
+      .team-grid{grid-template-columns:repeat(2,1fr)}.person{min-height:540px}
+      .cta-grid{grid-template-columns:1fr;gap:34px;align-items:start}.cta-grid .btn{justify-self:start}
+      .footer-grid{grid-template-columns:1.2fr 1fr 1fr;gap:5vw}
+    }
+
+    @media(max-width:760px){
+      .wrap{width:min(calc(100% - 32px),var(--max))}
+      .header{top:10px}.header.scrolled{top:7px}.nav{height:66px;padding:0 10px 0 9px}.logo-img{width:43px;height:43px}.brand-copy strong{font-size:.9rem}.brand-copy small{display:none}
+      .hero-grid{padding:122px 0 68px;gap:32px}.hero-copy h1{font-size:clamp(3.5rem,13.5vw,5.9rem);line-height:.86;margin:18px 0 23px}.hero-copy>p{font-size:1.05rem}.hero-note{padding:25px}.hero-note blockquote{font-size:clamp(1.2rem,4vw,1.55rem)}
+      .marquee{height:46px;font-size:.68rem;letter-spacing:.09em}.track span{padding-right:22px}.track span:after{margin-left:22px}
+      .story,.purpose,.values,.team,.journey,.cta{padding-block:74px}.display{font-size:clamp(2.3rem,10vw,3.8rem)}
+      .story-title h2{font-size:clamp(3.1rem,12vw,4.8rem)}.story-body>p:first-of-type{font-size:1.18rem}.story-body>p{font-size:1rem}.principles{margin-top:34px}
+      .purpose-head{margin-bottom:42px}.purpose-grid{border-left:0}.purpose-card{padding:30px;border-left:1px solid rgba(255,255,255,.16)}.purpose-card h3{font-size:clamp(2rem,8vw,3rem);margin:38px 0 17px}
+      .values-head,.team-head{margin-bottom:42px}.value-row{grid-template-columns:40px 1fr;gap:12px 14px;padding:23px 0}.value-row p{grid-column:2;margin-top:-4px}.value-row:hover{padding-left:6px}
+      .team-grid{grid-template-columns:1fr 1fr;gap:10px}.person{min-height:470px;border-radius:15px}.person-info{padding:65px 16px 17px}.person-info p{font-size:.74rem}
+      .journey-head{margin-bottom:52px}.milestone{grid-template-columns:66px 22px 1fr;gap:12px;padding-bottom:38px}.milestone:not(:last-child) .dot:after{height:78px}.milestone-body{padding-bottom:25px}
+      .stats{padding-block:52px}.stats-grid{grid-template-columns:repeat(2,1fr)}.stat{padding:25px 12px}.stat strong{font-size:clamp(2.2rem,9vw,3.5rem)}
+      .footer-grid{grid-template-columns:1fr;gap:38px;padding-bottom:44px}.footer-bottom{display:grid;gap:8px;line-height:1.6}
+    }
+
+    @media(max-width:520px){
+      .wrap{width:calc(100% - 24px)}.nav{padding-right:8px}
+      .hero-grid{padding:108px 0 58px}.breadcrumb{font-size:.65rem}.hero-copy h1{font-size:clamp(3.15rem,16vw,4.5rem)}.hero-copy>p{font-size:.98rem;line-height:1.58}.hero-note{padding:21px;border-radius:16px}.hero-note p{font-size:.79rem}
+      .eyebrow{font-size:.65rem;letter-spacing:.11em}.eyebrow:before{width:21px}.lead{font-size:1rem}
+      .story,.purpose,.values,.team,.journey,.cta{padding-block:66px}.story-title h2{font-size:clamp(2.9rem,15vw,4rem)}
+      .principle{grid-template-columns:32px 1fr;gap:10px;padding:17px 0}.principle p{font-size:.9rem}
+      .purpose-card{padding:25px 20px}.purpose-card h3{font-size:2.1rem}.purpose-card p{font-size:.93rem}.purpose-card li{font-size:.82rem}
+      .team-grid{grid-template-columns:1fr}.person{min-height:0;aspect-ratio:4/5}.person-info{padding:80px 19px 19px}.person-info h3{font-size:1.1rem}
+      .milestone{grid-template-columns:1fr;padding-bottom:31px}.year{font-size:.9rem}.dot{display:none}.milestone-body{padding-bottom:22px}.milestone-body h3{font-size:1.1rem}
+      .stats-grid{gap:1px}.stat{padding:22px 8px}.stat span{font-size:.65rem;letter-spacing:.06em}
+      .cta-grid .btn{width:100%}.footer{padding-top:58px}.footer .brand-copy small{display:block}
+    }
+
+    @media(max-width:360px){
+      .brand-copy strong{font-size:.8rem}.menu{width:42px;height:42px}.hero-copy h1{font-size:3rem}.display{font-size:2.15rem}.story-title h2{font-size:2.75rem}
+      .hero-note{padding:18px}.purpose-card{padding-inline:17px}.stat strong{font-size:2rem}.footer .brand-copy small{font-size:.48rem}
+    }
+
+    @media(max-height:560px) and (orientation:landscape) and (max-width:1000px){
+      .navlinks{justify-content:flex-start;padding-top:82px}.navlinks>a:not(.btn){font-size:1.35rem}
+      .hero-grid{padding-top:105px}.hero-copy h1{font-size:4rem}.hero-note{display:none}
+    }
   </style>
 </head>
 <body>
