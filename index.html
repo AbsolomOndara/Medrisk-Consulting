@@ -1,3 +1,6 @@
+Here's the updated code with the image in a round frame and the specific line removed from the bio.
+
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,28 +25,24 @@
     .btn{min-height:50px;padding:0 22px;border:1px solid transparent;border-radius:99px;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:800;text-decoration:none;transition:.25s ease;cursor:pointer}.btn-primary{background:var(--green);color:#092d1d}.btn-primary:hover{background:var(--lime);transform:translateY(-2px)}.btn-ghost{border-color:rgba(255,255,255,.34);color:white}.btn-ghost:hover{background:white;color:var(--ink)}.arrow{transition:transform .25s}.btn:hover .arrow,.text-link:hover .arrow{transform:translateX(4px)}
     .topline{height:52px;background:var(--green);color:#082d1d;display:flex;align-items:center;overflow:hidden;font-size:.8rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em}.ticker{display:flex;width:max-content;animation:ticker 22s linear infinite}.ticker span{display:flex;align-items:center;gap:30px;padding-right:30px;white-space:nowrap}.ticker span:after{content:"✦";font-size:1.1rem}@keyframes ticker{to{transform:translateX(-50%)}}
     
-    /* ===== NAVIGATION - SIMPLE CLEAN ===== */
+    /* ===== NAVIGATION ===== */
     .header{position:fixed;top:0;left:0;right:0;z-index:999;padding:10px 16px;transition:.25s;background:transparent}
     .header.scrolled{background:rgba(4,35,49,.92);backdrop-filter:blur(18px);box-shadow:0 4px 30px rgba(0,0,0,.12);padding:8px 16px}
     .nav{height:60px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border:1px solid rgba(255,255,255,.1);border-radius:50px;background:rgba(4,35,49,.7);backdrop-filter:blur(12px);box-shadow:0 20px 50px rgba(0,0,0,.1);transition:.25s;max-width:1280px;margin:0 auto;width:100%}
     .header.scrolled .nav{height:52px;background:rgba(4,35,49,.92);border-color:rgba(255,255,255,.05)}
-    
     .brand{text-decoration:none;display:flex;align-items:center;gap:8px;flex-shrink:0}
     .logo-img{width:36px;height:36px;object-fit:contain;border-radius:8px;background:white;padding:2px;flex-shrink:0}
     .brand-copy{line-height:1.1}.brand-copy strong{font:800 .8rem Manrope;display:block;color:white;letter-spacing:-.02em}.brand-copy small{font-size:.4rem;letter-spacing:.08em;color:var(--lime);text-transform:uppercase;display:block}
-    
     .navlinks{display:flex;align-items:center;gap:20px}
     .navlinks>a:not(.btn){font-size:.7rem;font-weight:700;text-decoration:none;text-transform:uppercase;letter-spacing:.04em;color:rgba(255,255,255,.85);transition:color .2s;padding:4px 0}
     .navlinks>a:not(.btn):hover{color:var(--lime)}
     .navlinks .btn{min-height:36px;padding:0 16px;font-size:.65rem}
     
-    /* ===== MOBILE MENU ===== */
     .menu-btn{display:none;flex-direction:column;gap:4px;background:transparent;border:none;cursor:pointer;padding:4px;z-index:100;width:32px;height:32px;align-items:center;justify-content:center}
     .menu-btn span{display:block;width:22px;height:2px;background:white;border-radius:4px;transition:.3s;transform-origin:center}
     .menu-btn.active span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
     .menu-btn.active span:nth-child(2){opacity:0;transform:scaleX(0)}
     .menu-btn.active span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
-
     .mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(9,47,69,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:60px 30px;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,0,0,1);z-index:98;gap:16px}
     .mobile-menu.open{transform:translateX(0)}
     .mobile-menu a{color:white;font:600 1.3rem Manrope;text-decoration:none;padding:6px 0;transition:color .2s;letter-spacing:.01em}
@@ -70,7 +69,7 @@
     .hero-banner .art-label span{font-size:.75rem;color:rgba(255,255,255,.7);display:block;margin-top:4px;line-height:1.4}
     .hero-banner:after{content:"";position:absolute;right:-8%;bottom:4%;width:78%;height:58%;background:radial-gradient(circle,rgba(113,179,78,.15),transparent 67%);filter:blur(20px);pointer-events:none}
 
-    /* ===== ALL OTHER SECTIONS ===== */
+    /* ===== CLIENTS SECTION ===== */
     .clients-section{padding:70px 0;background:var(--white);overflow:hidden}
     .clients-head{text-align:center;margin-bottom:40px}
     .clients-head .eyebrow{justify-content:center}
@@ -86,6 +85,7 @@
     .client-logo-scroll .client-name{font-weight:700;font-size:.7rem;color:var(--ink);text-align:center;line-height:1.2}
     @keyframes scrollClients{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+    /* ===== STORY SECTION ===== */
     .story-section{padding:90px 0;background:var(--white)}
     .story-intro{display:grid;grid-template-columns:.72fr 1.28fr;gap:8vw;align-items:start;margin-bottom:50px}
     .story-kicker{font:800 clamp(2.8rem,6vw,5.5rem) Manrope;line-height:.84;letter-spacing:-.07em;margin:0;color:var(--ink)}
@@ -129,15 +129,44 @@
     .timeline-body h3{font:700 1.1rem Manrope;margin:0 0 6px}
     .timeline-body p{color:rgba(255,255,255,.5);font-size:.85rem;margin:0;max-width:650px}
 
-    #team-section{display:none;padding:70px 0;background:var(--white);scroll-margin-top:80px;border-top:1px solid var(--line)}
+    /* ===== TEAM SECTION - REDESIGNED WITH ROUND IMAGE ===== */
+    #team-section{display:none;padding:80px 0;background:var(--white);scroll-margin-top:80px;border-top:1px solid var(--line)}
     #team-section:target{display:block}
-    #team-section .team-head{text-align:center;margin-bottom:45px}
+    #team-section .team-head{text-align:center;margin-bottom:50px}
     #team-section .team-head .eyebrow{justify-content:center}
     #team-section .team-head .lead{max-width:600px;margin:14px auto 0}
+
+    /* Managing Director - Featured with Round Image */
+    .md-featured{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);border-radius:24px;padding:40px;margin-bottom:50px;display:grid;grid-template-columns:240px 1fr;gap:40px;align-items:start;color:white;box-shadow:0 20px 60px rgba(17,82,118,.15)}
+    .md-featured .md-image{width:100%;max-width:220px;border-radius:50%;overflow:hidden;border:5px solid rgba(255,255,255,.2);flex-shrink:0;aspect-ratio:1/1;margin:0 auto;background:var(--navy);box-shadow:0 0 0 8px rgba(255,255,255,.05)}
+    .md-featured .md-image img{width:100%;height:100%;object-fit:cover;display:block}
+    .md-featured .md-info .md-role{display:inline-block;background:rgba(168,226,124,.15);color:var(--lime);padding:4px 16px;border-radius:99px;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+    .md-featured .md-info h3{font:800 1.8rem Manrope;margin:0 0 4px;color:white}
+    .md-featured .md-info .md-title{font-size:1rem;color:rgba(255,255,255,.6);margin-bottom:12px}
+    .md-featured .md-info .md-bio{font-size:.92rem;color:rgba(255,255,255,.85);line-height:1.7;margin-bottom:16px}
+    .md-featured .md-info .md-contact{display:flex;gap:20px;flex-wrap:wrap}
+    .md-featured .md-info .md-contact a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.85rem;display:flex;align-items:center;gap:6px;transition:color .2s}
+    .md-featured .md-info .md-contact a:hover{color:white}
+    .md-featured .md-info .md-contact i{color:var(--lime)}
+    .md-featured .md-info .md-contact span{color:rgba(255,255,255,.6);font-size:.85rem;display:flex;align-items:center;gap:6px}
+
+    /* Key Strengths & Achievements */
+    .md-strengths{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:16px}
+    .md-strengths .strength-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:20px 24px}
+    .md-strengths .strength-box h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--lime);margin:0 0 10px}
+    .md-strengths .strength-box ul{list-style:none;padding:0;margin:0}
+    .md-strengths .strength-box ul li{padding:4px 0;font-size:.82rem;color:rgba(255,255,255,.75);display:flex;gap:8px;align-items:flex-start}
+    .md-strengths .strength-box ul li i{color:var(--lime);font-size:.6rem;margin-top:6px;flex-shrink:0}
+
+    /* Education badges */
+    .md-edu{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .md-edu span{background:rgba(168,226,124,.1);color:var(--lime);padding:4px 14px;border-radius:99px;font-size:.7rem;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+
+    /* Team Members Grid */
     .team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;max-width:1150px;margin:0 auto}
     .team-card{background:var(--paper);border-radius:18px;overflow:hidden;transition:.4s;border:1px solid rgba(0,0,0,.02);box-shadow:0 4px 20px rgba(9,47,69,.04)}
     .team-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(9,47,69,.08);border-color:rgba(113,179,78,.12)}
-    .team-card .card-image{width:100%;height:260px;overflow:hidden;position:relative;background:var(--navy)}
+    .team-card .card-image{width:100%;height:240px;overflow:hidden;position:relative;background:var(--navy)}
     .team-card .card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
     .team-card:hover .card-image img{transform:scale(1.04)}
     .team-card .card-image .social-overlay{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(to top,rgba(9,47,69,.7),transparent);display:flex;justify-content:center;gap:10px;opacity:0;transition:opacity .3s}
@@ -192,7 +221,7 @@
     .reveal{opacity:0;transform:translateY(20px);transition:opacity .6s,transform .6s}
     .reveal.visible{opacity:1;transform:none}
 
-    /* ===== MOBILE RESPONSIVE - FIXED ===== */
+    /* ===== RESPONSIVE ===== */
     @media(max-width:820px){
       .navlinks{display:none}
       .menu-btn{display:flex}
@@ -242,8 +271,14 @@
       .timeline-dot{display:none}
       .timeline-time{font-size:.55rem}
       .timeline-body{padding-bottom:12px}
-      #team-section{padding:35px 0}
+      #team-section{padding:40px 0}
       .team-head .display{font-size:1.4rem}
+      .md-featured{grid-template-columns:1fr;padding:24px;gap:20px;text-align:center}
+      .md-featured .md-image{max-width:180px}
+      .md-featured .md-info h3{font-size:1.5rem}
+      .md-featured .md-info .md-contact{justify-content:center}
+      .md-strengths{grid-template-columns:1fr;gap:16px}
+      .md-edu{justify-content:center}
       .team-grid{grid-template-columns:1fr;gap:12px}
       .team-card .card-image{height:180px}
       .team-card .card-body{padding:14px}
@@ -272,7 +307,7 @@
       .footer-grid{grid-template-columns:1fr;gap:20px;padding-bottom:24px}
       .footer-bottom{flex-direction:column;text-align:center;gap:3px;font-size:.55rem}
     }
-    @media(max-width:400px){
+    @media(max-width:480px){
       .hero h1{font-size:1.6rem}
       .hero-badge{font-size:.45rem;padding:3px 6px}
       .nav{height:44px;padding:0 8px;border-radius:24px}
@@ -282,6 +317,12 @@
       .menu-btn{width:28px;height:28px}
       .menu-btn span{width:18px;height:2px}
       .mobile-menu a{font-size:1.1rem}
+      .md-featured .md-image{max-width:150px}
+      .md-featured .md-info h3{font-size:1.3rem}
+      .md-featured .md-info .md-title{font-size:.85rem}
+      .md-featured .md-info .md-bio{font-size:.82rem}
+      .md-strengths .strength-box{padding:14px 16px}
+      .md-strengths .strength-box ul li{font-size:.75rem}
       .team-card .card-image{height:160px}
       .display{font-size:1.2rem}
       .clients-head .display{font-size:1.2rem}
@@ -300,8 +341,6 @@
           <small>Bright Solutions, Valuable Results</small>
         </span>
       </a>
-      
-      <!-- Desktop Nav -->
       <div class="navlinks" id="navlinks">
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -310,15 +349,12 @@
         <a href="contact.html">Contact</a>
         <a class="btn btn-primary" href="booking.html">Book a meeting <span class="arrow">↗</span></a>
       </div>
-
-      <!-- Mobile Hamburger -->
       <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </nav>
   </header>
 
-  <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about" class="mobile-link">About</a>
     <a href="#services" class="mobile-link">Services</a>
@@ -360,7 +396,6 @@
       </div>
     </section>
 
-    <!-- ===== TOPLINE ===== -->
     <div class="topline" aria-hidden="true"><div class="ticker"><span>Build stronger teams · Improve performance · Create lasting value</span><span>Build stronger teams · Improve performance · Create lasting value</span></div></div>
 
     <!-- ===== CLIENTS ===== -->
@@ -409,38 +444,87 @@
       <article class="timeline-row reveal"><span class="timeline-time">STEP 04</span><span class="timeline-dot"></span><div class="timeline-body"><h3>Embed, measure and improve</h3><p>We equip your team, track early signals and refine the work so the improvement becomes part of how you operate.</p></div></article>
     </div></div></section>
 
-    <!-- ===== TEAM ===== -->
+    <!-- ===== TEAM SECTION - REDESIGNED WITH ROUND IMAGE ===== -->
     <section id="team-section">
       <div class="wrap">
         <div class="team-head reveal">
           <p class="eyebrow">Meet the people behind Medrisk</p>
-          <h2 class="display">The <span style="color:var(--green)">Team</span></h2>
+          <h2 class="display">Our <span style="color:var(--green)">Leadership Team</span></h2>
           <p class="lead">Each member brings deep experience, fresh thinking, and a commitment to real impact.</p>
         </div>
+
+        <!-- ===== MANAGING DIRECTOR - FEATURED WITH ROUND IMAGE ===== -->
+        <div class="md-featured reveal">
+          <div class="md-image">
+            <img src="images/md.jpg" alt="Haron Abuga - Managing Director" onerror="this.src='https://ui-avatars.com/api/?name=Haron+Abuga&background=115276&color=fff&size=400'">
+          </div>
+          <div class="md-info">
+            <div class="md-role"><i class="fas fa-star" style="margin-right:4px;"></i> Managing Director</div>
+            <h3>Haron Abuga</h3>
+            <div class="md-title">Healthcare Executive | Strategic Leader | Financial Expert</div>
+            <div class="md-bio">
+              I am a seasoned healthcare executive with over a decade of experience in hospital administration, specializing in strategic planning, operational efficiency, and patient care enhancement. I am dedicated to fostering a culture of excellence, innovation, and community engagement, driving organizations toward their mission of delivering high-quality, accessible healthcare to all.
+            </div>
+            <div class="md-contact">
+              <a href="tel:+254790409121"><i class="fas fa-phone"></i> 0790 409 121</a>
+              <a href="tel:+254728226561"><i class="fas fa-phone"></i> 0728 226 561</a>
+              <a href="mailto:haronabuga2@gmail.com"><i class="fas fa-envelope"></i> haronabuga2@gmail.com</a>
+              <span><i class="fas fa-map-marker-alt"></i> Kisii, Kenya</span>
+            </div>
+            
+            <div class="md-strengths">
+              <div class="strength-box">
+                <h4><i class="fas fa-bullseye" style="margin-right:6px;"></i> Key Strengths</h4>
+                <ul>
+                  <li><i class="fas fa-chevron-right"></i> Strategic Leadership &amp; Growth</li>
+                  <li><i class="fas fa-chevron-right"></i> Operational Excellence</li>
+                  <li><i class="fas fa-chevron-right"></i> Financial Management &amp; Sustainability</li>
+                  <li><i class="fas fa-chevron-right"></i> Community Engagement &amp; CSR</li>
+                  <li><i class="fas fa-chevron-right"></i> Patient-Centered Approach</li>
+                  <li><i class="fas fa-chevron-right"></i> Leadership &amp; Team Development</li>
+                </ul>
+              </div>
+              <div class="strength-box">
+                <h4><i class="fas fa-trophy" style="margin-right:6px;"></i> Achievements</h4>
+                <ul>
+                  <li><i class="fas fa-chevron-right"></i> Implemented transformative strategic plans</li>
+                  <li><i class="fas fa-chevron-right"></i> Introduced innovative management systems</li>
+                  <li><i class="fas fa-chevron-right"></i> Optimized financial planning &amp; revenue</li>
+                  <li><i class="fas fa-chevron-right"></i> Led successful community outreach programs</li>
+                  <li><i class="fas fa-chevron-right"></i> Developed patient engagement initiatives</li>
+                  <li><i class="fas fa-chevron-right"></i> Mentored and developed high-performing teams</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="md-edu">
+              <span><i class="fas fa-graduation-cap"></i> MBA - Corporate Management, KCA University</span>
+              <span><i class="fas fa-graduation-cap"></i> BCom - Finance, KCA University</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== TEAM MEMBERS GRID ===== -->
         <div class="team-grid">
           <div class="team-card reveal">
             <div class="card-image"><img src="images/team1.jpg" alt="James Mwangi" onerror="this.src='https://ui-avatars.com/api/?name=James+Mwangi&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Managing Director</div><h3>James Mwangi</h3><div class="title">20+ years in management consultancy</div><p>James leads Medrisk with a vision for transformative growth. He specializes in strategic planning, organizational development, and executive coaching.</p><div class="expertise"><span>Strategy</span><span>Leadership</span><span>Change</span></div></div>
+            <div class="card-body"><div class="role">Senior Consultant</div><h3>James Mwangi</h3><div class="title">Strategy &amp; Operations</div><p>James brings 20+ years of experience in management consultancy, specializing in strategic planning and organizational development.</p><div class="expertise"><span>Strategy</span><span>Leadership</span><span>Change</span></div></div>
           </div>
           <div class="team-card reveal">
             <div class="card-image"><img src="images/team2.jpg" alt="Grace Akinyi" onerror="this.src='https://ui-avatars.com/api/?name=Grace+Akinyi&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Head of HR Solutions</div><h3>Grace Akinyi</h3><div class="title">Organization design &amp; performance</div><p>Grace helps organizations build people systems that work. Her expertise spans talent management, performance engineering, and leadership coaching.</p><div class="expertise"><span>HR Strategy</span><span>Performance</span><span>Coaching</span></div></div>
+            <div class="card-body"><div class="role">Head of HR Solutions</div><h3>Grace Akinyi</h3><div class="title">Organization Design &amp; Performance</div><p>Grace helps organizations build people systems that work, spanning talent management, performance engineering, and leadership coaching.</p><div class="expertise"><span>HR Strategy</span><span>Performance</span><span>Coaching</span></div></div>
           </div>
           <div class="team-card reveal">
             <div class="card-image"><img src="images/team3.jpg" alt="David Ochieng" onerror="this.src='https://ui-avatars.com/api/?name=David+Ochieng&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Senior Consultant</div><h3>David Ochieng</h3><div class="title">Accounting, audit &amp; finance</div><p>David brings clarity to complex financial landscapes. He specializes in accounting, audit, risk management, and financial strategy for growing organizations.</p><div class="expertise"><span>Accounting</span><span>Audit</span><span>Risk</span></div></div>
+            <div class="card-body"><div class="role">Senior Consultant</div><h3>David Ochieng</h3><div class="title">Accounting, Audit &amp; Finance</div><p>David specializes in accounting, audit, risk management, and financial strategy for growing organizations, bringing clarity to complex financial landscapes.</p><div class="expertise"><span>Accounting</span><span>Audit</span><span>Risk</span></div></div>
           </div>
           <div class="team-card reveal">
             <div class="card-image"><img src="images/team4.jpg" alt="Faith Wanjiku" onerror="this.src='https://ui-avatars.com/api/?name=Faith+Wanjiku&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Training &amp; Development Lead</div><h3>Faith Wanjiku</h3><div class="title">Corporate training &amp; curriculum</div><p>Faith designs and delivers high-impact training programmes that build capability and drive performance across organizations of all sizes.</p><div class="expertise"><span>Training</span><span>Curriculum</span><span>Talent</span></div></div>
+            <div class="card-body"><div class="role">Training &amp; Development Lead</div><h3>Faith Wanjiku</h3><div class="title">Corporate Training &amp; Curriculum</div><p>Faith designs and delivers high-impact training programmes that build capability and drive performance across organizations of all sizes.</p><div class="expertise"><span>Training</span><span>Curriculum</span><span>Talent</span></div></div>
           </div>
           <div class="team-card reveal">
             <div class="card-image"><img src="images/team5.jpg" alt="Peter Kimani" onerror="this.src='https://ui-avatars.com/api/?name=Peter+Kimani&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Investment &amp; Pension Specialist</div><h3>Peter Kimani</h3><div class="title">Actuarial &amp; investment advisory</div><p>Peter advises clients on pension schemes, investment portfolios, and actuarial matters, helping them secure long-term financial stability.</p><div class="expertise"><span>Pension</span><span>Investment</span><span>Actuarial</span></div></div>
-          </div>
-          <div class="team-card reveal">
-            <div class="card-image"><img src="images/team6.jpg" alt="Sarah Muthoni" onerror="this.src='https://ui-avatars.com/api/?name=Sarah+Muthoni&background=115276&color=fff&size=300'"><div class="social-overlay"><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-envelope"></i></a></div></div>
-            <div class="card-body"><div class="role">Healthcare Management Consultant</div><h3>Sarah Muthoni</h3><div class="title">Hospital operations &amp; patient experience</div><p>Sarah brings deep expertise in healthcare management, helping hospitals and clinics optimize operations, enhance patient care, and improve financial performance.</p><div class="expertise"><span>Healthcare</span><span>Operations</span><span>Quality</span></div></div>
+            <div class="card-body"><div class="role">Investment &amp; Pension Specialist</div><h3>Peter Kimani</h3><div class="title">Actuarial &amp; Investment Advisory</div><p>Peter advises clients on pension schemes, investment portfolios, and actuarial matters, helping them secure long-term financial stability.</p><div class="expertise"><span>Pension</span><span>Investment</span><span>Actuarial</span></div></div>
           </div>
         </div>
       </div>
@@ -521,7 +605,6 @@
       });
     }
 
-    // Close mobile menu when clicking a link
     document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(function(link) {
       link.addEventListener('click', function() {
         mobileMenu.classList.remove('open');
@@ -530,7 +613,6 @@
       });
     });
 
-    // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
       if (mobileMenu && mobileMenu.classList.contains('open')) {
         const isClickInside = mobileMenu.contains(e.target) || (menuBtn && menuBtn.contains(e.target));
@@ -542,10 +624,8 @@
       }
     });
 
-    // Copyright year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Navbar scroll effect
     const header = document.querySelector('.header');
     if (header) {
       const syncHeader = function() {
@@ -555,7 +635,6 @@
       syncHeader();
     }
 
-    // Scroll reveal
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (reduced) {
       document.querySelectorAll('.reveal').forEach(function(el) {
@@ -575,7 +654,6 @@
       });
     }
 
-    // Team section toggle
     var teamNavLinks = document.querySelectorAll('#teamNavLink, #teamNavLinkMobile, #teamNavLinkFooter');
     var teamSection = document.getElementById('team-section');
     
@@ -590,7 +668,6 @@
             window.scrollTo({ top: top, behavior: 'smooth' });
           }, 100);
         }
-        // Close mobile menu if open
         mobileMenu.classList.remove('open');
         menuBtn.classList.remove('active');
         document.body.classList.remove('menu-open');
