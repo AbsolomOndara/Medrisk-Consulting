@@ -6,8 +6,31 @@
   <meta name="theme-color" content="#0b3851">
   <meta name="description" content="Medrisk Consulting Ltd helps organizations strengthen people, performance and profitability through expert consultancy and training.">
   <meta name="robots" content="index,follow">
+  <meta property="og:site_name" content="Medrisk Consulting">
   <link rel="canonical" href="https://medriskconsulting.co.ke/">
   <title>Medrisk Consulting · Bright Solutions, Valuable Results</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://medriskconsulting.co.ke/#website",
+        "url": "https://medriskconsulting.co.ke/",
+        "name": "Medrisk Consulting",
+        "alternateName": "Medrisk Consulting Ltd"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://medriskconsulting.co.ke/#organization",
+        "url": "https://medriskconsulting.co.ke/",
+        "name": "Medrisk Consulting",
+        "legalName": "Medrisk Consulting Ltd",
+        "logo": "https://medriskconsulting.co.ke/images/logo.jpg"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="images/logo.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="images/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,7 +73,7 @@
     .hero{min-height:100vh;height:auto;background:linear-gradient(120deg,#051e2b 0%,#083a53 58%,#0a3c4d 100%);position:relative;color:white;display:flex;align-items:stretch;overflow:hidden}
     .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:.5}
     .hero-video-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,30,43,.6) 0%,rgba(8,58,83,.4) 100%);z-index:1}
-    .hero-inner{position:relative;z-index:2;min-height:100vh;padding-top:85px;padding-bottom:50px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);gap:18px;align-items:center}
+    .hero-inner{position:relative;z-index:2;min-height:100vh;padding:85px clamp(16px,3vw,40px) 50px;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(420px,.98fr);gap:18px;align-items:center}
     .hero-copy{max-width:720px;padding:30px 0 20px}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(123,193,86,.3);background:rgba(9,47,69,.5);border-radius:99px;padding:6px 14px;color:#dce9e2;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.hero-badge i{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px rgba(113,179,78,.1)}
     .hero h1{font-family:Manrope,sans-serif;font-size:clamp(2.8rem,5.5vw,5.5rem);line-height:.96;letter-spacing:-.06em;margin:20px 0 18px;max-width:760px}.hero h1 em{display:block;background:linear-gradient(90deg,var(--lime),#4fd0b2);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
@@ -227,7 +250,7 @@
       .logo-img{width:30px;height:30px}
       .brand-copy strong{font-size:.7rem}
       .brand-copy small{font-size:.35rem}
-      .hero-inner{padding-top:70px;grid-template-columns:1fr;min-height:auto;padding-bottom:30px}
+      .hero-inner{padding:70px 16px 30px;grid-template-columns:1fr;min-height:auto}
       .hero-copy{padding:4px 0 0}
       .hero-banner{display:none}
       .hero h1{font-size:clamp(2rem,7vw,2.8rem)}
